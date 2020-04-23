@@ -22,11 +22,23 @@ form {
   align-items: center;
 }
 
+label{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: 0.2rem solid #C38728;
+}
+
 fieldset {
   display: grid;
   max-width: 80rem;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   width: 100%;
+  grid-gap: 1rem;
 }
 
 fieldset div {
@@ -44,14 +56,35 @@ fieldset div label {
 
 fieldset div input:checked+label {
   background-color: var(--selected-color);
+  color: white;
+  border: 0 none;
+}
+
+fieldset div input:checked+label span:after {
+  content: "✅";
+  padding: 0 0 0 0.5rem;
+}
+
+fieldset div input:checked+label svg[class*="textsize"] path{
+  fill: white;
+}
+
+fieldset label svg{
+  margin: auto 0;
+}
+
+fieldset label span{
+  margin: auto 0 0;
+  padding: 1rem 0;
 }
 
 .hidden {
   display: none;
 }
 
-.basketBackground {
-  stroke: #C38728;
+
+.card{
+  height: 15rem;
 }
 
 .textsize-small{
