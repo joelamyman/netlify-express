@@ -2,6 +2,7 @@ const serverless = require('serverless-http');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const MongoClient = require('mongodb').MongoClient
 
 const router = express.Router();
 
@@ -11,8 +12,24 @@ router.get('/', (req, res) => {
   res.end();
 });
 router.post('/', (req, res) =>  {
-  console.log(req.body);
-  res.json({ postBody: req.body });
+  MongoClient.connect(uri, { useUnifiedTopology: true })
+  .then(client => {
+    console.log('Connected to Database')
+    const db = client.db('star-wars-quotes')
+    const quotesCollection = db.collection('quotes');
+    quotesCollection.insertOne(req.body)
+      .then(result => {
+        res.redirect('/')
+      })
+      .catch(error => console.error(error))
+  })
+  .catch(error => console.error(error))
+
+
+
+
+  // console.log(req.body);
+  // res.json({ postBody: req.body });
 });
 
 app.use(bodyParser.urlencoded({ extended: true }))
