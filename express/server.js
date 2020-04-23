@@ -19,7 +19,7 @@ function connectToDatabase (uri) {
       const db = client.db('star-wars-quotes')
       const quotesCollection = db.collection('quotes');
       
-      cachedDb = db;
+      cachedDb = quotesCollection;
       return cachedDb;
     });
 }
@@ -27,7 +27,7 @@ function connectToDatabase (uri) {
 function queryDatabase (db) {
   console.log('=> query database');
 
-  return db.collection('star-wars-quotes').find({}).toArray()
+  return db.collection('quotes').find({}).toArray()
     .then(() => { return { statusCode: 200, body: 'success' }; })
     .catch(err => {
       console.log('=> an error occurred: ', err);
