@@ -1,22 +1,50 @@
-'use strict';
-const express = require('express');
-const path = require('path');
-const serverless = require('serverless-http');
-const app = express();
-const bodyParser = require('body-parser');
+"use strict";
+const MongoClient = require('mongodb').MongoClient;
+const MONGODB_URI = `mongodb+srv://jlamyman:${process.env.DB_PASS}@mtestcluster-bstuo.mongodb.net/test?retryWrites=true&w=majority` // or Atlas connection string
 
-const router = express.Router();
-router.get('/', (req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write('<h1>Hello from Express.js!</h1>');
-  res.end();
-});
-router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
-router.post('/', (req, res) => res.json({ postBody: req.body }));
+let cachedDb = null;
 
-app.use(bodyParser.json());
-app.use('/.netlify/functions/server', router);  // path must route to lambda
-app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
+function connectToDatabase (uri) {
 
-module.exports = app;
-module.exports.handler = serverless(app);
+  console.log('=> connect to database');
+
+  if (cachedDb) {
+    console.log('=> using cached database instance');
+    return Promise.resolve(cachedDb);
+  }
+
+  return MongoClient.connect(uri)
+    .then(db => {
+      cachedDb = db;
+      return cachedDb;
+    });
+}
+
+function queryDatabase (db) {
+  console.log('=> query database');
+
+  return db.collection('star-wars-quotes').find({}).toArray()
+    .then(() => { return { statusCode: 200, body: 'success' }; })
+    .catch(err => {
+      console.log('=> an error occurred: ', err);
+      return { statusCode: 500, body: 'error' };
+    });
+}
+
+module.exports.handler = (event, context, callback) => {
+
+  context.callbackWaitsForEmptyEventLoop = false;
+
+  console.log('event: ', event);
+
+  connectToDatabase(MONGODB_URI)
+    .then(db => queryDatabase(db))
+    .then(result => {
+      console.log('=> returning result: ', result);
+      callback(null, result);
+    })
+    .catch(err => {
+      console.log('=> an error occurred: ', err);
+      callback(err);
+    });
+};
