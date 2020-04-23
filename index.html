@@ -1,78 +1,14 @@
 <!DOCTYPE html>
 
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Test Page</title>
+  <meta name="description" content="Warning this is a work in progress">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="main.css">
   <style>
-    :root {
-      --main-background: #EEB04E;
-      --label-background: white;
-      --selected-color: blue;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 2vh;
-      background-color: var(--main-background);
-      background-image: url(./imgs/background-img.svg);
-      background-size: 4rem;
-    }
-
-    form {
-      background-color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    fieldset {
-      display: grid;
-      max-width: 80rem;
-      grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-      width: 100%;
-    }
-
-    fieldset div {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
-    }
-
-    fieldset div input,
-    fieldset div label {
-      grid-column: 1 / span 1;
-      grid-row: 1 / span 1;
-      background-color: var(--label-background);
-    }
-
-    fieldset div input:checked+label {
-      background-color: var(--selected-color);
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .basketBackground {
-      stroke: #C38728;
-    }
-
-    .textsize-small{
-      height: 2.5rem;
-    }
-
-    .textsize-medium{
-      height: 3.75rem;
-    } 
-
-    .textsize-large{
-      height: 5.625rem;
-    }  
-
-    .textsize-xlarge{
-      height: 8.4rem;
-    }    
+     
   </style>
 </head>
 
