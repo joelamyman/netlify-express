@@ -1,6 +1,7 @@
 const serverless = require('serverless-http');
 const express = require('express');
 const app = express();
+const bodyParse = require('body-parser');
 
 const router = express.Router();
 
