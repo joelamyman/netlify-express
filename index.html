@@ -7,9 +7,30 @@
 <body>
 
 
-  <form name="quotes" method="POST" action="/.netlify/functions/app/">
+
+  <form name="quotes" method="POST" netlify-honeypot="bot-field" action="/.netlify/functions/app/">
+    <p class="hidden">
+      <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+    </p>
+    <fieldset>
+      <legend>how big should the text be?</legend>
+
+      <input type="radio" id="textsize-small" name="textsize" value="textsize-small">
+      <label for="textsize-small">small</label><br/>
+
+      <input type="radio" id="textsize-medium" name="textsize" value="textsize-medium">
+      <label for="textsize-medium">medium</label><br/>
+
+      <input type="radio" id="textsize-large" name="textsize" value="textsize-large">
+      <label for="textsize-large">large</label>
+
+      <input type="radio" id="textsize-xlarge" name="textsize" value="textsize-xlarge">
+      <label for="textsize-xlarge">extra large</label>
+    </fieldset>
     <input type="text" placeholder="name" name="name">
     <input type="text" placeholder="quote" name="quote">
     <button type="submit">Submit</button>
   </form>
+
+
 </body>
