@@ -13,8 +13,12 @@ function connectToDatabase (uri) {
     return Promise.resolve(cachedDb);
   }
 
-  return MongoClient.connect(uri)
-    .then(db => {
+  return MongoClient.connect(uri, { useUnifiedTopology: true })
+    .then(client => {
+      console.log('=> connected to db ok ✅');
+      const db = client.db('star-wars-quotes')
+      const quotesCollection = db.collection('quotes');
+      
       cachedDb = db;
       return cachedDb;
     });
