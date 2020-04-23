@@ -10,9 +10,12 @@ router.get('/', (req, res) => {
   res.write('<h1>Hello from Express.js!</h1>');
   res.end();
 });
-router.post('/', (req, res) => res.json({ postBody: req.body }));
+router.post('/', (req, res) =>  {
+  console.log(req.body);
+  res.json({ postBody: req.body });
+});
 
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/.netlify/functions/app', router);  // path must route to lambda
 app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 
