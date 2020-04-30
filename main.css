@@ -50,7 +50,7 @@ legend span{
 fieldset {
   display: grid;
   max-width: 80rem;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   width: 100%;
   grid-gap: 1rem;
   border: 0 none;
@@ -117,3 +117,22 @@ fieldset label span{
 .textsize-xlarge{
   height: 8.4rem;
 }   
+
+@media only screen and (min-width: 18rem) {
+  fieldset {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (min-width: 40rem) {
+  fieldset {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 70rem) {
+  fieldset {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
