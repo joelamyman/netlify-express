@@ -17,49 +17,68 @@ body {
   font-size: 1.25rem;
 }
 
+.stack > * + *{
+  margin-top: 1.5rem;
+}
+
+.stack-small > * + *{
+  margin-top: 0.5rem;
+}
+
+.stack-small > * {
+  margin-bottom: 0rem;
+}
+
+.o-bwText__header{
+  width: max-content;
+}
+
+.o-bwText{
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  max-width: 60ch;
+}
+
+.o-bwText__bodyText{
+  line-height: 3rem;
+}
+
+.o-bwText__listHolder{
+  padding-left: 3rem;
+}
+
+.o-bwText__listItem{
+  
+}
+
+.o-bwText__link{
+  color: white;
+}
+
+.o-bwText__link:hover{
+  color: #ccc;
+}
+
+.o-button{
+  padding: 0.75rem 1rem;
+  font-size: 1.25rem;
+  background-color: var(--selected-color);
+  border: transparent none 0;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+.o-button:hover{
+  cursor: pointer;
+  background-color: darkblue;
+}
+
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-label{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  border-radius: 0.5rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  border: 0.2rem solid #C38728;
-}
-
-legend{
-  background-color: black;
-  color: white;
-  padding: 0.5rem 1rem;
-  font-weight: 600;
-}
-
-legend span{
-  display: block;
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-fieldset {
-  display: grid;
-  max-width: 80rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 100%;
-  grid-gap: 1rem;
-  border: 0 none;
-}
-
-fieldset div {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
 }
 
 fieldset div input,
@@ -69,34 +88,23 @@ fieldset div label {
   background-color: var(--label-background);
 }
 
-fieldset div input:checked+label {
-  background-color: var(--selected-color);
-  color: white;
-  border: 0 none;
-}
 
-fieldset div input:checked+label span:after {
-  content: "✅";
-  padding: 0 0 0 0.5rem;
-}
-
-fieldset div input:checked+label svg[class*="textsize"] path{
-  fill: white;
-}
 
 fieldset label svg{
   margin: auto 0;
-}
-
-fieldset label span{
-  margin: auto 0 0;
-  padding: 1rem 0;
 }
 
 .hidden {
   display: none;
 }
 
+.mt-0{
+  margin-top: 0;
+}
+
+.mb-0{
+  margin-bottom: 0;
+}
 
 .card{
   height: 15rem;
@@ -116,23 +124,218 @@ fieldset label span{
 
 .textsize-xlarge{
   height: 8.4rem;
-}   
+}
+
+.flex-center{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+.form-questionHolder{
+  display: grid;
+  max-width: 80rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  grid-gap: 1rem;
+  border: 0 none;
+}
+
+.form-questionHolder-inputStack{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.form-questionHolder-optionHolder{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: 0.2rem solid #C38728;
+}
+
+.form-questionHolder-optionDesc{
+  margin: auto 0 0;
+  padding: 1rem 0;
+}
+
+.form-questionHolder-displayText{
+  font-size: 0.75rem;
+  padding: 1rem;
+  text-align: left;
+}
+
+.form-fieldsetLegend{
+  background-color: black;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+}
+
+.form-fieldsetLengend-additionalInfo{
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.example-cards{
+  border: 0 none;
+  font-size: 0.75rem;
+  padding: 1rem;
+}
+
+fieldset div input:checked+label {
+  background-color: var(--selected-color);
+  color: white;
+  border: 0 none;
+}
+
+fieldset div input:checked+label span:after {
+  content: "✅";
+  padding: 0 0 0 0.5rem;
+}
+
+fieldset div input:checked+label svg[class*="textsize"] path{
+  fill: white;
+}
 
 @media only screen and (min-width: 18rem) {
-  fieldset {
+  .form-questionHolder {
     grid-template-columns: 1fr;
   }
 }
 
 @media only screen and (min-width: 40rem) {
-  fieldset {
+  .form-questionHolder {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media only screen and (min-width: 70rem) {
-  fieldset {
+  .form-questionHolder {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
+.l-page__grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.c-shopDisplay{
+  display: grid;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  box-shadow: 9px 13px 0px rgba(0, 0, 0, 0.04);
+  height: 70vh;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 2rem repeat(3, 1fr);
+  grid-template-areas: "browsernav browsernav browsernav" 
+                       "topleft topimage topright"
+                       "leftimage content rightimage"
+                       "bottomleft bottomimage bottomright";
+}
+
+.c-shopDisplay__bodyText{
+  grid-area: content;
+  display: none;
+}
+
+.o-circle{
+  border-radius: 100%;
+}
+
+.c-shopDisplay__button{
+  display: inline-block;
+  height: 0.75rem;
+  width: 0.75rem;
+}
+
+.c-shopDisplay__button--colour-red{
+  background-color: #ff5858;
+}
+
+.c-shopDisplay__button--colour-yellow{
+  background-color: #fbd335;
+}
+
+.c-shopDisplay__button--colour-green{
+  background-color: #3db13d;
+}
+
+.c-shopDisplay__browserNav{
+  grid-area: browsernav;
+  background-color: #0e1319;
+}
+
+.c-shopDisplay__addressBar{
+  display: inline-block;
+  color: white;
+  background-color: #3d4954;
+  padding: 0.2rem 2rem 0.2rem 2rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  margin: auto auto auto 10%;
+  width: 60%;
+}
+
+.c-shopDisplay__buttonHolder{
+  display: inline-block;
+  margin: 0.1rem 0 0 0.5rem;
+}
+
+.c-shopDisplay__iconHolder{
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 100%;
+  background-color: #3d4954;
+  margin: -1.3rem 0.5rem auto auto;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-shopDisplay__userIcon{
+  height: 0.75rem;
+}
+
+.c-shopDisplay__bodyText--size-small{
+  font-size: 12px;
+  display: block;
+}
+
+.c-shopDisplay__bodyText--size-medium{
+  font-size: 16px;
+  display: block;
+}
+
+.c-shopDisplay__bodyText--size-large{
+  font-size: 20px;
+  display: block;
+}
+
+.c-shopDisplay__bodyText--size-xlarge{
+  font-size: 24px;
+  display: block;
+}
+
+.c-shopDisplay__heading{
+  font-size: 1.2em;
+}
+
+.c-shopDisplay__paragraph{
+  font-size: 1em;
+}
