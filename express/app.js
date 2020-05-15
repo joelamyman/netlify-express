@@ -25,7 +25,25 @@ router.post('/', (req, res) =>  {
       .then(result => {
         res.redirect('/')
       })
-      .catch(error => console.error(error))
+      .catch(error => console.error(error));
+    const updateAction = { $inc: { [req.body.textsize]: 1 } }; // increment requests record by 1
+    const updateOptions = {
+      projection: { _id: 0 },
+      upsert: true, // create record if not present
+      returnOriginal: false // return updated value
+    };
+    infoCollection.findOneAndUpdate({"_id" : ObjectId("5ebea76b69c5ed197b666bde")}, updateAction, updateOptions, (err, result) => {
+      if (err) return errorResponse(callback, err);
+
+      console.log('Saved new page request. Current count:', result.value.requests);
+  
+      client.close();
+
+      callback(null, {
+        statusCode: 200,
+        body: JSON.stringify(result)
+      });
+    })
   })
   .catch(error => console.error(error))
 
