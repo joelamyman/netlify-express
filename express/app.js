@@ -18,7 +18,7 @@ router.post('/', (req, res) =>  {
   .then(client => {
     console.log('Connected to Database')
     console.log('request body is:')
-    console.log(req.body)
+    console.log(req.body.textsize);
     const db = client.db('test-data')
     const submissionsCollection = db.collection('submissions');
     submissionsCollection.insertOne(req.body)
