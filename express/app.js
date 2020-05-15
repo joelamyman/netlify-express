@@ -28,7 +28,7 @@ router.post('/', (req, res) =>  {
       })
       .catch(error => console.error(error));
     console.log("about to tackle the second");
-    const parameter = `textsize.${req.body.textsize}`;
+    let parameter = `textsize.${req.body.textsize}`;
     const updateAction = { $inc: { [parameter]: 1 } }; // increment requests record by 1
     const updateOptions = {
       projection: { _id: 0 },
@@ -47,6 +47,49 @@ router.post('/', (req, res) =>  {
         body: JSON.stringify(result)
       });
     })
+
+    parameter = `infoAmount.${req.body.infoAmount}`;
+    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebeb3b9eb8fc5d083afa5cd")}, updateAction, updateOptions, (err, result) => {
+      if (err) return errorResponse(callback, err);
+
+      console.log('Saved new page request. Current count:', result.value.requests);
+  
+      client.close();
+
+      callback(null, {
+        statusCode: 200,
+        body: JSON.stringify(result)
+      });
+    })
+
+    parameter = `productOptions.${req.body.productOptions}`;
+    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebeb4eeeb8fc5d083afa5ce")}, updateAction, updateOptions, (err, result) => {
+      if (err) return errorResponse(callback, err);
+
+      console.log('Saved new page request. Current count:', result.value.requests);
+  
+      client.close();
+
+      callback(null, {
+        statusCode: 200,
+        body: JSON.stringify(result)
+      });
+    })
+
+    parameter = `imagepos.${req.body.imagepos}`;
+    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebeb564eb8fc5d083afa5cf")}, updateAction, updateOptions, (err, result) => {
+      if (err) return errorResponse(callback, err);
+
+      console.log('Saved new page request. Current count:', result.value.requests);
+  
+      client.close();
+
+      callback(null, {
+        statusCode: 200,
+        body: JSON.stringify(result)
+      });
+    })
+    
   })
   .catch(error => console.error(error))
 
