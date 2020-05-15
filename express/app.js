@@ -2,7 +2,8 @@ const serverless = require('serverless-http');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const MongoClient = require('mongodb').MongoClient
+const MongoClient = require('mongodb').MongoClient;
+ObjectId = require('mongodb').ObjectID;
 
 const uri = `mongodb+srv://jlamyman:${process.env.DB_PASS}@mtestcluster-bstuo.mongodb.net/test?retryWrites=true&w=majority`;
 
@@ -32,7 +33,7 @@ router.post('/', (req, res) =>  {
       upsert: true, // create record if not present
       returnOriginal: false // return updated value
     };
-    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebea76b69c5ed197b666bde")}, updateAction, updateOptions, (err, result) => {
+    submissionsCollection.findOneAndUpdate({"_id" : [ObjectId("5ebea76b69c5ed197b666bde")]}, updateAction, updateOptions, (err, result) => {
       if (err) return errorResponse(callback, err);
 
       console.log('Saved new page request. Current count:', result.value.requests);
