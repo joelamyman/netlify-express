@@ -14,6 +14,11 @@ router.get('/', (req, res) => {
   res.write('<h1>Hello from Express.js!</h1>');
   res.end();
 });
+router.get('/complete/', (req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.write('<h1>Hello from Express.js!</h1>');
+  res.end();
+});
 router.post('/', (req, res) =>  {
   MongoClient.connect(uri, { useUnifiedTopology: true })
   .then(client => {
@@ -24,7 +29,7 @@ router.post('/', (req, res) =>  {
     const submissionsCollection = db.collection('submissions');
     submissionsCollection.insertOne(req.body)
       .then(result => {
-        res.redirect('/')
+        res.redirect('/complete/')
       })
       .catch(error => console.error(error));
     console.log("about to tackle the second");
