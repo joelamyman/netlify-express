@@ -27,7 +27,9 @@ router.post('/', (req, res) =>  {
         res.redirect('/')
       })
       .catch(error => console.error(error));
-    const updateAction = { $inc: { [req.body.textsize]: 1 } }; // increment requests record by 1
+    console.log("about to tackle the second");
+    const parameter = `textsize.${req.body.textsize}`;
+    const updateAction = { $inc: { [parameter]: 1 } }; // increment requests record by 1
     const updateOptions = {
       projection: { _id: 0 },
       upsert: true, // create record if not present
