@@ -49,6 +49,7 @@ router.post('/', (req, res) =>  {
     })
 
     parameter = `infoAmount.${req.body.infoAmount}`;
+    updateAction = { $inc: { [parameter]: 1 } };
     submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebeb3b9eb8fc5d083afa5cd")}, updateAction, updateOptions, (err, result) => {
       if (err) return errorResponse(callback, err);
 
@@ -63,6 +64,7 @@ router.post('/', (req, res) =>  {
     })
 
     parameter = `productOptions.${req.body.productOptions}`;
+    updateAction = { $inc: { [parameter]: 1 } };
     submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebeb4eeeb8fc5d083afa5ce")}, updateAction, updateOptions, (err, result) => {
       if (err) return errorResponse(callback, err);
 
@@ -77,6 +79,7 @@ router.post('/', (req, res) =>  {
     })
 
     parameter = `imagepos.${req.body.imagepos}`;
+    updateAction = { $inc: { [parameter]: 1 } };
     submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebeb564eb8fc5d083afa5cf")}, updateAction, updateOptions, (err, result) => {
       if (err) return errorResponse(callback, err);
 
