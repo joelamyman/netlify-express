@@ -17,9 +17,11 @@ router.post('/', (req, res) =>  {
   MongoClient.connect(uri, { useUnifiedTopology: true })
   .then(client => {
     console.log('Connected to Database')
-    const db = client.db('star-wars-quotes')
-    const quotesCollection = db.collection('quotes');
-    quotesCollection.insertOne(req.body)
+    console.log('request body is:')
+    console.log(req.body)
+    const db = client.db('test-data')
+    const submissionsCollection = db.collection('submissions');
+    submissionsCollection.insertOne(req.body)
       .then(result => {
         res.redirect('/')
       })
@@ -27,11 +29,6 @@ router.post('/', (req, res) =>  {
   })
   .catch(error => console.error(error))
 
-
-
-
-  // console.log(req.body);
-  // res.json({ postBody: req.body });
 });
 
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -40,17 +37,3 @@ app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 
 module.exports = app;
 module.exports.handler = serverless(app);
-
-
-
-
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
-// app.get('.netlify/functions/app/api/info', (req, res) => {
-//   res.send({ application: 'sample-app', version: '1' });
-// });
-// app.post('.netlify/functions/app/api/v1/getback', (req, res) => {
-//   res.send({ ...req.body });
-// });
-// //app.listen(3000, () => console.log(`Listening on: 3000`));
-// module.exports.handler = serverless(app);
