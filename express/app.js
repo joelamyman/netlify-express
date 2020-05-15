@@ -29,7 +29,7 @@ router.post('/', (req, res) =>  {
       .catch(error => console.error(error));
     console.log("about to tackle the second");
     let parameter = `textsize.${req.body.textsize}`;
-    const updateAction = { $inc: { [parameter]: 1 } }; // increment requests record by 1
+    let updateAction = { $inc: { [parameter]: 1 } }; // increment requests record by 1
     const updateOptions = {
       projection: { _id: 0 },
       upsert: true, // create record if not present
