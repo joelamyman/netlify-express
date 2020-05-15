@@ -32,7 +32,7 @@ router.post('/', (req, res) =>  {
       upsert: true, // create record if not present
       returnOriginal: false // return updated value
     };
-    infoCollection.findOneAndUpdate({"_id" : ObjectId("5ebea76b69c5ed197b666bde")}, updateAction, updateOptions, (err, result) => {
+    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebea76b69c5ed197b666bde")}, updateAction, updateOptions, (err, result) => {
       if (err) return errorResponse(callback, err);
 
       console.log('Saved new page request. Current count:', result.value.requests);
