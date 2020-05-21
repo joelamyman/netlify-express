@@ -33,9 +33,16 @@
     let mostFrequent = [];
     console.log(dbObject[0].textsize);
     const entries = Object.entries(dbObject[0].textsize);
+    const temporaryHighestValStore = [];
     for (const entry of entries){
-      console.log(`This entry is for ${entry[0]} and it's value is ${entry[1]}`);
+      if (temporaryHighestValStore === undefined || temporaryHighestValStore.length == 0){
+        temporaryHighestValStore.push(entry);
+      } else if (entry[1] > temporaryHighestValStore[0][1]) {
+        temporaryHighestValStore.splice(0, 1, entry[1])
+      }
+      console.log(`The highest value is ${entry[0]} and it's value is ${entry[1]}`);
     }
+    mostFrequent.push(temporaryHighestValStore);
   }
 </script>
 
