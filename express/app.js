@@ -15,9 +15,19 @@ router.get('/', (req, res) => {
   res.end();
 });
 router.get('/complete/', (req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write('<h1>Hello from Express.js!</h1>');
-  res.end();
+  MongoClient.connect(uri, { useUnifiedTopology: true })
+  .then(client => {
+    console.log('Connected to Database')
+    console.log('request body is:')
+    console.log(req.body.textsize);
+    const db = client.db('test-data')
+    const submissionsCollection = db.collection('submissions');
+    var query = {"_id" : ObjectId("5ebea76b69c5ed197b666bde")};
+    submissionsCollection.find(query).toArray(function(err, result) {
+      if (err) throw err;
+      console.log(result);
+      db.close();
+    });
 });
 router.post('/', (req, res) =>  {
   MongoClient.connect(uri, { useUnifiedTopology: true })
