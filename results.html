@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Your results</title>
+  <meta name="description" content="Warning this is a work in progress">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <p>The most popular is: <span id="result"></span></p>
+</body>
+
+<script>
+  window.onload = function () {
+    fetch('/.netlify/functions/app/complete/')
+      .then(res => {
+        if (res.status < 200 || res.status >= 300) {
+          return Promise.reject('No db connection')
+        }
+
+        return res.json();
+      })
+      .then((data) => console.log(data))
+      .catch(console.warn);
+  }
+</script>
+
+</html>
