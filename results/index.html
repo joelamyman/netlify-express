@@ -24,8 +24,19 @@
 
         return res.json();
       })
-      .then((data) => console.log(data))
+      .then((data) => mostPopular(data))
       .catch(console.warn);
+  }
+
+  function mostPopular(dbObject){
+    let mostFrequent = [];
+    for (int i=0; i<dbObject.length; i++){
+      const values = Object.entries(dbObject[i]);
+      for (const dbValue of values){
+        console.log(dbValue);
+      }
+    }
+    
   }
 </script>
 

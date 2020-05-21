@@ -41,7 +41,7 @@ router.post('/', (req, res) =>  {
     const submissionsCollection = db.collection('submissions');
     submissionsCollection.insertOne(req.body)
       .then(result => {
-        res.redirect('/complete/')
+        res.redirect('/results/')
       })
       .catch(error => console.error(error));
     console.log("about to tackle the second");
