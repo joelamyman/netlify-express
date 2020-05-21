@@ -26,7 +26,7 @@ router.get('/complete/', (req, res) => {
     submissionsCollection.find(query).toArray(function(err, result) {
       if (err) throw err;
       console.log(result);
-      db.close();
+      client.close();
     });
   })
 });
