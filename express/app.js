@@ -28,6 +28,7 @@ router.get('/complete/', (req, res) => {
       console.log(result);
       db.close();
     });
+  })
 });
 router.post('/', (req, res) =>  {
   MongoClient.connect(uri, { useUnifiedTopology: true })
