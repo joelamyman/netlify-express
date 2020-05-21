@@ -34,7 +34,10 @@
     for (let i=0; i<dbObject.length; i++){
       const values = Object.entries(dbObject[i]);
       for (const dbValue of values){
-        console.log(dbValue);
+        const uiValues = Object.entries(dbObject[i]);
+        for (const uiValue of uiValues){
+          console.log(uiValue);
+        }
       }
     }
     
