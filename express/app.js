@@ -23,8 +23,7 @@ router.get('/complete/', (req, res) => {
     const db = client.db('test-data')
     const submissionsCollection = db.collection('submissions');
     var query = {
-      "_id" : ObjectId("5ebea76b69c5ed197b666bde"),
-      "_id" : ObjectId("5ebeb3b9eb8fc5d083afa5cd")
+      "_id" : {"$in":[ObjectId("5ebea76b69c5ed197b666bde"), ObjectId("5ebeb3b9eb8fc5d083afa5cd")]}
     };
     submissionsCollection.find(query).toArray(function(err, result) {
       if (err) throw err;
