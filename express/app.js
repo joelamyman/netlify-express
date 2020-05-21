@@ -27,10 +27,7 @@ router.get('/complete/', (req, res) => {
       if (err) throw err;
       console.log(result);
       client.close();
-      callback(null, {
-        statusCode: 200,
-        body: JSON.stringify(result)
-      });
+      res.send(JSON.stringify(result))
     });
   })
 });
