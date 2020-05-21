@@ -22,7 +22,10 @@ router.get('/complete/', (req, res) => {
     console.log(req.body.textsize);
     const db = client.db('test-data')
     const submissionsCollection = db.collection('submissions');
-    var query = {"_id" : ObjectId("5ebea76b69c5ed197b666bde")};
+    var query = {
+      "_id" : ObjectId("5ebea76b69c5ed197b666bde"),
+      "_id" : ObjectId("5ebeb3b9eb8fc5d083afa5cd")
+    };
     submissionsCollection.find(query).toArray(function(err, result) {
       if (err) throw err;
       console.log(result);
