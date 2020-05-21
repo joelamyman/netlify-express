@@ -35,11 +35,13 @@
     const entries = Object.entries(dbObject[0].textsize);
     const temporaryHighestValStore = [];
     for (const entry of entries){
+      console.log(`The value in the array is ${temporaryHighestValStore[0][1]}`);
+      console.log(`This value is ${entry[1]}`);
       if (temporaryHighestValStore === undefined || temporaryHighestValStore.length == 0){
         temporaryHighestValStore.push(entry);
       } else if (entry[1] > temporaryHighestValStore[0][1]) {
-        temporaryHighestValStore.splice(0, 1, entry[1])
-        
+        temporaryHighestValStore.splice(0, 1, entry)
+
       }
     }
     console.log(temporaryHighestValStore);
