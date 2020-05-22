@@ -1,6 +1,5 @@
 const serverless = require('serverless-http');
 const express = require('express');
-const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
@@ -42,18 +41,8 @@ router.get('/results/show/*', (req, res) => {
   //   'Content-Type': 'text/html'
   // }) oops
   // res.send('<h1>Here is what you made!</h1><p>Text size' + req.query.textSize + '<br> Info amount ' + req.query.infoAmount + '</p><script>window.onload = function(){console.log("loaded")}</script>');
-  var options = {
-    root: path.join(__dirname, 'public')
-  }
-
-  var fileName = req.params.name
-  res.sendFile(fileName, options, function (err) {
-    if (err) {
-      next(err)
-    } else {
-      console.log('Sent:', fileName)
-    }
-  })
+  res.sendFile('../complete/index.html');
+  res.end();
 });
 router.post('/', (req, res) =>  {
   MongoClient.connect(uri, { useUnifiedTopology: true })
