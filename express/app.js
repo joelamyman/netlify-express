@@ -33,6 +33,14 @@ router.get('/complete/', (req, res) => {
     });
   })
 });
+router.get('/results/share/*', (req, res) => {
+  res.redirect(`/`)
+});
+router.get('/results/show/*', (req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.write(`<h1>Here's what you made!</h1>`);
+  res.end();
+});
 router.post('/', (req, res) =>  {
   MongoClient.connect(uri, { useUnifiedTopology: true })
   .then(client => {
@@ -43,7 +51,7 @@ router.post('/', (req, res) =>  {
     const submissionsCollection = db.collection('submissions');
     submissionsCollection.insertOne(req.body)
       .then(result => {
-        res.redirect(`/results/?textSize="${req.body.textsize}"`)
+        res.redirect(`/.netlify/functions/app/results/show/?textSize="${req.body.textsize}"`)
       })
       .catch(error => console.error(error));
     console.log("about to tackle the second");
