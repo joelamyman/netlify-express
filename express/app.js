@@ -40,7 +40,6 @@ router.get('/results/show/*', (req, res) => {
   res.set({
     'Content-Type': 'text/html'
   })
-  res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8"' });
   res.send('<h1>Here is what you made!</h1>');
   res.send('<p>' + req.query.textSize + "</p>");
   res.send('<script>window.onload = function(){console.log("loaded")}</script>');
