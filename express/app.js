@@ -39,7 +39,7 @@ router.get('/results/share/*', (req, res) => {
 router.get('/results/show/*', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write('<h1>Here is what you made!</h1>');
-  res.write('<p>' + req.body + "</p>");
+  res.write('<p>' + req + "</p>");
   res.end();
 });
 router.post('/', (req, res) =>  {
