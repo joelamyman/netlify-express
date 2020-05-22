@@ -41,6 +41,11 @@ router.get('/results/show/*', (req, res) => {
   //   'Content-Type': 'text/html'
   // }) oops
   // res.send('<h1>Here is what you made!</h1><p>Text size' + req.query.textSize + '<br> Info amount ' + req.query.infoAmount + '</p><script>window.onload = function(){console.log("loaded")}</script>');
+  console.log("__dirname:    ", __dirname); 
+  console.log("process.cwd() : ", process.cwd()); 
+  console.log("./ : ", path.resolve("./")); 
+  console.log("filename: ", __filename); 
+  
   res.sendFile('index.html', { root: '../results/'});
   res.end();
 });
