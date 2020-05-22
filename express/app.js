@@ -43,7 +43,7 @@ router.post('/', (req, res) =>  {
     const submissionsCollection = db.collection('submissions');
     submissionsCollection.insertOne(req.body)
       .then(result => {
-        res.redirect('/results/')
+        res.redirect(`/results/?textSize="${req.body.textsize}"`)
       })
       .catch(error => console.error(error));
     console.log("about to tackle the second");
