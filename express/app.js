@@ -39,7 +39,8 @@ router.get('/results/share/*', (req, res) => {
 router.get('/results/show/*', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write('<h1>Here is what you made!</h1>');
-  res.end(req.body);
+  res.write('<p>' + res.body + "</p>");
+  res.end();
 });
 router.post('/', (req, res) =>  {
   MongoClient.connect(uri, { useUnifiedTopology: true })
