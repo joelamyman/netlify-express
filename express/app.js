@@ -67,63 +67,40 @@ router.post('/', (req, res) =>  {
       upsert: true, // create record if not present
       returnOriginal: false // return updated value
     };
-    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebea76b69c5ed197b666bde")}, updateAction, updateOptions, (err, result) => {
-      if (err) return errorResponse(callback, err);
-
-      console.log('Saved new page request. Current count:', result.value.requests);
-  
-      client.close();
-
-      callback(null, {
-        statusCode: 200,
-        body: JSON.stringify(result)
-      });
-    })
+    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebea76b69c5ed197b666bde")}, updateAction, updateOptions)
+      .then(result => {
+        console.log('Saved new page request. Current count:', result.value.requests);
+        client.close();  
+      })
+      .catch(error => console.error(error));
 
     parameter = `infoAmount.${req.body.infoAmount}`;
     updateAction = { $inc: { [parameter]: 1 } };
-    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebeb3b9eb8fc5d083afa5cd")}, updateAction, updateOptions, (err, result) => {
-      if (err) return errorResponse(callback, err);
-
-      console.log('Saved new page request. Current count:', result.value.requests);
-  
-      client.close();
-
-      callback(null, {
-        statusCode: 200,
-        body: JSON.stringify(result)
-      });
-    })
+    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebeb3b9eb8fc5d083afa5cd")}, updateAction, updateOptions)
+      .then(result => {
+        console.log('Saved new page request. Current count:', result.value.requests);
+        client.close();  
+      })
+      .catch(error => console.error(error));
 
     parameter = `productOptions.${req.body.productOptions}`;
     updateAction = { $inc: { [parameter]: 1 } };
-    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebeb4eeeb8fc5d083afa5ce")}, updateAction, updateOptions, (err, result) => {
-      if (err) return errorResponse(callback, err);
-
-      console.log('Saved new page request. Current count:', result.value.requests);
-  
-      client.close();
-
-      callback(null, {
-        statusCode: 200,
-        body: JSON.stringify(result)
-      });
-    })
+    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebeb4eeeb8fc5d083afa5ce")}, updateAction, updateOptions) 
+      .then(result => {
+        console.log('Saved new page request. Current count:', result.value.requests);
+        client.close();
+      })
+      .catch(error => console.error(error))
 
     parameter = `imagepos.${req.body.imagepos}`;
     updateAction = { $inc: { [parameter]: 1 } };
-    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebeb564eb8fc5d083afa5cf")}, updateAction, updateOptions, (err, result) => {
-      if (err) return errorResponse(callback, err);
+    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebeb564eb8fc5d083afa5cf")}, updateAction, updateOptions)
+      .then(result => {
+        console.log('Saved new page request. Current count:', result.value.requests);
+        client.close();
+      })
+      .catch(error => console.error(error))
 
-      console.log('Saved new page request. Current count:', result.value.requests);
-  
-      client.close();
-
-      callback(null, {
-        statusCode: 200,
-        body: JSON.stringify(result)
-      });
-    })
     
   })
   .catch(error => console.error(error))
