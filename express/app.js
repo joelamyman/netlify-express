@@ -37,10 +37,11 @@ router.get('/results/share/*', (req, res) => {
   res.redirect(`/`)
 });
 router.get('/results/show/*', (req, res) => {
-  res.set({
-    'Content-Type': 'text/html'
-  })
-  res.send('<h1>Here is what you made!</h1><p>Text size' + req.query.textSize + '<br> Info amount ' + req.query.infoAmount + '</p><script>window.onload = function(){console.log("loaded")}</script>');
+  // res.set({
+  //   'Content-Type': 'text/html'
+  // })
+  // res.send('<h1>Here is what you made!</h1><p>Text size' + req.query.textSize + '<br> Info amount ' + req.query.infoAmount + '</p><script>window.onload = function(){console.log("loaded")}</script>');
+  res.sendFile('/complete/index.html');
   res.end();
 });
 router.post('/', (req, res) =>  {
