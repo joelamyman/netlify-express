@@ -41,8 +41,18 @@ router.get('/results/show/*', (req, res) => {
   //   'Content-Type': 'text/html'
   // }) oops
   // res.send('<h1>Here is what you made!</h1><p>Text size' + req.query.textSize + '<br> Info amount ' + req.query.infoAmount + '</p><script>window.onload = function(){console.log("loaded")}</script>');
-  res.sendFile(path.join(__dirname, '../index.html'));
-  res.end();
+  var options = {
+    root: path.join(__dirname, 'public')
+  }
+
+  var fileName = req.params.name
+  res.sendFile(fileName, options, function (err) {
+    if (err) {
+      next(err)
+    } else {
+      console.log('Sent:', fileName)
+    }
+  })
 });
 router.post('/', (req, res) =>  {
   MongoClient.connect(uri, { useUnifiedTopology: true })
