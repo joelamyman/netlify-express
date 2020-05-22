@@ -40,7 +40,7 @@ router.get('/results/show/*', (req, res) => {
   res.set({
     'Content-Type': 'text/html'
   })
-  res.send('<h1>Here is what you made!</h1><p>' + req.query.textSize + '</p><script>window.onload = function(){console.log("loaded")}</script>');
+  res.send('<h1>Here is what you made!</h1><p>Text size' + req.query.textSize + ' Info amount ' + req.body.infoAmount + '</p><script>window.onload = function(){console.log("loaded")}</script>');
   res.end();
 });
 router.post('/', (req, res) =>  {
