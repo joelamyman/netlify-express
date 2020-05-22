@@ -37,7 +37,14 @@ router.get('/results/share/*', (req, res) => {
   res.redirect(`/`)
 });
 router.get('/results/show/*', (req, res) => {
-  
+  res.set({
+    'Content-Type': 'text/html'
+  })
+  res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8"' });
+  res.send('<h1>Here is what you made!</h1>');
+  res.send('<p>' + req.query.textSize + "</p>");
+  res.send('<script>window.onload = function(){console.log("loaded")}</script>');
+  res.end();
 });
 router.post('/', (req, res) =>  {
   MongoClient.connect(uri, { useUnifiedTopology: true })
@@ -49,11 +56,6 @@ router.post('/', (req, res) =>  {
     const submissionsCollection = db.collection('submissions');
     submissionsCollection.insertOne(req.body)
       .then(result => {
-        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8"' });
-        res.write('<h1>Here is what you made!</h1>');
-        res.write('<p>' +  + "</p>");
-        res.write('<script>window.onload = function(){console.log("loaded")}</script>');
-        res.end();
         res.redirect(`/.netlify/functions/app/results/show/?textSize="${req.body.textsize}"&infoAmount="${req.body.infoAmount}"&productOptions="${req.body.productOptions}"&imagepos="${req.body.imagepos}"`)
       })
       .catch(error => console.error(error));
