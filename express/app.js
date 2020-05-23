@@ -58,6 +58,8 @@ router.get('/results/show/*', (req, res) => {
 
   })
 
+  console.log(receivedData);
+
   const entries = Object.entries(receivedData[0].textsize);
   const temporaryHighestValStore = [];
   for (const entry of entries){
