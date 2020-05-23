@@ -242,7 +242,7 @@ router.get('/results/show/*', (req, res) => {
             </div>
             <a class="h-skipLink" href="#questions">Back to questions</a>
           </section>
-          <p>${mostPopular(JSON.stringify(result))}</p>
+          <p>${result}</p>
         </body>
       `);
       res.end();
