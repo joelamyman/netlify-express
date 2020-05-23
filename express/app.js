@@ -50,7 +50,7 @@ router.get('/results/show/*', (req, res) => {
       if (err) throw err;
       console.log(result);
       client.close();
-      const dataString = (JSON.stringify(result));
+      const dataString = JSON.parse(JSON.stringify(result));
       const textSizesData = dataString.find(x => x._id === '5ebea76b69c5ed197b666bde').textsize;
       // const entries = Object.entries(receivedData[0].textsize);
       // const temporaryHighestValStore = [];
