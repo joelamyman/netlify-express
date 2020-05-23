@@ -51,7 +51,7 @@ router.get('/results/show/*', (req, res) => {
       <title>Test Page</title>
       <meta name="description" content="Warning this is a work in progress">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="main.css">
+      <link rel="stylesheet" href="https://eloquent-brown-615c35.netlify.app/main.css">
     </head>
     
     <body>
