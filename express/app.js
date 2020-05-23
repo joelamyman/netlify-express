@@ -244,7 +244,7 @@ router.get('/results/show/*', (req, res) => {
             </div>
             <a class="h-skipLink" href="#questions">Back to questions</a>
           </section>
-          <p>${textSizesData}</p>
+          <p>${mostFrequent(textSizesData)}</p>
         </body>
       `);
       res.end();
@@ -317,6 +317,26 @@ function mostPopular(dbObject){
   let mostFrequent = [];
   console.log(dbObject[0].textsize);
   const entries = Object.entries(dbObject[0].textsize);
+  const temporaryHighestValStore = [];
+  for (const entry of entries){
+    if (temporaryHighestValStore !== undefined){}
+    console.log(`The value in the array is ${temporaryHighestValStore}`);
+    console.log(`This value is ${entry[1]}`);
+    if (temporaryHighestValStore === undefined || temporaryHighestValStore.length == 0){
+      temporaryHighestValStore.push(entry);
+    } else if (entry[1] > temporaryHighestValStore[0][1]) {
+      temporaryHighestValStore.splice(0, 1, entry)
+
+    }
+  }
+  console.log(temporaryHighestValStore);
+  console.log(`The highest value is ${temporaryHighestValStore[0][0]} and it's value is ${temporaryHighestValStore[0][1]}`);
+  mostFrequent.push(temporaryHighestValStore);
+  return temporaryHighestValStore[0][1];
+}
+
+function mostFrequent(dbObject){
+  const entries = Object.entries(dbObject);
   const temporaryHighestValStore = [];
   for (const entry of entries){
     if (temporaryHighestValStore !== undefined){}
