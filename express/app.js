@@ -242,11 +242,10 @@ router.get('/results/show/*', (req, res) => {
             </div>
             <a class="h-skipLink" href="#questions">Back to questions</a>
           </section>
-
+          <p>${JSON.stringify(result)}</p>
         </body>
       `);
       res.end();
-      res.send(JSON.stringify(result))
     });
   })
 });
