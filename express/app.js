@@ -52,6 +52,7 @@ router.get('/results/show/*', (req, res) => {
       client.close();
       const dataString = JSON.parse(JSON.stringify(result));
       const textSizesData = dataString.find(x => x._id === '5ebea76b69c5ed197b666bde').textsize;
+      const additionalInfoData = dataString.find(x => x._id === '5ebeb3b9eb8fc5d083afa5cd').infoAmount;
       // const entries = Object.entries(receivedData[0].textsize);
       // const temporaryHighestValStore = [];
       // for (const entry of entries){
@@ -273,7 +274,7 @@ router.get('/results/show/*', (req, res) => {
                       Doesn't
                       that sound important!</p>
                     <!-- QUESTION 2 -->
-                    <div class="c-shopDisplay__additionalInfo">
+                    <div class="c-shopDisplay__additionalInfo ${mostFrequent(additionalInfoData)}">
                       <h2 class="c-shopDisplay__heading2">Additional Information</h2>
                       <p class="c-shopDisplay__additionalInfo--text u-hidden">Lots of important text that you should
                         definitely be
