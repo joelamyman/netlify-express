@@ -40,7 +40,25 @@ router.get('/results/show/*', (req, res) => {
   res.set({
     'Content-Type': 'text/html'
   })
-  res.send(`<h1>Here is what you made!</h1><p>Text size' + req.query.textSize + ' Info amount ' + req.query.infoAmount + '</p><script>window.onload = function(){console.log("loaded")}</script>`);
+  // res.send(`<h1>Here is what you made!</h1><p>Text size' + req.query.textSize + ' Info amount ' + req.query.infoAmount + '</p><script>window.onload = function(){console.log("loaded")}</script>`);
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Test Page</title>
+      <meta name="description" content="Warning this is a work in progress">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="main.css">
+    </head>
+    
+    <body>
+      <h1>Here is what you've made!</h1>
+      <p>Text size: ${req.query.textSize}</p>
+    </body>
+  `);
   res.end();
 });
 router.post('/', (req, res) =>  {
