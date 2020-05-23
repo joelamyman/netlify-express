@@ -37,6 +37,41 @@ router.get('/results/share/*', (req, res) => {
   res.redirect(`/`)
 });
 router.get('/results/show/*', (req, res) => {
+  const receivedData = [];
+  MongoClient.connect(uri, { useUnifiedTopology: true })
+  .then(client => {
+    console.log('Connected to Database')
+    console.log('request body is:')
+    console.log(req.body.textsize);
+    const db = client.db('test-data')
+    const submissionsCollection = db.collection('submissions');
+    var query = {
+      "_id" : {"$in":[ObjectId("5ebea76b69c5ed197b666bde"), ObjectId("5ebeb3b9eb8fc5d083afa5cd")]}
+    };
+    submissionsCollection.find(query).toArray(function(err, result) {
+      if (err) throw err;
+      receivedData = result;
+      console.log(result);
+      client.close();
+      res.send(JSON.stringify(result))
+    });
+
+  })
+
+  const entries = Object.entries(receivedData[0].textsize);
+  const temporaryHighestValStore = [];
+  for (const entry of entries){
+    if (temporaryHighestValStore !== undefined){}
+    console.log(`The value in the array is ${temporaryHighestValStore}`);
+    console.log(`This value is ${entry[1]}`);
+    if (temporaryHighestValStore === undefined || temporaryHighestValStore.length == 0){
+      temporaryHighestValStore.push(entry);
+    } else if (entry[1] > temporaryHighestValStore[0][1]) {
+      temporaryHighestValStore.splice(0, 1, entry)
+
+    }
+  }
+
   res.set({
     'Content-Type': 'text/html'
   })
@@ -215,6 +250,7 @@ router.get('/results/show/*', (req, res) => {
         </div>
         <a class="h-skipLink" href="#questions">Back to questions</a>
       </section>
+      <h2>Server most selected text is ${temporaryHighestValStore[0][1]}</h2>
     </body>
   `);
   res.end();
