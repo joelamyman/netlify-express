@@ -351,7 +351,6 @@ function mostFrequent(dbObject){
   }
   console.log(temporaryHighestValStore);
   console.log(`The highest value is ${temporaryHighestValStore[0][0]} and it's value is ${temporaryHighestValStore[0][1]}`);
-  mostFrequent.push(temporaryHighestValStore);
   return temporaryHighestValStore[0][1];
 }
 
