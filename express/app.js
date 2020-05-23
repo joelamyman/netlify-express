@@ -85,7 +85,7 @@ router.get('/results/show/*', (req, res) => {
                   Doesn't
                   that sound important!</p>
                 <!-- QUESTION 2 -->
-                <div class="c-shopDisplay__additionalInfo">
+                <div class="c-shopDisplay__additionalInfo ${req.query.infoAmount.replace(/['"]+/g, '')}">
                   <h2 class="c-shopDisplay__heading2">Additional Information</h2>
                   <p class="c-shopDisplay__additionalInfo--text u-hidden">Lots of important text that you should
                     definitely be
@@ -125,7 +125,7 @@ router.get('/results/show/*', (req, res) => {
                   </details>
                 </div>
                 <!-- QUESTION 3 -->
-                <div class="c-shopDisplay__productOptions">
+                <div class="c-shopDisplay__productOptions ${req.query.productOptions.replace(/['"]+/g, '')}">
                   <div class="c-shopDisplay__productOptions--select u-hidden">
                     <label class="o-label">Please select a size:</label>
                     <select class="c-shopDisplay__productOptions--select-font">
