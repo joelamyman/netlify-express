@@ -42,7 +42,6 @@ router.get('/results/show/*', (req, res) => {
   .then(client => {
     console.log('Connected to Database')
     console.log('request body is:')
-    console.log(req.body.textsize);
     const db = client.db('test-data')
     const submissionsCollection = db.collection('submissions');
     var query = {
@@ -60,19 +59,19 @@ router.get('/results/show/*', (req, res) => {
 
   console.log(receivedData);
 
-  const entries = Object.entries(receivedData[0].textsize);
-  const temporaryHighestValStore = [];
-  for (const entry of entries){
-    if (temporaryHighestValStore !== undefined){}
-    console.log(`The value in the array is ${temporaryHighestValStore}`);
-    console.log(`This value is ${entry[1]}`);
-    if (temporaryHighestValStore === undefined || temporaryHighestValStore.length == 0){
-      temporaryHighestValStore.push(entry);
-    } else if (entry[1] > temporaryHighestValStore[0][1]) {
-      temporaryHighestValStore.splice(0, 1, entry)
+  // const entries = Object.entries(receivedData[0].textsize);
+  // const temporaryHighestValStore = [];
+  // for (const entry of entries){
+  //   if (temporaryHighestValStore !== undefined){}
+  //   console.log(`The value in the array is ${temporaryHighestValStore}`);
+  //   console.log(`This value is ${entry[1]}`);
+  //   if (temporaryHighestValStore === undefined || temporaryHighestValStore.length == 0){
+  //     temporaryHighestValStore.push(entry);
+  //   } else if (entry[1] > temporaryHighestValStore[0][1]) {
+  //     temporaryHighestValStore.splice(0, 1, entry)
 
-    }
-  }
+  //   }
+  // }
 
   res.set({
     'Content-Type': 'text/html'
