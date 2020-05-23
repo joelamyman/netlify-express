@@ -50,6 +50,7 @@ router.get('/results/show/*', (req, res) => {
       if (err) throw err;
       console.log(result);
       client.close();
+      const dataString = (JSON.stringify(result));
       // const entries = Object.entries(receivedData[0].textsize);
       // const temporaryHighestValStore = [];
       // for (const entry of entries){
@@ -242,7 +243,7 @@ router.get('/results/show/*', (req, res) => {
             </div>
             <a class="h-skipLink" href="#questions">Back to questions</a>
           </section>
-          <p>${result}</p>
+          <p>${dataString}</p>
         </body>
       `);
       res.end();
