@@ -51,6 +51,7 @@ router.get('/results/show/*', (req, res) => {
       console.log(result);
       client.close();
       const dataString = (JSON.stringify(result));
+      const textSizesData = dataString.find(x => x._id === '5ebea76b69c5ed197b666bde').textsize;
       // const entries = Object.entries(receivedData[0].textsize);
       // const temporaryHighestValStore = [];
       // for (const entry of entries){
@@ -243,7 +244,7 @@ router.get('/results/show/*', (req, res) => {
             </div>
             <a class="h-skipLink" href="#questions">Back to questions</a>
           </section>
-          <p>${dataString}</p>
+          <p>${textSizesData}</p>
         </body>
       `);
       res.end();
