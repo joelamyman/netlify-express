@@ -251,7 +251,7 @@ router.get('/results/show/*', (req, res) => {
         </div>
         <a class="h-skipLink" href="#questions">Back to questions</a>
       </section>
-      <h2>Server most selected text is ${temporaryHighestValStore[0][1]}</h2>
+
     </body>
   `);
   res.end();
