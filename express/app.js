@@ -242,7 +242,7 @@ router.get('/results/show/*', (req, res) => {
             </div>
             <a class="h-skipLink" href="#questions">Back to questions</a>
           </section>
-          <p>${JSON.stringify(result)}</p>
+          <p>${mostPopular(JSON.stringify(result))}</p>
         </body>
       `);
       res.end();
@@ -309,6 +309,29 @@ router.post('/', (req, res) =>  {
   .catch(error => console.error(error))
 
 });
+
+function mostPopular(dbObject){
+  console.log(dbObject);
+  let mostFrequent = [];
+  console.log(dbObject[0].textsize);
+  const entries = Object.entries(dbObject[0].textsize);
+  const temporaryHighestValStore = [];
+  for (const entry of entries){
+    if (temporaryHighestValStore !== undefined){}
+    console.log(`The value in the array is ${temporaryHighestValStore}`);
+    console.log(`This value is ${entry[1]}`);
+    if (temporaryHighestValStore === undefined || temporaryHighestValStore.length == 0){
+      temporaryHighestValStore.push(entry);
+    } else if (entry[1] > temporaryHighestValStore[0][1]) {
+      temporaryHighestValStore.splice(0, 1, entry)
+
+    }
+  }
+  console.log(temporaryHighestValStore);
+  console.log(`The highest value is ${temporaryHighestValStore[0][0]} and it's value is ${temporaryHighestValStore[0][1]}`);
+  mostFrequent.push(temporaryHighestValStore);
+  return temporaryHighestValStore[0][1];
+}
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/.netlify/functions/app', router);  // path must route to lambda
