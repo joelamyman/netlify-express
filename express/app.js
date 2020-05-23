@@ -78,7 +78,7 @@ router.get('/results/show/*', (req, res) => {
             </div>
             <div class="c-shopDisplay">
               <!-- QUESTION 1 -->
-              <div class="c-shopDisplay__bodyText ${req.query.textSize}">
+              <div class="c-shopDisplay__bodyText ${req.query.textSize.replace(/['"]+/g, '')}">
                 <h1 class="c-shopDisplay__heading">Very important product</h1>
                 <p class="c-shopDisplay__paragraph">This is the most important product you will ever buy. It's importance
                   cannot be described by words.
