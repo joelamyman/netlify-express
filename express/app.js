@@ -37,7 +37,6 @@ router.get('/results/share/*', (req, res) => {
   res.redirect(`/`)
 });
 router.get('/results/show/*', (req, res) => {
-  const receivedData = [];
   MongoClient.connect(uri, { useUnifiedTopology: true })
   .then(client => {
     console.log('Connected to Database')
@@ -49,7 +48,6 @@ router.get('/results/show/*', (req, res) => {
     };
     submissionsCollection.find(query).toArray(function(err, result) {
       if (err) throw err;
-      receivedData = result;
       console.log(result);
       client.close();
       res.send(JSON.stringify(result))
