@@ -67,6 +67,52 @@ router.get('/results/show/*', (req, res) => {
       //   }
       // }
 
+      const textImageVariable = '';
+      const additionalInfoVariable = '';
+      const productOptionsVariable = '';
+
+      switch (req.query.textSize.replace(/['"]+/g, '')){
+        case "c-shopDisplay__bodyText--size-small":
+          textImageVariable = "textsize-small";
+          break;
+        case "c-shopDisplay__bodyText--size-medium":
+          textImageVariable = "textsize-medium";
+          break;
+        case "c-shopDisplay__bodyText--size-large":
+          textImageVariable = "textsize-large";
+          break;
+        case "c-shopDisplay__bodyText--size-xlarge":
+          textImageVariable = "textsize-xlarge";
+      }
+
+      switch (req.query.infoAmount.replace(/['"]+/g, '')){
+        case "c-shopDisplay__additionalInfo--text":
+          additionalInfoVariable = "infoAmount-texty";
+          break;
+        case "c-shopDisplay__additionalInfo--bullets":
+          additionalInfoVariable = "infoAmount-bullets";
+          break;
+        case "c-shopDisplay__additionalInfo--mixed":
+          additionalInfoVariable = "infoAmount-mix";
+          break;
+        case "c-shopDisplay__additionalInfo--details":
+          additionalInfoVariable = "infoAmount-details";
+      }
+
+      switch (req.query.infoAmount.replace(/['"]+/g, '')){
+        case "c-shopDisplay__productOptions--select":
+          productOptionsVariable = "productOptions-select";
+          break;
+        case "c-shopDisplay__productOptions--listOfCards":
+          productOptionsVariable = "productOptions-cards";
+          break;
+        case "c-shopDisplay__productOptions--radios":
+          productOptionsVariable = "productOptions-bullets";
+          break;
+        case "c-shopDisplay__productOptions--rowOfCards":
+          productOptionsVariable = "productOptions-grid";
+      }
+
       res.set({
         'Content-Type': 'text/html'
       })
@@ -84,7 +130,7 @@ router.get('/results/show/*', (req, res) => {
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:title" content="I just made the perfect shopping UI!" />
           <meta name="twitter:description" content="Sorry, there's no way you can beat this." />
-          <meta name="twitter:image" content="https://eloquent-brown-615c35.netlify.app/imgs/meta-images/image-${req.query.textSize.replace(/['"]+/g, '')}-${req.query.infoAmount.replace(/['"]+/g, '')}-${req.query.productOptions.replace(/['"]+/g, '')}.png" />
+          <meta name="twitter:image" content="https://eloquent-brown-615c35.netlify.app/imgs/meta-images/image-${textImageVariable}-${additionalInfoVariable}-${productOptionsVariable}.png" />
           <link rel="stylesheet" href="https://eloquent-brown-615c35.netlify.app/main.css">
         </head>
         
