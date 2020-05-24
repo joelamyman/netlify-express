@@ -67,9 +67,9 @@ router.get('/results/show/*', (req, res) => {
       //   }
       // }
 
-      const textImageVariable = '';
-      const additionalInfoVariable = '';
-      const productOptionsVariable = '';
+      let textImageVariable = '';
+      let additionalInfoVariable = '';
+      let productOptionsVariable = '';
 
       switch (req.query.textSize.replace(/['"]+/g, '')){
         case "c-shopDisplay__bodyText--size-small":
