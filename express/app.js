@@ -81,6 +81,11 @@ router.get('/results/show/*', (req, res) => {
           <title>Test Page</title>
           <meta name="description" content="Warning this is a work in progress">
           <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:site" content="@flickr" />
+          <meta name="twitter:title" content="Small Island Developing States Photo Submission" />
+          <meta name="twitter:description" content="View the album on Flickr." />
+          <meta name="twitter:image" content="https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg" />
           <link rel="stylesheet" href="https://eloquent-brown-615c35.netlify.app/main.css">
         </head>
         
