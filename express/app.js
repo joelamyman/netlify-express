@@ -82,10 +82,9 @@ router.get('/results/show/*', (req, res) => {
           <meta name="description" content="Warning this is a work in progress">
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <meta name="twitter:card" content="summary" />
-          <meta name="twitter:site" content="@flickr" />
-          <meta name="twitter:title" content="Small Island Developing States Photo Submission" />
-          <meta name="twitter:description" content="View the album on Flickr." />
-          <meta name="twitter:image" content="https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg" />
+          <meta name="twitter:title" content="I just made the perfect shopping UI!" />
+          <meta name="twitter:description" content="Sorry, there's no way you can beat this." />
+          <meta name="twitter:image" content="https://eloquent-brown-615c35.netlify.app/imgs/meta-images/image-${req.query.textSize.replace(/['"]+/g, '')}-${req.query.infoAmount.replace(/['"]+/g, '')}-${req.query.productOptions.replace(/['"]+/g, '')}.png" />
           <link rel="stylesheet" href="https://eloquent-brown-615c35.netlify.app/main.css">
         </head>
         
