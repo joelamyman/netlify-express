@@ -99,7 +99,7 @@ router.get('/results/show/*', (req, res) => {
           additionalInfoVariable = "infoAmount-details";
       }
 
-      switch (req.query.infoAmount.replace(/['"]+/g, '')){
+      switch (req.query.productOptions.replace(/['"]+/g, '')){
         case "c-shopDisplay__productOptions--select":
           productOptionsVariable = "productOptions-select";
           break;
