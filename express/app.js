@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
+const randomWords = require('random-words');
 ObjectId = require('mongodb').ObjectID;
 
 const uri = `mongodb+srv://jlamyman:${process.env.DB_PASS}@mtestcluster-bstuo.mongodb.net/test?retryWrites=true&w=majority`;
@@ -66,6 +67,8 @@ router.get('/results/show/*', (req, res) => {
 
       //   }
       // }
+
+      const id = req.query.id.replace(/['"]+/g, '');
 
       let textImageVariable = '';
       let additionalInfoVariable = '';
@@ -136,7 +139,7 @@ router.get('/results/show/*', (req, res) => {
         
         <body>
           <h1>Here is what you've made!</h1>
-          <p>Text size: ${req.query.textSize}</p>
+          <p>Your custom ID is: ${id}</p>
           <section>
             <a id="liveSite"></a>
             <p>Here's your site so far!</p>
@@ -465,13 +468,14 @@ router.post('/', (req, res) =>  {
   MongoClient.connect(uri, { useUnifiedTopology: true })
   .then(client => {
     console.log('Connected to Database')
+    const randomId = randomWords({ exactly: 3, join: '-' });
     console.log('request body is:')
     console.log(req.body.textsize);
     const db = client.db('test-data')
     const submissionsCollection = db.collection('submissions');
     submissionsCollection.insertOne(req.body)
       .then(result => {
-        res.redirect(`/.netlify/functions/app/results/show/?textSize="${req.body.textsize}"&infoAmount="${req.body.infoAmount}"&productOptions="${req.body.productOptions}"&imagepos="${req.body.imagepos}"`)
+        res.redirect(`/.netlify/functions/app/results/show/?id="${randomId}"&textSize="${req.body.textsize}"&infoAmount="${req.body.infoAmount}"&productOptions="${req.body.productOptions}"&imagepos="${req.body.imagepos}"`)
       })
       .catch(error => console.error(error));
     console.log("about to tackle the second");

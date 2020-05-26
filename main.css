@@ -436,6 +436,43 @@ fieldset div input:checked+label svg[class*="textsize"] path{
   grid-gap: 0.5em;
 }
 
+.c-shopDisplay__imagePos{
+  display: none;
+}
+
+.c-shopDisplay__imagePos.c-shopDisplay__imagePos--right,
+.c-shopDisplay__imagePos.c-shopDisplay__imagePos--left,
+.c-shopDisplay__imagePos.c-shopDisplay__imagePos--bottom,
+.c-shopDisplay__imagePos.c-shopDisplay__imagePos--top{
+  display: block;
+}
+
+.c-shopDisplay__imagePos--right{
+  grid-area: rightimage;
+}
+
+.c-shopDisplay__imagePos--left{
+  grid-area: leftimage;
+}
+
+.c-shopDisplay__imagePos--bottom{
+  grid-area: bottomimage;
+}
+
+.c-shopDisplay__imagePos--top{
+  grid-area: topimage;
+}
+
+div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__buttons--middle"], div[data-button="c-shopDisplay__buttons--bottom"]{
+  display: none;
+}
+
+.c-shopDisplay__buttons.c-shopDisplay__buttons--top div[data-button="c-shopDisplay__buttons--top"],
+.c-shopDisplay__buttons.c-shopDisplay__buttons--middle div[data-button="c-shopDisplay__buttons--middle"],
+.c-shopDisplay__buttons.c-shopDisplay__buttons--bottom div[data-button="c-shopDisplay__buttons--bottom"]{
+  display: block;
+}
+
 .h-skipLink{
   position: absolute;
   left: -9999px;
@@ -447,4 +484,13 @@ fieldset div input:checked+label svg[class*="textsize"] path{
   left: 0;
   top: 0;
   border: 1px solid red;
+}
+
+.o-button{
+  padding: 0.75rem 1rem;
+  border: 0 none transparent;
+  font-size: 1rem;
+  background-color: var(--selected-color);
+  color: white;
+  border-radius: 0.5rem;
 }
