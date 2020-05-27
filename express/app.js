@@ -459,6 +459,19 @@ router.get('/results/show/*', (req, res) => {
             <a class="h-skipLink" href="#questions">Back to questions</a>
           </section>
           <p></p>
+
+          <script>
+            window.onload = function(){
+              console.log(window.location.href);
+              let stateObj = {
+                foo: "bar",
+              }
+              const windowUrl = window.location.href;
+              windowUrl = windowUrl.replace("show", "share");
+              console.log(windowUrl);
+              history.replaceState(null, null, windowUrl);
+            }
+          </script>
         </body>
       `);
       res.end();
