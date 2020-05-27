@@ -619,6 +619,14 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
   font-size: 1.2rem;
 }
 
+.c-analyseSites{
+  display: flex;
+  flex-direction: row;
+}
+
+.c-analyseSites__site{
+  width: 50%;
+}
 
 
 
@@ -653,5 +661,14 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
 
   form{
     margin-top: 1rem;
+  }
+
+  .c-analyseSites{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .c-analyseSites__site{
+    width: 100%;
   }
 }

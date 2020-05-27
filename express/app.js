@@ -175,397 +175,399 @@ router.get('/results/show/*', (req, res) => {
           <h1>Here is what you've made!</h1>
           <p>Your custom ID is: ${id}</p>
           <p>This is address: ${thisAddress}</p>
-          <section>
-            <a id="liveSite"></a>
-            <p>Here's your site so far!</p>
-            <div id="site-in-progress">
-              <div class="c-browser">
-                <div class="c-shopDisplay__browserNav">
-                  <div class="c-shopDisplay__buttonHolder">
-                    <span class="o-circle c-shopDisplay__button c-shopDisplay__button--colour-red"></span>
-                    <span class="o-circle c-shopDisplay__button c-shopDisplay__button--colour-yellow"></span>
-                    <span class="o-circle c-shopDisplay__button c-shopDisplay__button--colour-green"></span>
+          <div class="c-analyseSites">
+            <section class="c-analyseSites__site">
+              <a id="liveSite"></a>
+              <p class="o-bwText h-maxContent h-mt--0">Here's the site you created:</p>
+              <div id="site-in-progress">
+                <div class="c-browser">
+                  <div class="c-shopDisplay__browserNav">
+                    <div class="c-shopDisplay__buttonHolder">
+                      <span class="o-circle c-shopDisplay__button c-shopDisplay__button--colour-red"></span>
+                      <span class="o-circle c-shopDisplay__button c-shopDisplay__button--colour-yellow"></span>
+                      <span class="o-circle c-shopDisplay__button c-shopDisplay__button--colour-green"></span>
+                    </div>
+                    <p class="c-shopDisplay__addressBar">https://www.mycoolshop.com</p>
+                    <div class="c-shopDisplay__iconHolder">
+                      <svg class="c-shopDisplay__userIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 137">
+                        <path d="M0 120c0-27.614 22.386-50 50-50s50 22.386 50 50v17H0v-17z" fill="#C4C4C4" />
+                        <circle cx="50" cy="38" r="38" fill="#C4C4C4" />
+                      </svg>
+                    </div>
                   </div>
-                  <p class="c-shopDisplay__addressBar">https://www.mycoolshop.com</p>
-                  <div class="c-shopDisplay__iconHolder">
-                    <svg class="c-shopDisplay__userIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 137">
-                      <path d="M0 120c0-27.614 22.386-50 50-50s50 22.386 50 50v17H0v-17z" fill="#C4C4C4" />
-                      <circle cx="50" cy="38" r="38" fill="#C4C4C4" />
-                    </svg>
+                  <div class="c-shopNav">
+                    <p class="c-shopNav__title">very good shop (patent pending)</p>
+                    <p class="c-shopNav__menu">Menu</p>
                   </div>
-                </div>
-                <div class="c-shopNav">
-                  <p class="c-shopNav__title">very good shop (patent pending)</p>
-                  <p class="c-shopNav__menu">Menu</p>
-                </div>
-                <div class="c-shopDisplay">
-                  <!-- QUESTION 1 -->
-                  <div class="c-shopDisplay__bodyText ${req.query.textSize.replace(/['"]+/g, '')}">
-                    <div class="c-shopDisplay__buttons ${req.query.buttons.replace(/['"]+/g, '')}">
-                      <h1 class="c-shopDisplay__heading">Blessed bog roll</h1>
-                      <div data-button="c-shopDisplay__buttons--top">
-                        <button class="o-shopButton">Add to basket</button>
-                      </div>
-                      <p class="c-shopDisplay__paragraph">This is the most important product you will ever buy. Its
-                        importance
-                        cannot be described by words.
-                        Doesn't
-                        that sound important!</p>
-                      <div class="c-shopDisplay__buttons" data-button="c-shopDisplay__buttons--middle">
-                        <button class="o-shopButton">Add to basket</button>
-                      </div>
-                      <!-- QUESTION 2 -->
-                      <div class="c-shopDisplay__additionalInfo ${req.query.infoAmount.replace(/['"]+/g, '')}">
-                        <h2 class="c-shopDisplay__heading2">Additional Information</h2>
-                        <p class="c-shopDisplay__additionalInfo--text u-hidden">Lots of important text that you should
-                          definitely be
-                          reading
-                          because all of it is important. Make
-                          sure
-                          that you carefully make a point to understand each detail and cross reference the facts. This is all
-                          very important text that you will be quizzed on during your purchase. The person who makes this
-                          product
-                          is called Jane, you'll be expected to know Jane's sister's name at checkout. Don't forget the number
-                          382, that may be important later.</p>
-                        <ul class="c-shopDisplay__additionalInfo--bullets u-hidden">
-                          <li>Very cool, as per usual.</li>
-                          <li>Very trendy, super trendy.</li>
-                          <li>Everyone will be jealous.</li>
-                          <li>The postal staff may try to steal it as a result.</li>
-                          <li>We may not even ship these, I think we'd rather keep them to ourselves.</li>
-                        </ul>
-                        <div class="c-shopDisplay__additionalInfo--mixed u-hidden">
-                          <p>Lots of important text that you should definitely be
+                  <div class="c-shopDisplay">
+                    <!-- QUESTION 1 -->
+                    <div class="c-shopDisplay__bodyText ${req.query.textSize.replace(/['"]+/g, '')}">
+                      <div class="c-shopDisplay__buttons ${req.query.buttons.replace(/['"]+/g, '')}">
+                        <h1 class="c-shopDisplay__heading">Blessed bog roll</h1>
+                        <div data-button="c-shopDisplay__buttons--top">
+                          <button class="o-shopButton">Add to basket</button>
+                        </div>
+                        <p class="c-shopDisplay__paragraph">This is the most important product you will ever buy. Its
+                          importance
+                          cannot be described by words.
+                          Doesn't
+                          that sound important!</p>
+                        <div class="c-shopDisplay__buttons" data-button="c-shopDisplay__buttons--middle">
+                          <button class="o-shopButton">Add to basket</button>
+                        </div>
+                        <!-- QUESTION 2 -->
+                        <div class="c-shopDisplay__additionalInfo ${req.query.infoAmount.replace(/['"]+/g, '')}">
+                          <h2 class="c-shopDisplay__heading2">Additional Information</h2>
+                          <p class="c-shopDisplay__additionalInfo--text u-hidden">Lots of important text that you should
+                            definitely be
                             reading
                             because all of it is important. Make
                             sure
-                            that you carefully make a point to understand each detail and cross reference the facts.</p>
-                          <ul>
+                            that you carefully make a point to understand each detail and cross reference the facts. This is all
+                            very important text that you will be quizzed on during your purchase. The person who makes this
+                            product
+                            is called Jane, you'll be expected to know Jane's sister's name at checkout. Don't forget the number
+                            382, that may be important later.</p>
+                          <ul class="c-shopDisplay__additionalInfo--bullets u-hidden">
                             <li>Very cool, as per usual.</li>
                             <li>Very trendy, super trendy.</li>
                             <li>Everyone will be jealous.</li>
+                            <li>The postal staff may try to steal it as a result.</li>
+                            <li>We may not even ship these, I think we'd rather keep them to ourselves.</li>
                           </ul>
+                          <div class="c-shopDisplay__additionalInfo--mixed u-hidden">
+                            <p>Lots of important text that you should definitely be
+                              reading
+                              because all of it is important. Make
+                              sure
+                              that you carefully make a point to understand each detail and cross reference the facts.</p>
+                            <ul>
+                              <li>Very cool, as per usual.</li>
+                              <li>Very trendy, super trendy.</li>
+                              <li>Everyone will be jealous.</li>
+                            </ul>
+                          </div>
+                          <details class="c-shopDisplay__additionalInfo--details u-hidden">
+                            <summary>View more information</summary>
+                            <p>Discount code: NUMBER1F4N</p>
+                            <p>That's right, we hid a discount code in here! Why? Because we didn't think anyone would look in
+                              here and we also didn't want to be accused of not giving back to our customers. Try accuse of it
+                              now!</p>
+                          </details>
                         </div>
-                        <details class="c-shopDisplay__additionalInfo--details u-hidden">
-                          <summary>View more information</summary>
-                          <p>Discount code: NUMBER1F4N</p>
-                          <p>That's right, we hid a discount code in here! Why? Because we didn't think anyone would look in
-                            here and we also didn't want to be accused of not giving back to our customers. Try accuse of it
-                            now!</p>
-                        </details>
-                      </div>
-                      <!-- QUESTION 3 -->
-                      <div class="c-shopDisplay__productOptions ${req.query.productOptions.replace(/['"]+/g, '')}">
-                        <div class="c-shopDisplay__productOptions--select u-hidden">
-                          <label class="o-label">Please select a package size:</label>
-                          <select class="c-shopDisplay__productOptions--select-font">
-                            <option>Small</option>
-                            <option>Medium</option>
-                            <option>Large</option>
-                            <option>Extra large</option>
-                          </select>
+                        <!-- QUESTION 3 -->
+                        <div class="c-shopDisplay__productOptions ${req.query.productOptions.replace(/['"]+/g, '')}">
+                          <div class="c-shopDisplay__productOptions--select u-hidden">
+                            <label class="o-label">Please select a package size:</label>
+                            <select class="c-shopDisplay__productOptions--select-font">
+                              <option>Small</option>
+                              <option>Medium</option>
+                              <option>Large</option>
+                              <option>Extra large</option>
+                            </select>
+                          </div>
+                          <fieldset class="c-shopDisplay__productOptions--listOfCards o-fieldset u-hidden">
+                            <legend class="o-label">Please select a package size:</legend>
+                            <div class="c-shopDisplay__productOptions--listOfCards-grid">
+                              <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
+                                <input type="radio" id="productOptions--listOfCards-small" name="productOptions">
+                                <label class="u-semibold u-halfPadding c-listOfCards__label"
+                                  for="productOptions--listOfCards-small">
+                                  <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/smallOrder.svg"><span>Small</span></label>
+                              </div>
+                              <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
+                                <input type="radio" id="productOptions--listOfCards-medium" name="productOptions">
+                                <label class="u-semibold u-halfPadding c-listOfCards__label"
+                                  for="productOptions--listOfCards-medium">
+                                  <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/mediumOrder.svg"><span>Medium</span>
+                                </label>
+                              </div>
+                              <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
+                                <input type="radio" id="productOptions--listOfCards-large" name="productOptions">
+                                <label class="u-semibold u-halfPadding c-listOfCards__label"
+                                  for="productOptions--listOfCards-large">
+                                  <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/largeOrder.svg"><span>Large</span>
+                                </label>
+                              </div>
+                              <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
+                                <input type="radio" id="productOptions--listOfCards-xlarge" name="productOptions">
+                                <label class="u-semibold u-halfPadding c-listOfCards__label"
+                                  for="productOptions--listOfCards-xlarge">
+                                  <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/xlargeOrder.svg"><span>Extra large</span>
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                          <fieldset class="c-shopDisplay__productOptions--radios o-fieldset u-hidden">
+                            <legend class="o-label">Please select a package size:</legend>
+                            <div class="c-shopDisplay__productOptions--radios-grid">
+                              <div class="">
+                                <input type="radio" id="productOptions--radios-small" name="productOptions">
+                                <label for="productOptions--radios-small">Small</label>
+                              </div>
+                              <div class="">
+                                <input type="radio" id="productOptions--radios-medium" name="productOptions">
+                                <label for="productOptions--radios-medium">Medium</label>
+                              </div>
+                              <div class="">
+                                <input type="radio" id="productOptions--radios-large" name="productOptions">
+                                <label for="productOptions--radios-large">Large</label>
+                              </div>
+                              <div class="">
+                                <input type="radio" id="productOptions--radios-xlarge" name="productOptions">
+                                <label for="productOptions--radios-xlarge">Extra large</label>
+                              </div>
+                            </div>
+                          </fieldset>
+                          <fieldset class="c-shopDisplay__productOptions--rowOfCards o-fieldset u-hidden">
+                            <legend class="o-label">Please select a package size:</legend>
+                            <div class="c-shopDisplay__productOptions--rowOfCards-grid">
+                              <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
+                                <input type="radio" id="productOptions--rowOfCards-small" name="productOptions">
+                                <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                                  for="productOptions--rowOfCards-small">
+                                  <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/smallOrder.svg"><span>Small</span>
+                                </label>
+                              </div>
+                              <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
+                                <input type="radio" id="productOptions--rowOfCards-medium" name="productOptions">
+                                <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                                  for="productOptions--rowOfCards-medium">
+                                  <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/mediumOrder.svg"><span>Medium</span>
+                                </label>
+                              </div>
+                              <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
+                                <input type="radio" id="productOptions--rowOfCards-large" name="productOptions">
+                                <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                                  for="productOptions--rowOfCards-large">
+                                  <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/largeOrder.svg"><span>Large</span>
+                                </label>
+                              </div>
+                              <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
+                                <input type="radio" id="productOptions--rowOfCards-xlarge" name="productOptions">
+                                <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                                  for="productOptions--rowOfCards-xlarge">
+                                  <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/xlargeOrder.svg"><span>Extra large</span>
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
                         </div>
-                        <fieldset class="c-shopDisplay__productOptions--listOfCards o-fieldset u-hidden">
-                          <legend class="o-label">Please select a package size:</legend>
-                          <div class="c-shopDisplay__productOptions--listOfCards-grid">
-                            <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
-                              <input type="radio" id="productOptions--listOfCards-small" name="productOptions">
-                              <label class="u-semibold u-halfPadding c-listOfCards__label"
-                                for="productOptions--listOfCards-small">
-                                <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/smallOrder.svg"><span>Small</span></label>
-                            </div>
-                            <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
-                              <input type="radio" id="productOptions--listOfCards-medium" name="productOptions">
-                              <label class="u-semibold u-halfPadding c-listOfCards__label"
-                                for="productOptions--listOfCards-medium">
-                                <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/mediumOrder.svg"><span>Medium</span>
-                              </label>
-                            </div>
-                            <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
-                              <input type="radio" id="productOptions--listOfCards-large" name="productOptions">
-                              <label class="u-semibold u-halfPadding c-listOfCards__label"
-                                for="productOptions--listOfCards-large">
-                                <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/largeOrder.svg"><span>Large</span>
-                              </label>
-                            </div>
-                            <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
-                              <input type="radio" id="productOptions--listOfCards-xlarge" name="productOptions">
-                              <label class="u-semibold u-halfPadding c-listOfCards__label"
-                                for="productOptions--listOfCards-xlarge">
-                                <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/xlargeOrder.svg"><span>Extra large</span>
-                              </label>
-                            </div>
-                          </div>
-                        </fieldset>
-                        <fieldset class="c-shopDisplay__productOptions--radios o-fieldset u-hidden">
-                          <legend class="o-label">Please select a package size:</legend>
-                          <div class="c-shopDisplay__productOptions--radios-grid">
-                            <div class="">
-                              <input type="radio" id="productOptions--radios-small" name="productOptions">
-                              <label for="productOptions--radios-small">Small</label>
-                            </div>
-                            <div class="">
-                              <input type="radio" id="productOptions--radios-medium" name="productOptions">
-                              <label for="productOptions--radios-medium">Medium</label>
-                            </div>
-                            <div class="">
-                              <input type="radio" id="productOptions--radios-large" name="productOptions">
-                              <label for="productOptions--radios-large">Large</label>
-                            </div>
-                            <div class="">
-                              <input type="radio" id="productOptions--radios-xlarge" name="productOptions">
-                              <label for="productOptions--radios-xlarge">Extra large</label>
-                            </div>
-                          </div>
-                        </fieldset>
-                        <fieldset class="c-shopDisplay__productOptions--rowOfCards o-fieldset u-hidden">
-                          <legend class="o-label">Please select a package size:</legend>
-                          <div class="c-shopDisplay__productOptions--rowOfCards-grid">
-                            <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
-                              <input type="radio" id="productOptions--rowOfCards-small" name="productOptions">
-                              <label class="u-semibold u-halfPadding c-rowOfCards__label"
-                                for="productOptions--rowOfCards-small">
-                                <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/smallOrder.svg"><span>Small</span>
-                              </label>
-                            </div>
-                            <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
-                              <input type="radio" id="productOptions--rowOfCards-medium" name="productOptions">
-                              <label class="u-semibold u-halfPadding c-rowOfCards__label"
-                                for="productOptions--rowOfCards-medium">
-                                <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/mediumOrder.svg"><span>Medium</span>
-                              </label>
-                            </div>
-                            <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
-                              <input type="radio" id="productOptions--rowOfCards-large" name="productOptions">
-                              <label class="u-semibold u-halfPadding c-rowOfCards__label"
-                                for="productOptions--rowOfCards-large">
-                                <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/largeOrder.svg"><span>Large</span>
-                              </label>
-                            </div>
-                            <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
-                              <input type="radio" id="productOptions--rowOfCards-xlarge" name="productOptions">
-                              <label class="u-semibold u-halfPadding c-rowOfCards__label"
-                                for="productOptions--rowOfCards-xlarge">
-                                <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/xlargeOrder.svg"><span>Extra large</span>
-                              </label>
-                            </div>
-                          </div>
-                        </fieldset>
-                      </div>
-                      <div class="c-shopDisplay__buttons" data-button="c-shopDisplay__buttons--bottom">
-                        <button class="o-shopButton">Add to basket</button>
+                        <div class="c-shopDisplay__buttons" data-button="c-shopDisplay__buttons--bottom">
+                          <button class="o-shopButton">Add to basket</button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <!-- QUESTION 5 -->
-                  <div class="c-shopDisplay__imagePos ${req.query.imagePos.replace(/['"]+/g, '')}">
-                    <img class="c-shopDisplay__image" src="https://eloquent-brown-615c35.netlify.app/imgs/toiletRoll.svg">
-                  </div>
-                  <!-- QUESTION 6 -->
-                  <div style="display: none;" class="c-shopDisplay__buyButton">
-                    <button>Buy now!</button>
+                    <!-- QUESTION 5 -->
+                    <div class="c-shopDisplay__imagePos ${req.query.imagePos.replace(/['"]+/g, '')}">
+                      <img class="c-shopDisplay__image" src="https://eloquent-brown-615c35.netlify.app/imgs/toiletRoll.svg">
+                    </div>
+                    <!-- QUESTION 6 -->
+                    <div style="display: none;" class="c-shopDisplay__buyButton">
+                      <button>Buy now!</button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <a class="h-skipLink" href="#questions">Back to questions</a>
-          </section>
+              <a class="h-skipLink" href="#questions">Back to questions</a>
+            </section>
 
-          <section>
-            <a id="liveSite"></a>
-            <p>Here's the most popular site so far!</p>
-            <div id="site-in-progress">
-              <div class="c-browser">
-                <div class="c-shopDisplay__browserNav">
-                  <div class="c-shopDisplay__buttonHolder">
-                    <span class="o-circle c-shopDisplay__button c-shopDisplay__button--colour-red"></span>
-                    <span class="o-circle c-shopDisplay__button c-shopDisplay__button--colour-yellow"></span>
-                    <span class="o-circle c-shopDisplay__button c-shopDisplay__button--colour-green"></span>
+            <section class="c-analyseSites__site">
+              <a id="liveSite"></a>
+              <p class="o-bwText h-maxContent h-mt--0">Here's the most popular site so far:</p>
+              <div id="site-in-progress">
+                <div class="c-browser">
+                  <div class="c-shopDisplay__browserNav">
+                    <div class="c-shopDisplay__buttonHolder">
+                      <span class="o-circle c-shopDisplay__button c-shopDisplay__button--colour-red"></span>
+                      <span class="o-circle c-shopDisplay__button c-shopDisplay__button--colour-yellow"></span>
+                      <span class="o-circle c-shopDisplay__button c-shopDisplay__button--colour-green"></span>
+                    </div>
+                    <p class="c-shopDisplay__addressBar">https://www.mycoolshop.com</p>
+                    <div class="c-shopDisplay__iconHolder">
+                      <svg class="c-shopDisplay__userIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 137">
+                        <path d="M0 120c0-27.614 22.386-50 50-50s50 22.386 50 50v17H0v-17z" fill="#C4C4C4" />
+                        <circle cx="50" cy="38" r="38" fill="#C4C4C4" />
+                      </svg>
+                    </div>
                   </div>
-                  <p class="c-shopDisplay__addressBar">https://www.mycoolshop.com</p>
-                  <div class="c-shopDisplay__iconHolder">
-                    <svg class="c-shopDisplay__userIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 137">
-                      <path d="M0 120c0-27.614 22.386-50 50-50s50 22.386 50 50v17H0v-17z" fill="#C4C4C4" />
-                      <circle cx="50" cy="38" r="38" fill="#C4C4C4" />
-                    </svg>
+                  <div class="c-shopNav">
+                    <p class="c-shopNav__title">very good shop (patent pending)</p>
+                    <p class="c-shopNav__menu">Menu</p>
                   </div>
-                </div>
-                <div class="c-shopNav">
-                  <p class="c-shopNav__title">very good shop (patent pending)</p>
-                  <p class="c-shopNav__menu">Menu</p>
-                </div>
-                <div class="c-shopDisplay">
-                  <!-- QUESTION 1 -->
-                  <div class="c-shopDisplay__bodyText ${mostFrequent(textSizesData)}">
-                    <div class="c-shopDisplay__buttons ${mostFrequent(buttonsData)}">
-                      <h1 class="c-shopDisplay__heading">Blessed bog roll</h1>
-                      <div data-button="c-shopDisplay__buttons--top">
-                        <button class="o-shopButton">Add to basket</button>
-                      </div>
-                      <p class="c-shopDisplay__paragraph">This is the most important product you will ever buy. Its
-                        importance
-                        cannot be described by words.
-                        Doesn't
-                        that sound important!</p>
-                      <div class="c-shopDisplay__buttons" data-button="c-shopDisplay__buttons--middle">
-                        <button class="o-shopButton">Add to basket</button>
-                      </div>
-                      <!-- QUESTION 2 -->
-                      <div class="c-shopDisplay__additionalInfo ${mostFrequent(additionalInfoData)}">
-                        <h2 class="c-shopDisplay__heading2">Additional Information</h2>
-                        <p class="c-shopDisplay__additionalInfo--text u-hidden">Lots of important text that you should
-                          definitely be
-                          reading
-                          because all of it is important. Make
-                          sure
-                          that you carefully make a point to understand each detail and cross reference the facts. This is all
-                          very important text that you will be quizzed on during your purchase. The person who makes this
-                          product
-                          is called Jane, you'll be expected to know Jane's sister's name at checkout. Don't forget the number
-                          382, that may be important later.</p>
-                        <ul class="c-shopDisplay__additionalInfo--bullets u-hidden">
-                          <li>Very cool, as per usual.</li>
-                          <li>Very trendy, super trendy.</li>
-                          <li>Everyone will be jealous.</li>
-                          <li>The postal staff may try to steal it as a result.</li>
-                          <li>We may not even ship these, I think we'd rather keep them to ourselves.</li>
-                        </ul>
-                        <div class="c-shopDisplay__additionalInfo--mixed u-hidden">
-                          <p>Lots of important text that you should definitely be
+                  <div class="c-shopDisplay">
+                    <!-- QUESTION 1 -->
+                    <div class="c-shopDisplay__bodyText ${mostFrequent(textSizesData)}">
+                      <div class="c-shopDisplay__buttons ${mostFrequent(buttonsData)}">
+                        <h1 class="c-shopDisplay__heading">Blessed bog roll</h1>
+                        <div data-button="c-shopDisplay__buttons--top">
+                          <button class="o-shopButton">Add to basket</button>
+                        </div>
+                        <p class="c-shopDisplay__paragraph">This is the most important product you will ever buy. Its
+                          importance
+                          cannot be described by words.
+                          Doesn't
+                          that sound important!</p>
+                        <div class="c-shopDisplay__buttons" data-button="c-shopDisplay__buttons--middle">
+                          <button class="o-shopButton">Add to basket</button>
+                        </div>
+                        <!-- QUESTION 2 -->
+                        <div class="c-shopDisplay__additionalInfo ${mostFrequent(additionalInfoData)}">
+                          <h2 class="c-shopDisplay__heading2">Additional Information</h2>
+                          <p class="c-shopDisplay__additionalInfo--text u-hidden">Lots of important text that you should
+                            definitely be
                             reading
                             because all of it is important. Make
                             sure
-                            that you carefully make a point to understand each detail and cross reference the facts.</p>
-                          <ul>
+                            that you carefully make a point to understand each detail and cross reference the facts. This is all
+                            very important text that you will be quizzed on during your purchase. The person who makes this
+                            product
+                            is called Jane, you'll be expected to know Jane's sister's name at checkout. Don't forget the number
+                            382, that may be important later.</p>
+                          <ul class="c-shopDisplay__additionalInfo--bullets u-hidden">
                             <li>Very cool, as per usual.</li>
                             <li>Very trendy, super trendy.</li>
                             <li>Everyone will be jealous.</li>
+                            <li>The postal staff may try to steal it as a result.</li>
+                            <li>We may not even ship these, I think we'd rather keep them to ourselves.</li>
                           </ul>
+                          <div class="c-shopDisplay__additionalInfo--mixed u-hidden">
+                            <p>Lots of important text that you should definitely be
+                              reading
+                              because all of it is important. Make
+                              sure
+                              that you carefully make a point to understand each detail and cross reference the facts.</p>
+                            <ul>
+                              <li>Very cool, as per usual.</li>
+                              <li>Very trendy, super trendy.</li>
+                              <li>Everyone will be jealous.</li>
+                            </ul>
+                          </div>
+                          <details class="c-shopDisplay__additionalInfo--details u-hidden">
+                            <summary>View more information</summary>
+                            <p>Discount code: NUMBER1F4N</p>
+                            <p>That's right, we hid a discount code in here! Why? Because we didn't think anyone would look in
+                              here and we also didn't want to be accused of not giving back to our customers. Try accuse of it
+                              now!</p>
+                          </details>
                         </div>
-                        <details class="c-shopDisplay__additionalInfo--details u-hidden">
-                          <summary>View more information</summary>
-                          <p>Discount code: NUMBER1F4N</p>
-                          <p>That's right, we hid a discount code in here! Why? Because we didn't think anyone would look in
-                            here and we also didn't want to be accused of not giving back to our customers. Try accuse of it
-                            now!</p>
-                        </details>
-                      </div>
-                      <!-- QUESTION 3 -->
-                      <div class="c-shopDisplay__productOptions ${mostFrequent(productOptionsData)}">
-                        <div class="c-shopDisplay__productOptions--select u-hidden">
-                          <label class="o-label">Please select a package size:</label>
-                          <select class="c-shopDisplay__productOptions--select-font">
-                            <option>Small</option>
-                            <option>Medium</option>
-                            <option>Large</option>
-                            <option>Extra large</option>
-                          </select>
+                        <!-- QUESTION 3 -->
+                        <div class="c-shopDisplay__productOptions ${mostFrequent(productOptionsData)}">
+                          <div class="c-shopDisplay__productOptions--select u-hidden">
+                            <label class="o-label">Please select a package size:</label>
+                            <select class="c-shopDisplay__productOptions--select-font">
+                              <option>Small</option>
+                              <option>Medium</option>
+                              <option>Large</option>
+                              <option>Extra large</option>
+                            </select>
+                          </div>
+                          <fieldset class="c-shopDisplay__productOptions--listOfCards o-fieldset u-hidden">
+                            <legend class="o-label">Please select a package size:</legend>
+                            <div class="c-shopDisplay__productOptions--listOfCards-grid">
+                              <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
+                                <input type="radio" id="productOptions--listOfCards-small" name="productOptions">
+                                <label class="u-semibold u-halfPadding c-listOfCards__label"
+                                  for="productOptions--listOfCards-small">
+                                  <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/smallOrder.svg"><span>Small</span></label>
+                              </div>
+                              <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
+                                <input type="radio" id="productOptions--listOfCards-medium" name="productOptions">
+                                <label class="u-semibold u-halfPadding c-listOfCards__label"
+                                  for="productOptions--listOfCards-medium">
+                                  <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/mediumOrder.svg"><span>Medium</span>
+                                </label>
+                              </div>
+                              <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
+                                <input type="radio" id="productOptions--listOfCards-large" name="productOptions">
+                                <label class="u-semibold u-halfPadding c-listOfCards__label"
+                                  for="productOptions--listOfCards-large">
+                                  <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/largeOrder.svg"><span>Large</span>
+                                </label>
+                              </div>
+                              <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
+                                <input type="radio" id="productOptions--listOfCards-xlarge" name="productOptions">
+                                <label class="u-semibold u-halfPadding c-listOfCards__label"
+                                  for="productOptions--listOfCards-xlarge">
+                                  <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/xlargeOrder.svg"><span>Extra large</span>
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
+                          <fieldset class="c-shopDisplay__productOptions--radios o-fieldset u-hidden">
+                            <legend class="o-label">Please select a package size:</legend>
+                            <div class="c-shopDisplay__productOptions--radios-grid">
+                              <div class="">
+                                <input type="radio" id="productOptions--radios-small" name="productOptions">
+                                <label for="productOptions--radios-small">Small</label>
+                              </div>
+                              <div class="">
+                                <input type="radio" id="productOptions--radios-medium" name="productOptions">
+                                <label for="productOptions--radios-medium">Medium</label>
+                              </div>
+                              <div class="">
+                                <input type="radio" id="productOptions--radios-large" name="productOptions">
+                                <label for="productOptions--radios-large">Large</label>
+                              </div>
+                              <div class="">
+                                <input type="radio" id="productOptions--radios-xlarge" name="productOptions">
+                                <label for="productOptions--radios-xlarge">Extra large</label>
+                              </div>
+                            </div>
+                          </fieldset>
+                          <fieldset class="c-shopDisplay__productOptions--rowOfCards o-fieldset u-hidden">
+                            <legend class="o-label">Please select a package size:</legend>
+                            <div class="c-shopDisplay__productOptions--rowOfCards-grid">
+                              <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
+                                <input type="radio" id="productOptions--rowOfCards-small" name="productOptions">
+                                <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                                  for="productOptions--rowOfCards-small">
+                                  <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/smallOrder.svg"><span>Small</span>
+                                </label>
+                              </div>
+                              <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
+                                <input type="radio" id="productOptions--rowOfCards-medium" name="productOptions">
+                                <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                                  for="productOptions--rowOfCards-medium">
+                                  <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/mediumOrder.svg"><span>Medium</span>
+                                </label>
+                              </div>
+                              <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
+                                <input type="radio" id="productOptions--rowOfCards-large" name="productOptions">
+                                <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                                  for="productOptions--rowOfCards-large">
+                                  <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/largeOrder.svg"><span>Large</span>
+                                </label>
+                              </div>
+                              <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
+                                <input type="radio" id="productOptions--rowOfCards-xlarge" name="productOptions">
+                                <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                                  for="productOptions--rowOfCards-xlarge">
+                                  <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/xlargeOrder.svg"><span>Extra large</span>
+                                </label>
+                              </div>
+                            </div>
+                          </fieldset>
                         </div>
-                        <fieldset class="c-shopDisplay__productOptions--listOfCards o-fieldset u-hidden">
-                          <legend class="o-label">Please select a package size:</legend>
-                          <div class="c-shopDisplay__productOptions--listOfCards-grid">
-                            <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
-                              <input type="radio" id="productOptions--listOfCards-small" name="productOptions">
-                              <label class="u-semibold u-halfPadding c-listOfCards__label"
-                                for="productOptions--listOfCards-small">
-                                <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/smallOrder.svg"><span>Small</span></label>
-                            </div>
-                            <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
-                              <input type="radio" id="productOptions--listOfCards-medium" name="productOptions">
-                              <label class="u-semibold u-halfPadding c-listOfCards__label"
-                                for="productOptions--listOfCards-medium">
-                                <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/mediumOrder.svg"><span>Medium</span>
-                              </label>
-                            </div>
-                            <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
-                              <input type="radio" id="productOptions--listOfCards-large" name="productOptions">
-                              <label class="u-semibold u-halfPadding c-listOfCards__label"
-                                for="productOptions--listOfCards-large">
-                                <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/largeOrder.svg"><span>Large</span>
-                              </label>
-                            </div>
-                            <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
-                              <input type="radio" id="productOptions--listOfCards-xlarge" name="productOptions">
-                              <label class="u-semibold u-halfPadding c-listOfCards__label"
-                                for="productOptions--listOfCards-xlarge">
-                                <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/xlargeOrder.svg"><span>Extra large</span>
-                              </label>
-                            </div>
-                          </div>
-                        </fieldset>
-                        <fieldset class="c-shopDisplay__productOptions--radios o-fieldset u-hidden">
-                          <legend class="o-label">Please select a package size:</legend>
-                          <div class="c-shopDisplay__productOptions--radios-grid">
-                            <div class="">
-                              <input type="radio" id="productOptions--radios-small" name="productOptions">
-                              <label for="productOptions--radios-small">Small</label>
-                            </div>
-                            <div class="">
-                              <input type="radio" id="productOptions--radios-medium" name="productOptions">
-                              <label for="productOptions--radios-medium">Medium</label>
-                            </div>
-                            <div class="">
-                              <input type="radio" id="productOptions--radios-large" name="productOptions">
-                              <label for="productOptions--radios-large">Large</label>
-                            </div>
-                            <div class="">
-                              <input type="radio" id="productOptions--radios-xlarge" name="productOptions">
-                              <label for="productOptions--radios-xlarge">Extra large</label>
-                            </div>
-                          </div>
-                        </fieldset>
-                        <fieldset class="c-shopDisplay__productOptions--rowOfCards o-fieldset u-hidden">
-                          <legend class="o-label">Please select a package size:</legend>
-                          <div class="c-shopDisplay__productOptions--rowOfCards-grid">
-                            <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
-                              <input type="radio" id="productOptions--rowOfCards-small" name="productOptions">
-                              <label class="u-semibold u-halfPadding c-rowOfCards__label"
-                                for="productOptions--rowOfCards-small">
-                                <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/smallOrder.svg"><span>Small</span>
-                              </label>
-                            </div>
-                            <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
-                              <input type="radio" id="productOptions--rowOfCards-medium" name="productOptions">
-                              <label class="u-semibold u-halfPadding c-rowOfCards__label"
-                                for="productOptions--rowOfCards-medium">
-                                <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/mediumOrder.svg"><span>Medium</span>
-                              </label>
-                            </div>
-                            <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
-                              <input type="radio" id="productOptions--rowOfCards-large" name="productOptions">
-                              <label class="u-semibold u-halfPadding c-rowOfCards__label"
-                                for="productOptions--rowOfCards-large">
-                                <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/largeOrder.svg"><span>Large</span>
-                              </label>
-                            </div>
-                            <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
-                              <input type="radio" id="productOptions--rowOfCards-xlarge" name="productOptions">
-                              <label class="u-semibold u-halfPadding c-rowOfCards__label"
-                                for="productOptions--rowOfCards-xlarge">
-                                <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/xlargeOrder.svg"><span>Extra large</span>
-                              </label>
-                            </div>
-                          </div>
-                        </fieldset>
-                      </div>
-                      <div class="c-shopDisplay__buttons" data-button="c-shopDisplay__buttons--bottom">
-                        <button class="o-shopButton">Add to basket</button>
+                        <div class="c-shopDisplay__buttons" data-button="c-shopDisplay__buttons--bottom">
+                          <button class="o-shopButton">Add to basket</button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <!-- QUESTION 5 -->
-                  <div class="c-shopDisplay__imagePos ${mostFrequent(imagePosData)}">
-                    <img class="c-shopDisplay__image" src="https://eloquent-brown-615c35.netlify.app/imgs/toiletRoll.svg">
-                  </div>
-                  <!-- QUESTION 6 -->
-                  <div style="display: none;" class="c-shopDisplay__buyButton">
-                    <button>Buy now!</button>
+                    <!-- QUESTION 5 -->
+                    <div class="c-shopDisplay__imagePos ${mostFrequent(imagePosData)}">
+                      <img class="c-shopDisplay__image" src="https://eloquent-brown-615c35.netlify.app/imgs/toiletRoll.svg">
+                    </div>
+                    <!-- QUESTION 6 -->
+                    <div style="display: none;" class="c-shopDisplay__buyButton">
+                      <button>Buy now!</button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <a class="h-skipLink" href="#questions">Back to questions</a>
-          </section>
+              <a class="h-skipLink" href="#questions">Back to questions</a>
+            </section>
+          </div>
           <p></p>
 
           <script>
