@@ -466,7 +466,7 @@ router.get('/results/show/*', (req, res) => {
               let stateObj = {
                 foo: "bar",
               }
-              const windowUrl = window.location.href;
+              let windowUrl = window.location.href;
               windowUrl = windowUrl.replace("show", "share");
               console.log(windowUrl);
               history.replaceState(null, null, windowUrl);
