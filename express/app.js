@@ -69,6 +69,9 @@ router.get('/results/show/*', (req, res) => {
       //   }
       // }
 
+      let thisAddress = req.protocol;
+      thisAddress = thisAddress.replace("show", "share");
+
       const id = req.query.id.replace(/['"]+/g, '');
 
       let textImageVariable = '';
@@ -141,6 +144,7 @@ router.get('/results/show/*', (req, res) => {
         <body>
           <h1>Here is what you've made!</h1>
           <p>Your custom ID is: ${id}</p>
+          <p>This is address: ${thisAddress}</p>
           <section>
             <a id="liveSite"></a>
             <p>Here's your site so far!</p>
