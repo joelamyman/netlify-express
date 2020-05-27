@@ -194,6 +194,10 @@ router.get('/results/show/*', (req, res) => {
                     </svg>
                   </div>
                 </div>
+                <div class="c-shopNav">
+                  <p class="c-shopNav__title">very good shop (patent pending)</p>
+                  <p class="c-shopNav__menu">Menu</p>
+                </div>
                 <div class="c-shopDisplay">
                   <!-- QUESTION 1 -->
                   <div class="c-shopDisplay__bodyText ${req.query.textSize.replace(/['"]+/g, '')}">
@@ -268,27 +272,27 @@ router.get('/results/show/*', (req, res) => {
                               <input type="radio" id="productOptions--listOfCards-small" name="productOptions">
                               <label class="u-semibold u-halfPadding c-listOfCards__label"
                                 for="productOptions--listOfCards-small">
-                                <img class="c-listOfCards__img" src="./imgs/smallOrder.svg"><span>Small</span></label>
+                                <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/smallOrder.svg"><span>Small</span></label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                               <input type="radio" id="productOptions--listOfCards-medium" name="productOptions">
                               <label class="u-semibold u-halfPadding c-listOfCards__label"
                                 for="productOptions--listOfCards-medium">
-                                <img class="c-listOfCards__img" src="./imgs/mediumOrder.svg"><span>Medium</span>
+                                <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/mediumOrder.svg"><span>Medium</span>
                               </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                               <input type="radio" id="productOptions--listOfCards-large" name="productOptions">
                               <label class="u-semibold u-halfPadding c-listOfCards__label"
                                 for="productOptions--listOfCards-large">
-                                <img class="c-listOfCards__img" src="./imgs/largeOrder.svg"><span>Large</span>
+                                <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/largeOrder.svg"><span>Large</span>
                               </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                               <input type="radio" id="productOptions--listOfCards-xlarge" name="productOptions">
                               <label class="u-semibold u-halfPadding c-listOfCards__label"
                                 for="productOptions--listOfCards-xlarge">
-                                <img class="c-listOfCards__img" src="./imgs/xlargeOrder.svg"><span>Extra large</span>
+                                <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/xlargeOrder.svg"><span>Extra large</span>
                               </label>
                             </div>
                           </div>
@@ -321,28 +325,28 @@ router.get('/results/show/*', (req, res) => {
                               <input type="radio" id="productOptions--rowOfCards-small" name="productOptions">
                               <label class="u-semibold u-halfPadding c-rowOfCards__label"
                                 for="productOptions--rowOfCards-small">
-                                <img class="c-rowOfCards__img" src="./imgs/smallOrder.svg"><span>Small</span>
+                                <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/smallOrder.svg"><span>Small</span>
                               </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                               <input type="radio" id="productOptions--rowOfCards-medium" name="productOptions">
                               <label class="u-semibold u-halfPadding c-rowOfCards__label"
                                 for="productOptions--rowOfCards-medium">
-                                <img class="c-rowOfCards__img" src="./imgs/mediumOrder.svg"><span>Medium</span>
+                                <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/mediumOrder.svg"><span>Medium</span>
                               </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                               <input type="radio" id="productOptions--rowOfCards-large" name="productOptions">
                               <label class="u-semibold u-halfPadding c-rowOfCards__label"
                                 for="productOptions--rowOfCards-large">
-                                <img class="c-rowOfCards__img" src="./imgs/largeOrder.svg"><span>Large</span>
+                                <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/largeOrder.svg"><span>Large</span>
                               </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                               <input type="radio" id="productOptions--rowOfCards-xlarge" name="productOptions">
                               <label class="u-semibold u-halfPadding c-rowOfCards__label"
                                 for="productOptions--rowOfCards-xlarge">
-                                <img class="c-rowOfCards__img" src="./imgs/xlargeOrder.svg"><span>Extra large</span>
+                                <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/xlargeOrder.svg"><span>Extra large</span>
                               </label>
                             </div>
                           </div>
@@ -355,7 +359,7 @@ router.get('/results/show/*', (req, res) => {
                   </div>
                   <!-- QUESTION 5 -->
                   <div class="c-shopDisplay__imagePos ${req.query.imagePos.replace(/['"]+/g, '')}">
-                    <img class="c-shopDisplay__image" src="./imgs/toiletRoll.svg">
+                    <img class="c-shopDisplay__image" src="https://eloquent-brown-615c35.netlify.app/imgs/toiletRoll.svg">
                   </div>
                   <!-- QUESTION 6 -->
                   <div style="display: none;" class="c-shopDisplay__buyButton">
@@ -385,6 +389,10 @@ router.get('/results/show/*', (req, res) => {
                       <circle cx="50" cy="38" r="38" fill="#C4C4C4" />
                     </svg>
                   </div>
+                </div>
+                <div class="c-shopNav">
+                  <p class="c-shopNav__title">very good shop (patent pending)</p>
+                  <p class="c-shopNav__menu">Menu</p>
                 </div>
                 <div class="c-shopDisplay">
                   <!-- QUESTION 1 -->
@@ -460,27 +468,27 @@ router.get('/results/show/*', (req, res) => {
                               <input type="radio" id="productOptions--listOfCards-small" name="productOptions">
                               <label class="u-semibold u-halfPadding c-listOfCards__label"
                                 for="productOptions--listOfCards-small">
-                                <img class="c-listOfCards__img" src="./imgs/smallOrder.svg"><span>Small</span></label>
+                                <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/smallOrder.svg"><span>Small</span></label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                               <input type="radio" id="productOptions--listOfCards-medium" name="productOptions">
                               <label class="u-semibold u-halfPadding c-listOfCards__label"
                                 for="productOptions--listOfCards-medium">
-                                <img class="c-listOfCards__img" src="./imgs/mediumOrder.svg"><span>Medium</span>
+                                <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/mediumOrder.svg"><span>Medium</span>
                               </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                               <input type="radio" id="productOptions--listOfCards-large" name="productOptions">
                               <label class="u-semibold u-halfPadding c-listOfCards__label"
                                 for="productOptions--listOfCards-large">
-                                <img class="c-listOfCards__img" src="./imgs/largeOrder.svg"><span>Large</span>
+                                <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/largeOrder.svg"><span>Large</span>
                               </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                               <input type="radio" id="productOptions--listOfCards-xlarge" name="productOptions">
                               <label class="u-semibold u-halfPadding c-listOfCards__label"
                                 for="productOptions--listOfCards-xlarge">
-                                <img class="c-listOfCards__img" src="./imgs/xlargeOrder.svg"><span>Extra large</span>
+                                <img class="c-listOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/xlargeOrder.svg"><span>Extra large</span>
                               </label>
                             </div>
                           </div>
@@ -513,28 +521,28 @@ router.get('/results/show/*', (req, res) => {
                               <input type="radio" id="productOptions--rowOfCards-small" name="productOptions">
                               <label class="u-semibold u-halfPadding c-rowOfCards__label"
                                 for="productOptions--rowOfCards-small">
-                                <img class="c-rowOfCards__img" src="./imgs/smallOrder.svg"><span>Small</span>
+                                <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/smallOrder.svg"><span>Small</span>
                               </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                               <input type="radio" id="productOptions--rowOfCards-medium" name="productOptions">
                               <label class="u-semibold u-halfPadding c-rowOfCards__label"
                                 for="productOptions--rowOfCards-medium">
-                                <img class="c-rowOfCards__img" src="./imgs/mediumOrder.svg"><span>Medium</span>
+                                <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/mediumOrder.svg"><span>Medium</span>
                               </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                               <input type="radio" id="productOptions--rowOfCards-large" name="productOptions">
                               <label class="u-semibold u-halfPadding c-rowOfCards__label"
                                 for="productOptions--rowOfCards-large">
-                                <img class="c-rowOfCards__img" src="./imgs/largeOrder.svg"><span>Large</span>
+                                <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/largeOrder.svg"><span>Large</span>
                               </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                               <input type="radio" id="productOptions--rowOfCards-xlarge" name="productOptions">
                               <label class="u-semibold u-halfPadding c-rowOfCards__label"
                                 for="productOptions--rowOfCards-xlarge">
-                                <img class="c-rowOfCards__img" src="./imgs/xlargeOrder.svg"><span>Extra large</span>
+                                <img class="c-rowOfCards__img" src="https://eloquent-brown-615c35.netlify.app/imgs/xlargeOrder.svg"><span>Extra large</span>
                               </label>
                             </div>
                           </div>
@@ -547,7 +555,7 @@ router.get('/results/show/*', (req, res) => {
                   </div>
                   <!-- QUESTION 5 -->
                   <div class="c-shopDisplay__imagePos ${mostFrequent(imagePosData)}">
-                    <img class="c-shopDisplay__image" src="./imgs/toiletRoll.svg">
+                    <img class="c-shopDisplay__image" src="https://eloquent-brown-615c35.netlify.app/imgs/toiletRoll.svg">
                   </div>
                   <!-- QUESTION 6 -->
                   <div style="display: none;" class="c-shopDisplay__buyButton">
