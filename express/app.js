@@ -69,7 +69,7 @@ router.get('/results/show/*', (req, res) => {
       //   }
       // }
 
-      let thisAddress = req.protocol;
+      let thisAddress = req.protocol + '://' + req.get('host') + req.originalUrl;
       thisAddress = thisAddress.replace("show", "share");
 
       const id = req.query.id.replace(/['"]+/g, '');
