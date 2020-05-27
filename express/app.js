@@ -4,7 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 const randomWords = require('random-words');
-const { check } = reequire('express-validator');
+const { check } = require('express-validator');
 ObjectId = require('mongodb').ObjectID;
 
 const uri = `mongodb+srv://jlamyman:${process.env.DB_PASS}@mtestcluster-bstuo.mongodb.net/test?retryWrites=true&w=majority`;
