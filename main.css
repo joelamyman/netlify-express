@@ -671,4 +671,8 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
   .c-analyseSites__site{
     width: 100%;
   }
+
+  .h-maxContent{
+    width: 100%;
+  }
 }
