@@ -174,7 +174,8 @@ router.get('/results/show/*', (req, res) => {
         <body>
           <h1>Here is what you've made!</h1>
           <p>Your custom ID is: ${id}</p>
-          <p>This is address: ${thisAddress}</p>
+          <label class="c-share__label" id="share">Share your results!</label>
+          <input class="c-share__input" type="text" for="share" value="${thisAddress}">
           <div class="c-analyseSites">
             <section class="c-analyseSites__site">
               <a id="liveSite"></a>
