@@ -560,7 +560,7 @@ router.post('/', [
 
     submissionsCollection.insertOne( { userID: [randomId], textSize: [cleanTextSize], infoAmount: [cleanInfoAmount], productOptions: [cleanProductOptions], imagePos: [cleanImagePos], cleanButtons: [cleanButtons] } )
       .then(result => {
-        res.redirect(`/.netlify/functions/app/results/show/?id="${randomId}"&textSize="${cleanTextSize}"&infoAmount="${cleanInfoAmount}"&productOptions="${cleanProductOptions}"&imagepos="${cleanImagePos}"&buttons="${cleanButtons}"`)
+        res.redirect(`/.netlify/functions/app/results/show/?id="${randomId}"&textSize="${cleanTextSize}"&infoAmount="${cleanInfoAmount}"&productOptions="${cleanProductOptions}"&imagePos="${cleanImagePos}"&buttons="${cleanButtons}"`)
       })
       .catch(error => console.error(error));
     console.log("about to tackle the second");
