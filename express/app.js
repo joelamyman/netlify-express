@@ -198,17 +198,17 @@ router.get('/results/show/*', (req, res) => {
                   <!-- QUESTION 1 -->
                   <div class="c-shopDisplay__bodyText ${req.query.textSize.replace(/['"]+/g, '')}">
                     <div class="c-shopDisplay__buttons ${req.query.buttons.replace(/['"]+/g, '')}">
-                      <h1 class="c-shopDisplay__heading">Very important product</h1>
+                      <h1 class="c-shopDisplay__heading">Blessed bog roll</h1>
                       <div data-button="c-shopDisplay__buttons--top">
-                        <button>Add to basket</button>
+                        <button class="o-shopButton">Add to basket</button>
                       </div>
-                      <p class="c-shopDisplay__paragraph">This is the most important product you will ever buy. It's
+                      <p class="c-shopDisplay__paragraph">This is the most important product you will ever buy. Its
                         importance
                         cannot be described by words.
                         Doesn't
                         that sound important!</p>
                       <div class="c-shopDisplay__buttons" data-button="c-shopDisplay__buttons--middle">
-                        <button>Add to basket</button>
+                        <button class="o-shopButton">Add to basket</button>
                       </div>
                       <!-- QUESTION 2 -->
                       <div class="c-shopDisplay__additionalInfo ${req.query.infoAmount.replace(/['"]+/g, '')}">
@@ -253,7 +253,7 @@ router.get('/results/show/*', (req, res) => {
                       <!-- QUESTION 3 -->
                       <div class="c-shopDisplay__productOptions ${req.query.productOptions.replace(/['"]+/g, '')}">
                         <div class="c-shopDisplay__productOptions--select u-hidden">
-                          <label class="o-label">Please select a size:</label>
+                          <label class="o-label">Please select a package size:</label>
                           <select class="c-shopDisplay__productOptions--select-font">
                             <option>Small</option>
                             <option>Medium</option>
@@ -262,29 +262,39 @@ router.get('/results/show/*', (req, res) => {
                           </select>
                         </div>
                         <fieldset class="c-shopDisplay__productOptions--listOfCards o-fieldset u-hidden">
-                          <legend class="o-label">Please select a size:</legend>
+                          <legend class="o-label">Please select a package size:</legend>
                           <div class="c-shopDisplay__productOptions--listOfCards-grid">
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                               <input type="radio" id="productOptions--listOfCards-small" name="productOptions">
-                              <label class="u-semibold u-halfPadding" for="productOptions--listOfCards-small">Small</label>
+                              <label class="u-semibold u-halfPadding c-listOfCards__label"
+                                for="productOptions--listOfCards-small">
+                                <img class="c-listOfCards__img" src="./imgs/smallOrder.svg"><span>Small</span></label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                               <input type="radio" id="productOptions--listOfCards-medium" name="productOptions">
-                              <label class="u-semibold u-halfPadding" for="productOptions--listOfCards-medium">Medium</label>
+                              <label class="u-semibold u-halfPadding c-listOfCards__label"
+                                for="productOptions--listOfCards-medium">
+                                <img class="c-listOfCards__img" src="./imgs/mediumOrder.svg"><span>Medium</span>
+                              </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                               <input type="radio" id="productOptions--listOfCards-large" name="productOptions">
-                              <label class="u-semibold u-halfPadding" for="productOptions--listOfCards-large">Large</label>
+                              <label class="u-semibold u-halfPadding c-listOfCards__label"
+                                for="productOptions--listOfCards-large">
+                                <img class="c-listOfCards__img" src="./imgs/largeOrder.svg"><span>Large</span>
+                              </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                               <input type="radio" id="productOptions--listOfCards-xlarge" name="productOptions">
-                              <label class="u-semibold u-halfPadding" for="productOptions--listOfCards-xlarge">Extra
-                                large</label>
+                              <label class="u-semibold u-halfPadding c-listOfCards__label"
+                                for="productOptions--listOfCards-xlarge">
+                                <img class="c-listOfCards__img" src="./imgs/xlargeOrder.svg"><span>Extra large</span>
+                              </label>
                             </div>
                           </div>
                         </fieldset>
                         <fieldset class="c-shopDisplay__productOptions--radios o-fieldset u-hidden">
-                          <legend class="o-label">Please select a size:</legend>
+                          <legend class="o-label">Please select a package size:</legend>
                           <div class="c-shopDisplay__productOptions--radios-grid">
                             <div class="">
                               <input type="radio" id="productOptions--radios-small" name="productOptions">
@@ -305,36 +315,47 @@ router.get('/results/show/*', (req, res) => {
                           </div>
                         </fieldset>
                         <fieldset class="c-shopDisplay__productOptions--rowOfCards o-fieldset u-hidden">
-                          <legend class="o-label">Please select a size:</legend>
+                          <legend class="o-label">Please select a package size:</legend>
                           <div class="c-shopDisplay__productOptions--rowOfCards-grid">
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                               <input type="radio" id="productOptions--rowOfCards-small" name="productOptions">
-                              <label class="u-semibold u-halfPadding" for="productOptions--rowOfCards-small">Small</label>
+                              <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                                for="productOptions--rowOfCards-small">
+                                <img class="c-rowOfCards__img" src="./imgs/smallOrder.svg"><span>Small</span>
+                              </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                               <input type="radio" id="productOptions--rowOfCards-medium" name="productOptions">
-                              <label class="u-semibold u-halfPadding" for="productOptions--rowOfCards-medium">Medium</label>
+                              <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                                for="productOptions--rowOfCards-medium">
+                                <img class="c-rowOfCards__img" src="./imgs/mediumOrder.svg"><span>Medium</span>
+                              </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                               <input type="radio" id="productOptions--rowOfCards-large" name="productOptions">
-                              <label class="u-semibold u-halfPadding" for="productOptions--rowOfCards-large">Large</label>
+                              <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                                for="productOptions--rowOfCards-large">
+                                <img class="c-rowOfCards__img" src="./imgs/largeOrder.svg"><span>Large</span>
+                              </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                               <input type="radio" id="productOptions--rowOfCards-xlarge" name="productOptions">
-                              <label class="u-semibold u-halfPadding" for="productOptions--rowOfCards-xlarge">Extra
-                                large</label>
+                              <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                                for="productOptions--rowOfCards-xlarge">
+                                <img class="c-rowOfCards__img" src="./imgs/xlargeOrder.svg"><span>Extra large</span>
+                              </label>
                             </div>
                           </div>
                         </fieldset>
                       </div>
                       <div class="c-shopDisplay__buttons" data-button="c-shopDisplay__buttons--bottom">
-                        <button>Add to basket</button>
+                        <button class="o-shopButton">Add to basket</button>
                       </div>
                     </div>
                   </div>
                   <!-- QUESTION 5 -->
                   <div class="c-shopDisplay__imagePos ${req.query.imagePos.replace(/['"]+/g, '')}">
-                    <img src="https://source.unsplash.com/random/120x120">
+                    <img class="c-shopDisplay__image" src="./imgs/toiletRoll.svg">
                   </div>
                   <!-- QUESTION 6 -->
                   <div style="display: none;" class="c-shopDisplay__buyButton">
@@ -369,17 +390,17 @@ router.get('/results/show/*', (req, res) => {
                   <!-- QUESTION 1 -->
                   <div class="c-shopDisplay__bodyText ${mostFrequent(textSizesData)}">
                     <div class="c-shopDisplay__buttons ${mostFrequent(buttonsData)}">
-                      <h1 class="c-shopDisplay__heading">Very important product</h1>
+                      <h1 class="c-shopDisplay__heading">Blessed bog roll</h1>
                       <div data-button="c-shopDisplay__buttons--top">
-                        <button>Add to basket</button>
+                        <button class="o-shopButton">Add to basket</button>
                       </div>
-                      <p class="c-shopDisplay__paragraph">This is the most important product you will ever buy. It's
+                      <p class="c-shopDisplay__paragraph">This is the most important product you will ever buy. Its
                         importance
                         cannot be described by words.
                         Doesn't
                         that sound important!</p>
                       <div class="c-shopDisplay__buttons" data-button="c-shopDisplay__buttons--middle">
-                        <button>Add to basket</button>
+                        <button class="o-shopButton">Add to basket</button>
                       </div>
                       <!-- QUESTION 2 -->
                       <div class="c-shopDisplay__additionalInfo ${mostFrequent(additionalInfoData)}">
@@ -424,7 +445,7 @@ router.get('/results/show/*', (req, res) => {
                       <!-- QUESTION 3 -->
                       <div class="c-shopDisplay__productOptions ${mostFrequent(productOptionsData)}">
                         <div class="c-shopDisplay__productOptions--select u-hidden">
-                          <label class="o-label">Please select a size:</label>
+                          <label class="o-label">Please select a package size:</label>
                           <select class="c-shopDisplay__productOptions--select-font">
                             <option>Small</option>
                             <option>Medium</option>
@@ -433,29 +454,39 @@ router.get('/results/show/*', (req, res) => {
                           </select>
                         </div>
                         <fieldset class="c-shopDisplay__productOptions--listOfCards o-fieldset u-hidden">
-                          <legend class="o-label">Please select a size:</legend>
+                          <legend class="o-label">Please select a package size:</legend>
                           <div class="c-shopDisplay__productOptions--listOfCards-grid">
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                               <input type="radio" id="productOptions--listOfCards-small" name="productOptions">
-                              <label class="u-semibold u-halfPadding" for="productOptions--listOfCards-small">Small</label>
+                              <label class="u-semibold u-halfPadding c-listOfCards__label"
+                                for="productOptions--listOfCards-small">
+                                <img class="c-listOfCards__img" src="./imgs/smallOrder.svg"><span>Small</span></label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                               <input type="radio" id="productOptions--listOfCards-medium" name="productOptions">
-                              <label class="u-semibold u-halfPadding" for="productOptions--listOfCards-medium">Medium</label>
+                              <label class="u-semibold u-halfPadding c-listOfCards__label"
+                                for="productOptions--listOfCards-medium">
+                                <img class="c-listOfCards__img" src="./imgs/mediumOrder.svg"><span>Medium</span>
+                              </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                               <input type="radio" id="productOptions--listOfCards-large" name="productOptions">
-                              <label class="u-semibold u-halfPadding" for="productOptions--listOfCards-large">Large</label>
+                              <label class="u-semibold u-halfPadding c-listOfCards__label"
+                                for="productOptions--listOfCards-large">
+                                <img class="c-listOfCards__img" src="./imgs/largeOrder.svg"><span>Large</span>
+                              </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                               <input type="radio" id="productOptions--listOfCards-xlarge" name="productOptions">
-                              <label class="u-semibold u-halfPadding" for="productOptions--listOfCards-xlarge">Extra
-                                large</label>
+                              <label class="u-semibold u-halfPadding c-listOfCards__label"
+                                for="productOptions--listOfCards-xlarge">
+                                <img class="c-listOfCards__img" src="./imgs/xlargeOrder.svg"><span>Extra large</span>
+                              </label>
                             </div>
                           </div>
                         </fieldset>
                         <fieldset class="c-shopDisplay__productOptions--radios o-fieldset u-hidden">
-                          <legend class="o-label">Please select a size:</legend>
+                          <legend class="o-label">Please select a package size:</legend>
                           <div class="c-shopDisplay__productOptions--radios-grid">
                             <div class="">
                               <input type="radio" id="productOptions--radios-small" name="productOptions">
@@ -476,36 +507,47 @@ router.get('/results/show/*', (req, res) => {
                           </div>
                         </fieldset>
                         <fieldset class="c-shopDisplay__productOptions--rowOfCards o-fieldset u-hidden">
-                          <legend class="o-label">Please select a size:</legend>
+                          <legend class="o-label">Please select a package size:</legend>
                           <div class="c-shopDisplay__productOptions--rowOfCards-grid">
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                               <input type="radio" id="productOptions--rowOfCards-small" name="productOptions">
-                              <label class="u-semibold u-halfPadding" for="productOptions--rowOfCards-small">Small</label>
+                              <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                                for="productOptions--rowOfCards-small">
+                                <img class="c-rowOfCards__img" src="./imgs/smallOrder.svg"><span>Small</span>
+                              </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                               <input type="radio" id="productOptions--rowOfCards-medium" name="productOptions">
-                              <label class="u-semibold u-halfPadding" for="productOptions--rowOfCards-medium">Medium</label>
+                              <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                                for="productOptions--rowOfCards-medium">
+                                <img class="c-rowOfCards__img" src="./imgs/mediumOrder.svg"><span>Medium</span>
+                              </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                               <input type="radio" id="productOptions--rowOfCards-large" name="productOptions">
-                              <label class="u-semibold u-halfPadding" for="productOptions--rowOfCards-large">Large</label>
+                              <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                                for="productOptions--rowOfCards-large">
+                                <img class="c-rowOfCards__img" src="./imgs/largeOrder.svg"><span>Large</span>
+                              </label>
                             </div>
                             <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                               <input type="radio" id="productOptions--rowOfCards-xlarge" name="productOptions">
-                              <label class="u-semibold u-halfPadding" for="productOptions--rowOfCards-xlarge">Extra
-                                large</label>
+                              <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                                for="productOptions--rowOfCards-xlarge">
+                                <img class="c-rowOfCards__img" src="./imgs/xlargeOrder.svg"><span>Extra large</span>
+                              </label>
                             </div>
                           </div>
                         </fieldset>
                       </div>
                       <div class="c-shopDisplay__buttons" data-button="c-shopDisplay__buttons--bottom">
-                        <button>Add to basket</button>
+                        <button class="o-shopButton">Add to basket</button>
                       </div>
                     </div>
                   </div>
                   <!-- QUESTION 5 -->
                   <div class="c-shopDisplay__imagePos ${mostFrequent(imagePosData)}">
-                    <img src="https://source.unsplash.com/random/120x120">
+                    <img class="c-shopDisplay__image" src="./imgs/toiletRoll.svg">
                   </div>
                   <!-- QUESTION 6 -->
                   <div style="display: none;" class="c-shopDisplay__buyButton">
@@ -629,7 +671,7 @@ function mostPopular(dbObject){
     }
   }
   console.log(temporaryHighestValStore);
-  console.log(`The highest value is ${temporaryHighestValStore[0][0]} and it's value is ${temporaryHighestValStore[0][1]}`);
+  console.log(`The highest value is ${temporaryHighestValStore[0][0]} and its value is ${temporaryHighestValStore[0][1]}`);
   mostFrequent.push(temporaryHighestValStore);
   return temporaryHighestValStore[0][1];
 }
@@ -649,7 +691,7 @@ function mostFrequent(dbObject){
     }
   }
   console.log(temporaryHighestValStore);
-  console.log(`The highest value is ${temporaryHighestValStore[0][0]} and it's value is ${temporaryHighestValStore[0][1]}`);
+  console.log(`The highest value is ${temporaryHighestValStore[0][0]} and its value is ${temporaryHighestValStore[0][1]}`);
   return temporaryHighestValStore[0][0];
 }
 
