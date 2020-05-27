@@ -1,3 +1,5 @@
 [build]
+  base = "/"
+  publish = "/"
   command = "cd express && npm install && cd .."
   functions = "express"
