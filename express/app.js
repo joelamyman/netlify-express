@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 const randomWords = require('random-words');
+const { check } = reequire('express-validator');
 ObjectId = require('mongodb').ObjectID;
 
 const uri = `mongodb+srv://jlamyman:${process.env.DB_PASS}@mtestcluster-bstuo.mongodb.net/test?retryWrites=true&w=majority`;
@@ -464,18 +465,31 @@ router.get('/results/show/*', (req, res) => {
     });
   })
 });
-router.post('/', (req, res) =>  {
+router.post('/', [
+  check('textsize').isLength({ min: 5 }).trim().escape(),
+  check('infoAmount').isLength({ min: 5 }).trim().escape(),
+  check('productOptions').isLength({ min: 5 }).trim().escape(),
+  check('imagePos').isLength({ min: 5 }).trim().escape(),
+  check('buttons').isLength({ min: 5 }).trim().escape()
+] , (req, res) =>  {
   MongoClient.connect(uri, { useUnifiedTopology: true })
   .then(client => {
     console.log('Connected to Database')
+
+    const cleanTextSize = req.body.textsize;
+    const cleanInfoAmount = req.body.infoAmount;
+    const cleanProductOptions = req.body.productOptions;
+    const cleanImagePos = req.body.imagePos;
+    const cleanButtons = req.body.buttons;
+
     const randomId = randomWords({ exactly: 3, join: '-' });
-    console.log('request body is:')
-    console.log(req.body.textsize);
+
     const db = client.db('test-data')
     const submissionsCollection = db.collection('submissions');
-    submissionsCollection.insertOne(req.body)
+
+    submissionsCollection.insertOne( { userID: [randomId], textSize: [cleanTextSize], infoAmount: [cleanInfoAmount], productOptions: [cleanProductOptions], imagePos: [cleanImagePos], cleanButtons: [cleanButtons] } )
       .then(result => {
-        res.redirect(`/.netlify/functions/app/results/show/?id="${randomId}"&textSize="${req.body.textsize}"&infoAmount="${req.body.infoAmount}"&productOptions="${req.body.productOptions}"&imagepos="${req.body.imagepos}"`)
+        res.redirect(`/.netlify/functions/app/results/show/?id="${randomId}"&textSize="${cleanTextSize}"&infoAmount="${cleanInfoAmount}"&productOptions="${cleanProductOptions}"&imagepos="${cleanImagePos}"&buttons="${cleanButtons}"`)
       })
       .catch(error => console.error(error));
     console.log("about to tackle the second");
