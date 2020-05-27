@@ -61,8 +61,8 @@ body {
 }
 
 .o-button{
-  padding: 0.75rem 1rem;
-  font-size: 1.25rem;
+  padding: 0.75em 1em;
+  font-size: 1.25em;
   background-color: var(--selected-color);
   border: transparent none 0;
   border-radius: 0.5rem;
@@ -79,6 +79,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-grow: 1;
 }
 
 fieldset div input,
@@ -140,12 +141,10 @@ fieldset label svg{
 }
 
 .form-questionHolder{
-  display: grid;
+  display: flex;
+  flex-direction: column;
   max-width: 80rem;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 20vh);
   width: 100%;
-  grid-gap: 1rem;
   border: 0 none;
 }
 
@@ -153,6 +152,14 @@ fieldset label svg{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+  width: 15rem;
+  min-width: 15rem;
+  max-width: 15rem;
+  margin: 0 auto;
+}
+
+.form-questionHolder > .form-questionHolder-inputStack + .form-questionHolder-inputStack{
+  margin-top: 1rem;
 }
 
 .form-questionHolder-optionHolder{
@@ -210,27 +217,13 @@ fieldset div input:checked+label svg[class*="textsize"] path{
   fill: white;
 }
 
-@media only screen and (min-width: 18rem) {
-  .form-questionHolder {
-    /* grid-template-columns: 1fr; */
-  }
-}
-
-@media only screen and (min-width: 40rem) {
-  .form-questionHolder {
-    /* grid-template-columns: 1fr 1fr; */
-  }
-}
-
-@media only screen and (min-width: 70rem) {
-  .form-questionHolder {
-    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-  }
-}
-
 .l-page__grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
+}
+
+.l-liveView{
+  width: 60vw;
 }
 
 .c-browser{
@@ -238,12 +231,38 @@ fieldset div input:checked+label svg[class*="textsize"] path{
   height: 70vh;
   background-color: white;
   grid-template-columns: 1fr;
-  grid-template-rows: 2rem 1fr;
+  grid-template-rows: 2rem 2rem 1fr;
   grid-template-areas: "browsernav"
+                       "shopnav"
                        "browserdisplay";
   border: 1px solid black;
   border-radius: 0.5rem;
   box-shadow: 9px 13px 0px rgba(0, 0, 0, 0.04);
+}
+
+.c-shopNav{
+  grid-area: shopnav;
+  background-color: #89699D;
+}
+
+.c-shopNav__title{
+  color: white;
+  font-weight: bold;
+  margin: 0 auto;
+  line-height: 2rem;
+  width: max-content;
+  font-size: 0.8rem;
+}
+
+.c-shopNav__menu{
+  color: white;
+  margin: 0 auto;
+  line-height: 2rem;
+  width: max-content;
+  font-size: 0.8rem;
+  position: relative;
+  top: -2rem;
+  margin: 0 2rem 0 auto;
 }
 
 .c-shopDisplay{
@@ -257,13 +276,12 @@ fieldset div input:checked+label svg[class*="textsize"] path{
   height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding: 0.5rem;
-  
 }
 
 .c-shopDisplay__bodyText{
   grid-area: content;
   display: none;
+  padding: 1rem;
 }
 
 .o-circle{
@@ -403,8 +421,11 @@ fieldset div input:checked+label svg[class*="textsize"] path{
 .c-shopDisplay__productOptions--listOfCards-grid{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 8em;
+  grid-template-rows: 6em;
   grid-gap: 0.5em;
+  width: auto;
+  max-width: 100%;
+  min-width: auto;
 }
 
 .o-label{
@@ -417,8 +438,10 @@ fieldset div input:checked+label svg[class*="textsize"] path{
 }
 
 .form-questionHolder-inputStack--listOfCards{
-  border: 0.2em solid grey;
   border-radius: 0.3em;
+  width: 100%;
+  max-width: 100%;
+  min-width: auto;
 }
 
 .u-semibold{
@@ -438,13 +461,16 @@ fieldset div input:checked+label svg[class*="textsize"] path{
 
 .c-shopDisplay__imagePos{
   display: none;
+  background-color: #D0A1ED;
 }
 
 .c-shopDisplay__imagePos.c-shopDisplay__imagePos--right,
 .c-shopDisplay__imagePos.c-shopDisplay__imagePos--left,
 .c-shopDisplay__imagePos.c-shopDisplay__imagePos--bottom,
 .c-shopDisplay__imagePos.c-shopDisplay__imagePos--top{
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .c-shopDisplay__imagePos--right{
@@ -461,6 +487,11 @@ fieldset div input:checked+label svg[class*="textsize"] path{
 
 .c-shopDisplay__imagePos--top{
   grid-area: topimage;
+}
+
+.c-shopDisplay__image{
+  height: 8em;
+  padding: 1em;
 }
 
 div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__buttons--middle"], div[data-button="c-shopDisplay__buttons--bottom"]{
@@ -493,4 +524,134 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
   background-color: var(--selected-color);
   color: white;
   border-radius: 0.5rem;
+}
+
+.o-button--alt{
+  background-color: transparent;
+  color: #000085;
+}
+
+.o-button--alt:hover{
+  cursor: pointer;
+  background-color: transparent;
+  color: #000057;
+  text-decoration: underline;
+}
+
+.o-button--purple{
+  background-color: #D0A1ED;
+  color: #000000;
+}
+
+.o-button--purple:hover{
+  background-color: #89699D;
+  color: #000000;
+}
+
+.o-questionContainer{
+  margin: auto;
+  padding: 0 1em;
+}
+
+.o-buttonsHolder{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.h-rightAlign{
+  display: block;
+  margin: 0 0 0 auto;
+}
+
+.c-listOfCards__img{
+  height: 3em;
+}
+
+.c-listOfCards__label{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #D0A1ED;
+}
+
+.c-rowOfCards__label{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #D0A1ED;
+}
+
+.c-rowOfCards__img{
+  height: 1em;
+  padding: 0 1em 0 0;
+}
+
+.o-shopButton{
+  padding: 0.75em 1em;
+  font-size: 1em;
+  background-color: #89699D;
+  border: transparent none 0;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+.h-bold{
+  font-weight: bold;
+} 
+
+.h-maxContent{
+  width: max-content;
+}
+
+.h-mt--0{
+  margin-top: 0;
+}
+
+.h-mb--0{
+  margin-bottom: 0;
+}
+
+.h-text--large{
+  font-size: 1.2rem;
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 70rem) {
+  .l-page__grid {
+    flex-direction: column-reverse;
+  }
+
+  .l-liveView{
+    width: 100%;
+  }
+
+  .c-browser{
+    height: 30rem;
+  }
+
+  .c-shopDisplay__addressBar{
+    display: none;
+  }
+
+  .form-questionHolder{
+    padding: 0;
+  }
+
+  .o-questionContainer{
+    padding: 0;
+  }
+
+  form{
+    margin-top: 1rem;
+  }
 }

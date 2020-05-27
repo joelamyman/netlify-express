@@ -12,14 +12,15 @@
 
 <body>
 
-  <p><strong>Warning, this site is a work in progress and data from the form is being submitted to a database</strong>
+  <h1 class="o-bwText h-bold h-maxContent h-mb--0">Let's build a shop UI!</h1>
+  <p class="o-bwText h-maxContent h-mt--0"><strong>To start building, answer the questions below.</strong>
   </p>
 
   <div class="l-page__grid">
 
-    <section>
+    <section class="l-liveView">
       <a id="liveSite"></a>
-      <p>Here's your site so far!</p>
+      <h1 class="o-bwText h-bold h-maxContent h-text--large">Here's your site so far!</h1>
       <div id="site-in-progress">
         <div class="c-browser">
           <div class="c-shopDisplay__browserNav">
@@ -36,13 +37,17 @@
               </svg>
             </div>
           </div>
+          <div class="c-shopNav">
+            <p class="c-shopNav__title">very good shop (patent pending)</p>
+            <p class="c-shopNav__menu">Menu</p>
+          </div>
           <div class="c-shopDisplay">
             <!-- QUESTION 1 -->
             <div class="c-shopDisplay__bodyText c-shopDisplay__buttons">
               <div class="c-shopDisplay__buttons">
-                <h1 class="c-shopDisplay__heading">Very important product</h1>
+                <h1 class="c-shopDisplay__heading">Blessed bog roll</h1>
                 <div data-button="c-shopDisplay__buttons--top">
-                  <button>Add to basket</button>
+                  <button class="o-shopButton">Add to basket</button>
                 </div>
                 <p class="c-shopDisplay__paragraph">This is the most important product you will ever buy. It's
                   importance
@@ -50,7 +55,7 @@
                   Doesn't
                   that sound important!</p>
                 <div class="c-shopDisplay__buttons" data-button="c-shopDisplay__buttons--middle">
-                  <button>Add to basket</button>
+                  <button class="o-shopButton">Add to basket</button>
                 </div>
                 <!-- QUESTION 2 -->
                 <div class="c-shopDisplay__additionalInfo">
@@ -95,7 +100,7 @@
                 <!-- QUESTION 3 -->
                 <div class="c-shopDisplay__productOptions">
                   <div class="c-shopDisplay__productOptions--select u-hidden">
-                    <label class="o-label">Please select a size:</label>
+                    <label class="o-label">Please select a package size:</label>
                     <select class="c-shopDisplay__productOptions--select-font">
                       <option>Small</option>
                       <option>Medium</option>
@@ -104,29 +109,39 @@
                     </select>
                   </div>
                   <fieldset class="c-shopDisplay__productOptions--listOfCards o-fieldset u-hidden">
-                    <legend class="o-label">Please select a size:</legend>
+                    <legend class="o-label">Please select a package size:</legend>
                     <div class="c-shopDisplay__productOptions--listOfCards-grid">
                       <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                         <input type="radio" id="productOptions--listOfCards-small" name="productOptions">
-                        <label class="u-semibold u-halfPadding" for="productOptions--listOfCards-small">Small</label>
+                        <label class="u-semibold u-halfPadding c-listOfCards__label"
+                          for="productOptions--listOfCards-small">
+                          <img class="c-listOfCards__img" src="./imgs/smallOrder.svg"><span>Small</span></label>
                       </div>
                       <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                         <input type="radio" id="productOptions--listOfCards-medium" name="productOptions">
-                        <label class="u-semibold u-halfPadding" for="productOptions--listOfCards-medium">Medium</label>
+                        <label class="u-semibold u-halfPadding c-listOfCards__label"
+                          for="productOptions--listOfCards-medium">
+                          <img class="c-listOfCards__img" src="./imgs/mediumOrder.svg"><span>Medium</span>
+                        </label>
                       </div>
                       <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                         <input type="radio" id="productOptions--listOfCards-large" name="productOptions">
-                        <label class="u-semibold u-halfPadding" for="productOptions--listOfCards-large">Large</label>
+                        <label class="u-semibold u-halfPadding c-listOfCards__label"
+                          for="productOptions--listOfCards-large">
+                          <img class="c-listOfCards__img" src="./imgs/largeOrder.svg"><span>Large</span>
+                        </label>
                       </div>
                       <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                         <input type="radio" id="productOptions--listOfCards-xlarge" name="productOptions">
-                        <label class="u-semibold u-halfPadding" for="productOptions--listOfCards-xlarge">Extra
-                          large</label>
+                        <label class="u-semibold u-halfPadding c-listOfCards__label"
+                          for="productOptions--listOfCards-xlarge">
+                          <img class="c-listOfCards__img" src="./imgs/xlargeOrder.svg"><span>Extra large</span>
+                        </label>
                       </div>
                     </div>
                   </fieldset>
                   <fieldset class="c-shopDisplay__productOptions--radios o-fieldset u-hidden">
-                    <legend class="o-label">Please select a size:</legend>
+                    <legend class="o-label">Please select a package size:</legend>
                     <div class="c-shopDisplay__productOptions--radios-grid">
                       <div class="">
                         <input type="radio" id="productOptions--radios-small" name="productOptions">
@@ -147,36 +162,47 @@
                     </div>
                   </fieldset>
                   <fieldset class="c-shopDisplay__productOptions--rowOfCards o-fieldset u-hidden">
-                    <legend class="o-label">Please select a size:</legend>
+                    <legend class="o-label">Please select a package size:</legend>
                     <div class="c-shopDisplay__productOptions--rowOfCards-grid">
                       <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                         <input type="radio" id="productOptions--rowOfCards-small" name="productOptions">
-                        <label class="u-semibold u-halfPadding" for="productOptions--rowOfCards-small">Small</label>
+                        <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                          for="productOptions--rowOfCards-small">
+                          <img class="c-rowOfCards__img" src="./imgs/smallOrder.svg"><span>Small</span>
+                        </label>
                       </div>
                       <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                         <input type="radio" id="productOptions--rowOfCards-medium" name="productOptions">
-                        <label class="u-semibold u-halfPadding" for="productOptions--rowOfCards-medium">Medium</label>
+                        <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                          for="productOptions--rowOfCards-medium">
+                          <img class="c-rowOfCards__img" src="./imgs/mediumOrder.svg"><span>Medium</span>
+                        </label>
                       </div>
                       <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                         <input type="radio" id="productOptions--rowOfCards-large" name="productOptions">
-                        <label class="u-semibold u-halfPadding" for="productOptions--rowOfCards-large">Large</label>
+                        <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                          for="productOptions--rowOfCards-large">
+                          <img class="c-rowOfCards__img" src="./imgs/largeOrder.svg"><span>Large</span>
+                        </label>
                       </div>
                       <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                         <input type="radio" id="productOptions--rowOfCards-xlarge" name="productOptions">
-                        <label class="u-semibold u-halfPadding" for="productOptions--rowOfCards-xlarge">Extra
-                          large</label>
+                        <label class="u-semibold u-halfPadding c-rowOfCards__label"
+                          for="productOptions--rowOfCards-xlarge">
+                          <img class="c-rowOfCards__img" src="./imgs/xlargeOrder.svg"><span>Extra large</span>
+                        </label>
                       </div>
                     </div>
                   </fieldset>
                 </div>
                 <div class="c-shopDisplay__buttons" data-button="c-shopDisplay__buttons--bottom">
-                  <button>Add to basket</button>
+                  <button class="o-shopButton">Add to basket</button>
                 </div>
               </div>
             </div>
             <!-- QUESTION 5 -->
             <div class="c-shopDisplay__imagePos">
-              <img src="https://source.unsplash.com/random/120x120">
+              <img class="c-shopDisplay__image" src="./imgs/toiletRoll.svg">
             </div>
             <!-- QUESTION 6 -->
             <div style="display: none;" class="c-shopDisplay__buyButton">
@@ -195,7 +221,7 @@
       </p>
 
       <!-- QUESTION - Size of text -->
-      <div id="question-1" class="">
+      <div id="question-1" class="o-questionContainer">
         <fieldset class="form-questionHolder">
           <legend class="form-fieldsetLegend">How big should the font on your e-commerce site be? <span
               class="form-fieldsetLengend-additionalInfo">Ensure that you can
@@ -242,13 +268,13 @@
           </div>
         </fieldset>
         <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
-        <button type="button" class="o-button js-changeQuestionButton" data-this-question="question-1"
+        <button type="button" class="o-button js-changeQuestionButton h-rightAlign" data-this-question="question-1"
           data-change-question="question-2">Next
           question</button>
       </div>
 
       <!-- QUESTION - Amount of information -->
-      <div id="question-2" class="u-hidden">
+      <div id="question-2" class="u-hidden o-questionContainer">
         <fieldset class="form-questionHolder">
           <legend class="form-fieldsetLegend">How should additional product information be displayed? <span
               class="form-fieldsetLengend-additionalInfo">Ensure that you
@@ -295,17 +321,19 @@
             </label>
           </div>
         </fieldset>
-        <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
-        <button type="button" class="js-changeQuestionButton" data-this-question="question-2"
-          data-change-question="question-1">Previous
-          question</button>
-        <button type="button" class="o-button js-changeQuestionButton" data-this-question="question-2"
-          data-change-question="question-3">Next
-          question</button>
+        <div class="o-buttonsHolder">
+          <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
+          <button type="button" class="o-button o-button--alt js-changeQuestionButton" data-this-question="question-2"
+            data-change-question="question-1">Previous
+            question</button>
+          <button type="button" class="o-button js-changeQuestionButton" data-this-question="question-2"
+            data-change-question="question-3">Next
+            question</button>
+        </div>
       </div>
 
       <!-- QUESTION - Selecting options -->
-      <div id="question-3" class="u-hidden">
+      <div id="question-3" class="u-hidden o-questionContainer">
         <fieldset class="form-questionHolder">
           <legend class="form-fieldsetLegend">How should product options be displayed?</legend>
 
@@ -321,7 +349,7 @@
             <input type="radio" class="js-answer" id="productOptions-cards" name="productOptions"
               value="c-shopDisplay__productOptions--listOfCards">
             <label class="card form-questionHolder-optionHolder" for="productOptions-cards">
-              <span class="form-questionHolder-optionDesc">List of cards</span>
+              <span class="form-questionHolder-optionDesc">Row of cards</span>
             </label>
           </div>
 
@@ -337,7 +365,7 @@
             <input type="radio" class="js-answer" id="productOptions-grid" name="productOptions"
               value="c-shopDisplay__productOptions--rowOfCards">
             <label class="card form-questionHolder-optionHolder" for="productOptions-grid">
-              <span class="form-questionHolder-optionDesc">Row of cards</span>
+              <span class="form-questionHolder-optionDesc">List of cards</span>
             </label>
           </div>
 
@@ -349,17 +377,19 @@
             </label>
           </div>
         </fieldset>
-        <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
-        <button type="button" class="js-changeQuestionButton" data-this-question="question-3"
-          data-change-question="question-2">Previous
-          question</button>
-        <button type="button" class="o-button js-changeQuestionButton" data-this-question="question-3"
-          data-change-question="question-4">Next
-          question</button>
+        <div class="o-buttonsHolder">
+          <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
+          <button type="button" class="o-button o-button--alt js-changeQuestionButton" data-this-question="question-3"
+            data-change-question="question-2">Previous
+            question</button>
+          <button type="button" class="o-button js-changeQuestionButton" data-this-question="question-3"
+            data-change-question="question-4">Next
+            question</button>
+        </div>
       </div>
 
       <!-- QUESTION - Position of image -->
-      <div id="question-4" class="u-hidden">
+      <div id="question-4" class="u-hidden o-questionContainer">
         <fieldset class="form-questionHolder">
           <legend class="form-fieldsetLegend">Where should the image sit in your site's listings?</legend>
 
@@ -367,7 +397,7 @@
             <input type="radio" class="js-answer" id="imagePos-right" name="imagePos"
               value="c-shopDisplay__imagePos--right">
             <label class="card form-questionHolder-optionHolder" for="imagePos-right">
-              <span class="form-questionHolder-optionDesc">Small</span>
+              <span class="form-questionHolder-optionDesc">Right of the text</span>
             </label>
           </div>
 
@@ -375,7 +405,7 @@
             <input type="radio" class="js-answer" id="imagePos-left" name="imagePos"
               value="c-shopDisplay__imagePos--left">
             <label class="card form-questionHolder-optionHolder" for="imagePos-left">
-              <span class="form-questionHolder-optionDesc">Medium</span>
+              <span class="form-questionHolder-optionDesc">Left of the text</span>
             </label>
           </div>
 
@@ -383,7 +413,7 @@
             <input type="radio" class="js-answer" id="imagePos-bottom" name="imagePos"
               value="c-shopDisplay__imagePos--bottom">
             <label class="card form-questionHolder-optionHolder" for="imagePos-bottom">
-              <span class="form-questionHolder-optionDesc">Large</span>
+              <span class="form-questionHolder-optionDesc">Below the text</span>
             </label>
           </div>
 
@@ -391,7 +421,7 @@
             <input type="radio" class="js-answer" id="imagePos-top" name="imagePos"
               value="c-shopDisplay__imagePos--top">
             <label class="card form-questionHolder-optionHolder" for="imagePos-top">
-              <span class="form-questionHolder-optionDesc">Larger</span>
+              <span class="form-questionHolder-optionDesc">Above the text</span>
             </label>
           </div>
 
@@ -402,24 +432,26 @@
             </label>
           </div>
         </fieldset>
-        <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
-        <button type="button" class="js-changeQuestionButton" data-this-question="question-4"
-          data-change-question="question-3">Previous
-          question</button>
-        <button type="button" class="o-button js-changeQuestionButton" data-this-question="question-4"
-          data-change-question="question-5">Next
-          question</button>
+        <div class="o-buttonsHolder">
+          <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
+          <button type="button" class="o-button o-button--alt js-changeQuestionButton" data-this-question="question-4"
+            data-change-question="question-3">Previous
+            question</button>
+          <button type="button" class="o-button js-changeQuestionButton" data-this-question="question-4"
+            data-change-question="question-5">Next
+            question</button>
+        </div>
       </div>
 
       <!-- QUESTION - Position of button -->
-      <div id="question-5" class="u-hidden">
+      <div id="question-5" class="u-hidden o-questionContainer">
         <fieldset class="form-questionHolder">
-          <legend class="form-fieldsetLegend">Where should the image sit in your site's listings?</legend>
+          <legend class="form-fieldsetLegend">Where should the 'Add to basket' buttons sit?</legend>
 
           <div class="form-questionHolder-inputStack">
             <input type="radio" class="js-answer" id="buttons-top" name="buttons" value="c-shopDisplay__buttons--top">
             <label class="card form-questionHolder-optionHolder" for="buttons-top">
-              <span class="form-questionHolder-optionDesc">Top</span>
+              <span class="form-questionHolder-optionDesc">At the start of the text</span>
             </label>
           </div>
 
@@ -427,7 +459,7 @@
             <input type="radio" class="js-answer" id="buttons-middle" name="buttons"
               value="c-shopDisplay__buttons--middle">
             <label class="card form-questionHolder-optionHolder" for="buttons-middle">
-              <span class="form-questionHolder-optionDesc">Top</span>
+              <span class="form-questionHolder-optionDesc">Midway through the text</span>
             </label>
           </div>
 
@@ -435,7 +467,7 @@
             <input type="radio" class="js-answer" id="buttons-bottom" name="buttons"
               value="c-shopDisplay__buttons--bottom">
             <label class="card form-questionHolder-optionHolder" for="buttons-bottom">
-              <span class="form-questionHolder-optionDesc">Top</span>
+              <span class="form-questionHolder-optionDesc">At the bottom of the text</span>
             </label>
           </div>
 
@@ -446,11 +478,13 @@
             </label>
           </div>
         </fieldset>
-        <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
-        <button type="button" class="js-changeQuestionButton" data-this-question="question-5"
-          data-change-question="question-4">Previous
-          question</button>
-        <button type="submit">Submit</button>
+        <div class="o-buttonsHolder">
+          <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
+          <button type="button" class="o-button o-button--alt js-changeQuestionButton" data-this-question="question-5"
+            data-change-question="question-4">Previous
+            question</button>
+          <button class="o-button o-button--purple" type="submit">Submit your answers</button>
+        </div>
       </div>
 
     </form>

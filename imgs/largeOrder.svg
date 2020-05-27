@@ -1,0 +1,30 @@
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 219 150">
+  <ellipse cx="5.5" cy="112.853" rx="36.75" ry="5.5" transform="rotate(90 5.5 112.853)" fill="#F5F5F5"/>
+  <path fill="#F5F5F5" d="M68 76.103v73.5H5.5v-73.5z"/>
+  <ellipse cx="67.5" cy="112.853" rx="36.75" ry="5.5" transform="rotate(90 67.5 112.853)" fill="#F0F0F0"/>
+  <ellipse cx="67.75" cy="112.353" rx="11.75" ry="1.75" transform="rotate(90 67.75 112.353)" fill="#CEBCBC"/>
+  <path d="M1 99.603h61" stroke="#E0E0E0" stroke-dasharray="3 3"/>
+  <path d="M2 141.103h61.5" stroke="#E0E0E0" stroke-dasharray="3 3"/>
+  <ellipse cx="78.5" cy="112.75" rx="36.75" ry="5.5" transform="rotate(90 78.5 112.75)" fill="#F5F5F5"/>
+  <path fill="#F5F5F5" d="M141 76v73.5H78.5V76z"/>
+  <ellipse cx="140.5" cy="112.75" rx="36.75" ry="5.5" transform="rotate(90 140.5 112.75)" fill="#F0F0F0"/>
+  <ellipse cx="140.75" cy="112.25" rx="11.75" ry="1.75" transform="rotate(90 140.75 112.25)" fill="#CEBCBC"/>
+  <path d="M74 99.5h61" stroke="#E0E0E0" stroke-dasharray="3 3"/>
+  <path d="M75 141h61.5" stroke="#E0E0E0" stroke-dasharray="3 3"/>
+  <ellipse cx="151.5" cy="111.75" rx="36.75" ry="5.5" transform="rotate(90 151.5 111.75)" fill="#F5F5F5"/>
+  <path fill="#F5F5F5" d="M214 75v73.5h-62.5V75z"/>
+  <ellipse cx="213.5" cy="111.75" rx="36.75" ry="5.5" transform="rotate(90 213.5 111.75)" fill="#F0F0F0"/>
+  <ellipse cx="213.75" cy="111.25" rx="11.75" ry="1.75" transform="rotate(90 213.75 111.25)" fill="#CEBCBC"/>
+  <path d="M147 98.5h61" stroke="#E0E0E0" stroke-dasharray="3 3"/>
+  <path d="M148 140h61.5" stroke="#E0E0E0" stroke-dasharray="3 3"/>
+  <ellipse cx="73.387" cy="6.108" rx="35.387" ry="6.108" fill="#fff"/>
+  <ellipse cx="73.387" cy="74.775" rx="35.387" ry="6.108" fill="#fff"/>
+  <path fill="#fff" d="M38 5.898h70.773v68.667H38z"/>
+  <path d="M52.323 1.264V79.62" stroke="#EEE" stroke-dasharray="3 3"/>
+  <path d="M103.297 2.949v74.986" stroke="#EEE" stroke-dasharray="3 3"/>
+  <ellipse cx="146.387" cy="6.108" rx="35.387" ry="6.108" fill="#fff"/>
+  <ellipse cx="146.387" cy="74.775" rx="35.387" ry="6.108" fill="#fff"/>
+  <path fill="#fff" d="M111 5.898h70.773v68.667H111z"/>
+  <path d="M125.323 1.264V79.62" stroke="#EEE" stroke-dasharray="3 3"/>
+  <path d="M176.297 2.949v74.986" stroke="#EEE" stroke-dasharray="3 3"/>
+</svg>

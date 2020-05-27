@@ -1,0 +1,32 @@
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 247 230">
+  <ellipse cx="35.387" cy="155.108" rx="35.387" ry="6.108" fill="#fff"/>
+  <ellipse cx="35.387" cy="223.775" rx="35.387" ry="6.108" fill="#fff"/>
+  <path fill="#fff" d="M0 154.898h70.773v68.667H0z"/>
+  <path d="M14.323 150.264v78.356" stroke="#EEE" stroke-dasharray="3 3"/>
+  <path d="M65.297 151.949v74.986" stroke="#EEE" stroke-dasharray="3 3"/>
+  <ellipse cx="123.613" cy="155.108" rx="35.387" ry="6.108" fill="#fff"/>
+  <ellipse cx="123.613" cy="223.775" rx="35.387" ry="6.108" fill="#fff"/>
+  <path fill="#fff" d="M88.227 154.898H159v68.667H88.227z"/>
+  <path d="M102.55 150.264v78.356" stroke="#EEE" stroke-dasharray="3 3"/>
+  <path d="M153.524 151.949v74.986" stroke="#EEE" stroke-dasharray="3 3"/>
+  <ellipse cx="79.387" cy="81.108" rx="35.387" ry="6.108" fill="#fff"/>
+  <ellipse cx="79.387" cy="149.775" rx="35.387" ry="6.108" fill="#fff"/>
+  <path fill="#fff" d="M44 80.898h70.773v68.667H44z"/>
+  <path d="M58.323 76.264v78.356" stroke="#EEE" stroke-dasharray="3 3"/>
+  <path d="M109.297 77.949v74.986" stroke="#EEE" stroke-dasharray="3 3"/>
+  <ellipse cx="124.387" cy="6.108" rx="35.387" ry="6.108" fill="#fff"/>
+  <ellipse cx="124.387" cy="74.775" rx="35.387" ry="6.108" fill="#fff"/>
+  <path fill="#fff" d="M89 5.898h70.773v68.667H89z"/>
+  <path d="M103.323 1.264V79.62" stroke="#EEE" stroke-dasharray="3 3"/>
+  <path d="M154.297 2.949v74.986" stroke="#EEE" stroke-dasharray="3 3"/>
+  <ellipse cx="167.613" cy="81.108" rx="35.387" ry="6.108" fill="#fff"/>
+  <ellipse cx="167.613" cy="149.775" rx="35.387" ry="6.108" fill="#fff"/>
+  <path fill="#fff" d="M132.227 80.898H203v68.667h-70.773z"/>
+  <path d="M146.55 76.264v78.356" stroke="#EEE" stroke-dasharray="3 3"/>
+  <path d="M197.524 77.949v74.986" stroke="#EEE" stroke-dasharray="3 3"/>
+  <ellipse cx="211.387" cy="155.108" rx="35.387" ry="6.108" fill="#fff"/>
+  <ellipse cx="211.387" cy="223.775" rx="35.387" ry="6.108" fill="#fff"/>
+  <path fill="#fff" d="M176 154.898h70.773v68.667H176z"/>
+  <path d="M190.323 150.264v78.356" stroke="#EEE" stroke-dasharray="3 3"/>
+  <path d="M241.297 151.949v74.986" stroke="#EEE" stroke-dasharray="3 3"/>
+</svg>
