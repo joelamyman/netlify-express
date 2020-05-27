@@ -233,6 +233,13 @@
               <span class="form-questionHolder-optionDesc">Larger</span>
             </label>
           </div>
+
+          <div class="form-questionHolder-inputStack">
+            <input type="radio" class="js-random-answer" id="textsize-random" name="textsize" value="question-1">
+            <label class="card form-questionHolder-optionHolder" for="textsize-random">
+              <span class="form-questionHolder-optionDesc">I'm not fussed</span>
+            </label>
+          </div>
         </fieldset>
         <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
         <button type="button" class="o-button js-changeQuestionButton" data-this-question="question-1"
@@ -278,6 +285,13 @@
               value="c-shopDisplay__additionalInfo--details">
             <label class="card form-questionHolder-optionHolder" for="infoAmount-details">
               <span class="form-questionHolder-optionDesc">Content displayed in a collapsible container</span>
+            </label>
+          </div>
+
+          <div class="form-questionHolder-inputStack">
+            <input type="radio" class="js-random-answer" id="infoAmount-random" name="infoAmount" value="question-2">
+            <label class="card form-questionHolder-optionHolder" for="infoAmount-random">
+              <span class="form-questionHolder-optionDesc">I'm not fussed</span>
             </label>
           </div>
         </fieldset>
@@ -326,6 +340,14 @@
               <span class="form-questionHolder-optionDesc">Row of cards</span>
             </label>
           </div>
+
+          <div class="form-questionHolder-inputStack">
+            <input type="radio" class="js-random-answer" id="productOptions-random" name="productOptions"
+              value="question-3">
+            <label class="card form-questionHolder-optionHolder" for="productOptions-random">
+              <span class="form-questionHolder-optionDesc">I'm not fussed</span>
+            </label>
+          </div>
         </fieldset>
         <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
         <button type="button" class="js-changeQuestionButton" data-this-question="question-3"
@@ -372,6 +394,13 @@
               <span class="form-questionHolder-optionDesc">Larger</span>
             </label>
           </div>
+
+          <div class="form-questionHolder-inputStack">
+            <input type="radio" class="js-random-answer" id="imagePos-random" name="imagePos" value="question-4">
+            <label class="card form-questionHolder-optionHolder" for="imagePos-random">
+              <span class="form-questionHolder-optionDesc">I'm not fussed</span>
+            </label>
+          </div>
         </fieldset>
         <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
         <button type="button" class="js-changeQuestionButton" data-this-question="question-4"
@@ -410,6 +439,12 @@
             </label>
           </div>
 
+          <div class="form-questionHolder-inputStack">
+            <input type="radio" class="js-random-answer" id="buttons-random" name="buttons" value="question-5">
+            <label class="card form-questionHolder-optionHolder" for="buttons-random">
+              <span class="form-questionHolder-optionDesc">I'm not fussed</span>
+            </label>
+          </div>
         </fieldset>
         <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
         <button type="button" class="js-changeQuestionButton" data-this-question="question-5"
@@ -427,22 +462,11 @@
   <script>
     window.onload = function () {
       const answers = document.querySelectorAll('.js-answer');
-      const regex = /(([a-z]*[-]{1})\w*)/;
+
       for (let i = 0; i < answers.length; i++) {
         answers[i].addEventListener("click", function (e) {
-          const targetAnswer = e.target.value;
-          console.group('clicked ' + e.target.id);
-          console.log('value is: ' + targetAnswer);
-          console.log('target element is: ' + targetAnswer.match(regex)[0]);
-          const elementToUpdate = document.querySelector(`.${targetAnswer.match(regex)[0]}`);
-          console.log(`Class list pos 1: ${elementToUpdate.classList.item(1)}`);
-          const classListPos1 = elementToUpdate.classList.item(1);
-          if (classListPos1 !== null) {
-            console.log(`There's something at pos1`);
-            elementToUpdate.classList.remove(elementToUpdate.classList.item(1));
-          }
-          elementToUpdate.classList.add(targetAnswer);
-          console.groupEnd('clicked ' + e.target.id);
+          const selectedAnswer = e.target.value;
+          updateStyling(selectedAnswer);
         });
       }
       const progressButtons = document.querySelectorAll('.js-changeQuestionButton');
@@ -455,7 +479,27 @@
           document.querySelector(`#${questionToChangeTo}`).classList.toggle('u-hidden');
         });
       }
+      const randomAnswers = document.querySelectorAll('.js-random-answer');
+      for (let k = 0; k < randomAnswers.length; k++) {
+        randomAnswers[k].addEventListener("click", function (e) {
+          const question = e.target.value;
+          const answers = document.querySelectorAll(`#${question} input[value*="c-shopDisplay"]`)
+          const randomlySelectedAnswer = answers[Math.floor(Math.random() * answers.length)];
+          console.log(randomlySelectedAnswer.value);
+          updateStyling(randomlySelectedAnswer.value);
+        })
+      }
     };
+
+    function updateStyling(targetAnswer) {
+      const regex = /(([a-z]*[-]{1})\w*)/;
+      const elementToUpdate = document.querySelector(`.${targetAnswer.match(regex)[0]}`);
+      const classListPos1 = elementToUpdate.classList.item(1);
+      if (classListPos1 !== null) {
+        elementToUpdate.classList.remove(elementToUpdate.classList.item(1));
+      }
+      elementToUpdate.classList.add(targetAnswer);
+    }
   </script>
 </body>
 
