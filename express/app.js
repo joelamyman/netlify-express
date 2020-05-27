@@ -69,7 +69,7 @@ router.get('/results/show/*', (req, res) => {
       //   }
       // }
 
-      let thisAddress = req.protocol + '://' + 'eloquent-brown-615c35.netlify.app' + req.get('host') + req.originalUrl;
+      let thisAddress = req.protocol + '://' + 'eloquent-brown-615c35.netlify.app' + req.originalUrl;
       thisAddress = thisAddress.replace("show", "share");
 
       const id = req.query.id.replace(/['"]+/g, '');
