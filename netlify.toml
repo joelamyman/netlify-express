@@ -3,3 +3,6 @@
   publish = "/"
   command = "cd express && npm install && cd .."
   functions = "express"
+
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"
