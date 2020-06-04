@@ -17,16 +17,19 @@
 </body>
 
 <script>
+
+
   fetch('../.netlify/functions/app/results/share/?id="apples"')
       .then(res => {
         if (res.status < 200 || res.status >= 300) {
           return Promise.reject('No db connection')
         }
 
-        return res.json();
+        return res;
       })
-      .then((data) => console.log(JSON.stringify(data)))
+      .then((data) => console.log(data))
       .catch(console.warn);
+
 </script>
 
 </html>

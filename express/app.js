@@ -12,7 +12,8 @@ const uri = `mongodb+srv://jlamyman:${process.env.DB_PASS}@mtestcluster-bstuo.mo
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.sendStatus(200);
+  res.type('html');
   res.write('<h1>Hello from Express.js!</h1>');
   res.end();
 });
