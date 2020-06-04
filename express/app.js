@@ -38,7 +38,7 @@ router.get('/complete/', (req, res) => {
 router.get('/results/share/*', (req, res) => {
   const id = req.query.id.replace(/['"]+/g, '');
 
-  res.status(200).jsonp({ error: 'hello this is good' })
+  res.status(200).jsonp({ "message": id })
 
 });
 router.get('/results/show/*', (req, res) => {
