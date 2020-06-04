@@ -45,7 +45,7 @@ router.get('/results/share/*', (req, res) => {
     const db = client.db('test-data')
     const submissionsCollection = db.collection('submissions');
     var query = {
-      "userID" : { "$in" : id }
+      "userID" :  id 
     };
     submissionsCollection.find(query).toArray(function(err, result) {
       if (err) throw err;
