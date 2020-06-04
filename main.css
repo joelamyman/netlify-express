@@ -38,6 +38,7 @@ body {
   color: white;
   padding: 1rem;
   max-width: 60ch;
+  white-space: normal;
 }
 
 .o-bwText__bodyText{
@@ -704,5 +705,9 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
 
   .h-maxContent{
     width: 100%;
+  }
+
+  .o-bwText{
+    max-width: 100%;
   }
 }

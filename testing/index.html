@@ -13,6 +13,10 @@
 <body>
 
   <h1 class="o-bwText h-bold h-maxContent h-mb--0">Let's build a shop UI!</h1>
+  <details class="o-bwText h-maxContent h-mt--0">
+    <summary>What is this?</summary>
+    <p>This is a game made by me, Joe Lamyman, Interactive Media student at the University of York, as part of my master's thesis. This game allows you to answer questions and create your own e-commerce user interface based on your own needs. For more information, you can <a href="#">visit the information page</a>.</p>
+  </details>
   <p class="o-bwText h-maxContent h-mt--0"><strong>To start building, answer the questions below.</strong>
   </p>
 
@@ -259,7 +263,7 @@
 
           <div class="form-questionHolder-inputStack">
             <input type="radio" class="js-random-answer" id="textsize-random" name="textsize" data-question="question-1"
-              value="c-shopDisplay__bodyText--size-random">
+              data-random="true" value="">
             <label class="card form-questionHolder-optionHolder" for="textsize-random">
               <span class="form-questionHolder-optionDesc">I'm not fussed</span>
             </label>
@@ -318,7 +322,7 @@
 
           <div class="form-questionHolder-inputStack">
             <input type="radio" class="js-random-answer" id="infoAmount-random" name="infoAmount"
-              data-question="question-2" value="c-shopDisplay__additionalInfo--random">
+              data-question="question-2" data-random="true" value="">
             <label class="card form-questionHolder-optionHolder" for="infoAmount-random">
               <span class="form-questionHolder-optionDesc">I'm not fussed</span>
             </label>
@@ -378,7 +382,7 @@
 
           <div class="form-questionHolder-inputStack">
             <input type="radio" class="js-random-answer" id="productOptions-random" name="productOptions"
-              data-question="question-3" value="c-shopDisplay__productOptions--random">
+              data-question="question-3" data-random="true" value="">
             <label class="card form-questionHolder-optionHolder" for="productOptions-random">
               <span class="form-questionHolder-optionDesc">I'm not fussed</span>
             </label>
@@ -438,7 +442,7 @@
 
           <div class="form-questionHolder-inputStack">
             <input type="radio" class="js-random-answer" id="imagePos-random" name="imagePos" data-question="question-4"
-              value="c-shopDisplay__imagePos--random">
+              data-random="true" value="">
             <label class="card form-questionHolder-optionHolder" for="imagePos-random">
               <span class="form-questionHolder-optionDesc">I'm not fussed</span>
             </label>
@@ -488,7 +492,7 @@
           </div>
 
           <div class="form-questionHolder-inputStack">
-            <input type="radio" class="js-random-answer" id="buttons-random" name="buttons" value="question-5">
+            <input type="radio" class="js-random-answer" id="buttons-random" name="buttons" data-question="question-5" data-random="true" value="">
             <label class="card form-questionHolder-optionHolder" for="buttons-random">
               <span class="form-questionHolder-optionDesc">I'm not fussed</span>
             </label>
@@ -539,10 +543,11 @@
           console.log("IN RANDOM ANSWERS");
           const question = e.target.dataset.question;
           console.log(question);
-          const answers = document.querySelectorAll(`#${question} input[value*="c-shopDisplay"]:not([value*="random"])`);
+          const answers = document.querySelectorAll(`#${question} input[value*="c-shopDisplay"]:not([data-random="true"])`);
           console.log(answers);
           const randomlySelectedAnswer = answers[Math.floor(Math.random() * answers.length)];
           console.log(randomlySelectedAnswer.value);
+          e.target.value = randomlySelectedAnswer.value;
           console.log("GOING TO UPDATE STYLING");
           updateStyling(randomlySelectedAnswer.value);
         })

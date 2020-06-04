@@ -36,7 +36,15 @@ router.get('/complete/', (req, res) => {
   })
 });
 router.get('/results/share/*', (req, res) => {
-  res.redirect(`/`)
+  const id = req.query.id.replace(/['"]+/g, '');
+
+  res.set({
+    'Content-Type': 'text/html'
+  })
+  // res.send(`<h1>Here is what you made!</h1><p>Text size' + req.query.textSize + ' Info amount ' + req.query.infoAmount + '</p><script>window.onload = function(){console.log("loaded")}</script>`);
+  res.send(`<h1>${id}</h1>`);
+  res.end();
+
 });
 router.get('/results/show/*', (req, res) => {
   MongoClient.connect(uri, { useUnifiedTopology: true })
