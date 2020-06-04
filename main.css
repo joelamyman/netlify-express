@@ -377,7 +377,7 @@ fieldset div input:checked+label svg[class*="textsize"] path{
 }
 
 .c-shopDisplay__additionalInfo{
-  font-size: 0.8em;
+  font-size: 1em;
   display: none;
 }
 
