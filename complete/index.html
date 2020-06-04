@@ -17,7 +17,7 @@
 </body>
 
 <script>
-  fetch('/.netlify/functions/app/results/share/?id="apples"')
+  fetch('../.netlify/functions/app/results/share/?id="apples"')
       .then(res => {
         if (res.status < 200 || res.status >= 300) {
           return Promise.reject('No db connection')
@@ -25,9 +25,8 @@
 
         return res.json();
       })
-      .then((data) => document.querySelector('#test').innerHTML = data)
+      .then((data) => console.log(data))
       .catch(console.warn);
-  }
 </script>
 
 </html>
