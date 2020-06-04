@@ -12,8 +12,8 @@ const uri = `mongodb+srv://jlamyman:${process.env.DB_PASS}@mtestcluster-bstuo.mo
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.sendStatus(200);
-  res.json({ username: 'Flavio' });
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.write('<h1>Hello from Express.js!</h1>');
   res.end();
 });
 router.get('/complete/', (req, res) => {
@@ -38,12 +38,7 @@ router.get('/complete/', (req, res) => {
 router.get('/results/share/*', (req, res) => {
   const id = req.query.id.replace(/['"]+/g, '');
 
-  res.set({
-    'Content-Type': 'text/html'
-  })
-  // res.send(`<h1>Here is what you made!</h1><p>Text size' + req.query.textSize + ' Info amount ' + req.query.infoAmount + '</p><script>window.onload = function(){console.log("loaded")}</script>`);
-  res.send(`<h1>${id}</h1>`);
-  res.end();
+  res.status(200).jsonp({ error: 'hello this is good' })
 
 });
 router.get('/results/show/*', (req, res) => {
