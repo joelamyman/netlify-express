@@ -13,8 +13,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   res.sendStatus(200);
-  res.type('html');
-  res.write('<h1>Hello from Express.js!</h1>');
+  res.json({ username: 'Flavio' });
   res.end();
 });
 router.get('/complete/', (req, res) => {
