@@ -258,11 +258,16 @@
           </div>
 
           <div class="form-questionHolder-inputStack">
-            <input type="radio" class="js-random-answer" id="textsize-random" name="textsize" value="question-1">
+            <input type="radio" class="js-random-answer" id="textsize-random" name="textsize" data-question="question-1"
+              value="c-shopDisplay__bodyText--size-random">
             <label class="card form-questionHolder-optionHolder" for="textsize-random">
               <span class="form-questionHolder-optionDesc">I'm not fussed</span>
             </label>
           </div>
+
+          <button class="c-clearOptionButton js-clearOption" type="button" data-namegroup="textsize">Clear
+            selected option</button>
+
         </fieldset>
         <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
         <button type="button" class="o-button js-changeQuestionButton h-rightAlign" data-this-question="question-1"
@@ -312,11 +317,16 @@
           </div>
 
           <div class="form-questionHolder-inputStack">
-            <input type="radio" class="js-random-answer" id="infoAmount-random" name="infoAmount" value="question-2">
+            <input type="radio" class="js-random-answer" id="infoAmount-random" name="infoAmount"
+              data-question="question-2" value="c-shopDisplay__additionalInfo--random">
             <label class="card form-questionHolder-optionHolder" for="infoAmount-random">
               <span class="form-questionHolder-optionDesc">I'm not fussed</span>
             </label>
           </div>
+
+          <button class="c-clearOptionButton js-clearOption" type="button" data-namegroup="infoAmount">Clear
+            selected option</button>
+
         </fieldset>
         <div class="o-buttonsHolder">
           <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
@@ -368,11 +378,15 @@
 
           <div class="form-questionHolder-inputStack">
             <input type="radio" class="js-random-answer" id="productOptions-random" name="productOptions"
-              value="question-3">
+              data-question="question-3" value="c-shopDisplay__productOptions--random">
             <label class="card form-questionHolder-optionHolder" for="productOptions-random">
               <span class="form-questionHolder-optionDesc">I'm not fussed</span>
             </label>
           </div>
+
+          <button class="c-clearOptionButton js-clearOption" type="button" data-namegroup="productOptions">Clear
+            selected option</button>
+
         </fieldset>
         <div class="o-buttonsHolder">
           <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
@@ -423,11 +437,16 @@
           </div>
 
           <div class="form-questionHolder-inputStack">
-            <input type="radio" class="js-random-answer" id="imagePos-random" name="imagePos" value="question-4">
+            <input type="radio" class="js-random-answer" id="imagePos-random" name="imagePos" data-question="question-4"
+              value="c-shopDisplay__imagePos--random">
             <label class="card form-questionHolder-optionHolder" for="imagePos-random">
               <span class="form-questionHolder-optionDesc">I'm not fussed</span>
             </label>
           </div>
+
+          <button class="c-clearOptionButton js-clearOption" type="button" data-namegroup="imagePos">Clear
+            selected option</button>
+
         </fieldset>
         <div class="o-buttonsHolder">
           <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
@@ -474,6 +493,10 @@
               <span class="form-questionHolder-optionDesc">I'm not fussed</span>
             </label>
           </div>
+
+          <button class="c-clearOptionButton js-clearOption" type="button" data-namegroup="buttons">Clear
+            selected option</button>
+
         </fieldset>
         <div class="o-buttonsHolder">
           <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
@@ -513,23 +536,65 @@
       const randomAnswers = document.querySelectorAll('.js-random-answer');
       for (let k = 0; k < randomAnswers.length; k++) {
         randomAnswers[k].addEventListener("click", function (e) {
-          const question = e.target.value;
-          const answers = document.querySelectorAll(`#${question} input[value*="c-shopDisplay"]`)
+          console.log("IN RANDOM ANSWERS");
+          const question = e.target.dataset.question;
+          console.log(question);
+          const answers = document.querySelectorAll(`#${question} input[value*="c-shopDisplay"]:not([value*="random"])`);
+          console.log(answers);
           const randomlySelectedAnswer = answers[Math.floor(Math.random() * answers.length)];
           console.log(randomlySelectedAnswer.value);
+          console.log("GOING TO UPDATE STYLING");
           updateStyling(randomlySelectedAnswer.value);
         })
+      }
+      const clearOptionButtons = document.querySelectorAll('.js-clearOption');
+      for (let l = 0; l < clearOptionButtons.length; l++) {
+        clearOptionButtons[l].addEventListener('click', clearOptionSelected);
       }
     };
 
     function updateStyling(targetAnswer) {
+      const elementToUpdate = removeStyling(targetAnswer);
+      elementToUpdate.classList.add(targetAnswer);
+    }
+
+    function clearOptionSelected(e) {
+      console.log('---');
+      console.log('Within clear options');
+      const questionSet = e.target.dataset.namegroup;
+      console.log(questionSet);
+
+      console.group('Attribute testing');
+      console.log(document.querySelector(`input[name="${questionSet}"]:checked`).value);
+      console.log(document.querySelector(`input[name="${questionSet}"]:checked`).id);
+      console.groupEnd('Attribute testing');
+
+      if (document.querySelector(`input[name="${questionSet}"]:checked`).id.includes('-random')) {
+        console.log("It's a random selector");
+        const regex = /(([a-z]*[-]{1})\w*)/;
+        const elementToUpdate = document.querySelector(`input[name="${questionSet}"]:checked`).value.match(regex)[0];
+        console.log(elementToUpdate);
+        console.log(`classlist length is: `);
+        removeStyling(elementToUpdate);
+      } else {
+        removeStyling(document.querySelector(`input[name="${questionSet}"]:checked`).value);
+      }
+
+      document.querySelector(`input[name="${questionSet}"]:checked`).checked = false;
+      console.log(document.querySelector(`input[name="${questionSet}"]:checked`));
+    }
+
+    function removeStyling(targetAnswer) {
       const regex = /(([a-z]*[-]{1})\w*)/;
+      console.log(`target answer is: ${targetAnswer}`);
+      console.log(targetAnswer.match(regex)[0]);
       const elementToUpdate = document.querySelector(`.${targetAnswer.match(regex)[0]}`);
+      console.log(`Element to update is: ${elementToUpdate}`);
       const classListPos1 = elementToUpdate.classList.item(1);
       if (classListPos1 !== null) {
         elementToUpdate.classList.remove(elementToUpdate.classList.item(1));
       }
-      elementToUpdate.classList.add(targetAnswer);
+      return elementToUpdate;
     }
   </script>
 </body>
