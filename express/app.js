@@ -38,8 +38,21 @@ router.get('/complete/', (req, res) => {
 router.get('/results/share/*', (req, res) => {
   const id = req.query.id.replace(/['"]+/g, '');
 
-  res.status(200).jsonp({ "message": id })
+  
 
+  MongoClient.connect(uri, { useUnifiedTopology: true })
+  .then(client => {
+    const db = client.db('test-data')
+    const submissionsCollection = db.collection('submissions');
+    var query = {
+      "userID" : { "$in" : id }
+    };
+    submissionsCollection.find(query).toArray(function(err, result) {
+      if (err) throw err;
+      res.status(200).jsonp({ "message": result })
+      client.close();
+    });
+})
 });
 router.get('/results/show/*', (req, res) => {
   MongoClient.connect(uri, { useUnifiedTopology: true })
