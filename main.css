@@ -1,5 +1,5 @@
 :root {
-  --main-background: #EEB04E;
+  --main-background: #FFEFD5;
   --label-background: white;
   --selected-color: blue;
 }
@@ -11,7 +11,7 @@
 body {
   margin: 2vh;
   background-color: var(--main-background);
-  background-image: url(./imgs/background-img.svg);
+  /* background-image: url(./imgs/background-img.svg); */
   background-size: 6rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
   font-size: 1.25rem;
@@ -155,7 +155,7 @@ fieldset label svg{
   width: 15rem;
   min-width: 15rem;
   max-width: 15rem;
-  margin: 0 auto;
+  margin: 0 auto 0 0.5rem;
 }
 
 .form-questionHolder > .form-questionHolder-inputStack + .form-questionHolder-inputStack{
@@ -174,7 +174,9 @@ fieldset label svg{
 }
 
 .form-questionHolder-optionDesc{
-  padding: 1rem 0;
+  padding: 0.75rem 0.5rem;
+  display: block;
+  text-align: left;
 }
 
 .form-questionHolder-displayText{
@@ -268,7 +270,7 @@ fieldset div input:checked+label svg[class*="textsize"] path{
 .c-shopDisplay{
   grid-area: browserdisplay;
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: auto 1fr auto;
   grid-template-rows: repeat(3, auto);
   grid-template-areas: "topleft topimage topright"
                        "leftimage content rightimage"
@@ -549,8 +551,9 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
 }
 
 .o-questionContainer{
-  margin: auto;
+  margin: auto auto auto 0rem;
   padding: 0 1em;
+  width: 100%;
 }
 
 .o-buttonsHolder{
@@ -628,7 +631,15 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
   width: 50%;
 }
 
-
+.c-share__input{
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  display: block;
+  background-color: var(--label-background);
+  color: var(--selected-color);
+  font-weight: 600;
+  border: 0.25rem solid var(--selected-color);
+}
 
 
 
