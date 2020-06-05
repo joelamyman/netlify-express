@@ -657,14 +657,14 @@ router.post('/', [
     const cleanProductOptions = req.body.productOptions;
     const cleanImagePos = req.body.imagePos;
     const cleanButtons = req.body.buttons;
-    const clearColourScheme = req.body.colourScheme;
+    const cleanColourScheme = req.body.colourScheme;
 
     const randomId = randomWords({ exactly: 3, join: '-' });
 
     const db = client.db('test-data')
     const submissionsCollection = db.collection('submissions');
 
-    submissionsCollection.insertOne( { userID: [randomId], textSize: [cleanTextSize], infoAmount: [cleanInfoAmount], productOptions: [cleanProductOptions], imagePos: [cleanImagePos], cleanButtons: [cleanButtons] } )
+    submissionsCollection.insertOne( { userID: [randomId], textSize: [cleanTextSize], infoAmount: [cleanInfoAmount], productOptions: [cleanProductOptions], imagePos: [cleanImagePos], cleanButtons: [cleanButtons], colourScheme: [cleanColourScheme] } )
       .then(result => {
         res.redirect(`/complete/?id="${randomId}"`)
       })
