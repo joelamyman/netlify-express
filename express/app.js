@@ -661,7 +661,7 @@ router.post('/', [
 
     submissionsCollection.insertOne( { userID: [randomId], textSize: [cleanTextSize], infoAmount: [cleanInfoAmount], productOptions: [cleanProductOptions], imagePos: [cleanImagePos], cleanButtons: [cleanButtons] } )
       .then(result => {
-        res.redirect(`./complete/?id="${randomId}"`)
+        res.redirect(`/complete/?id="${randomId}"`)
       })
       .catch(error => console.error(error));
     console.log("about to tackle the second");
