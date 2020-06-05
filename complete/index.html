@@ -398,6 +398,12 @@
   </section>
     <script>
 
+      console.log(window.location.href);
+      let windowUrl = window.location.href;
+      windowUrl = windowUrl.replace("complete", "share");
+      console.log(windowUrl);
+      history.replaceState(null, null, windowUrl);
+
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
 
