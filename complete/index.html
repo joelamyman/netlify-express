@@ -12,7 +12,8 @@
 
 <body>
   <h1>Thank you so much!</h1>
-  <p></p>
+  <label for="share-link">You can share your results by sharing the following link with your friends and family!</p>
+  <input id="share-link" type="text" class="c-share__input">
   <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="I have just constructed the greatest UI of all time, do not even attempt to challenge me." data-url="" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <div id="test"></div>
   <section class="l-liveView">
@@ -452,10 +453,10 @@
         });
       }
 
-      window.onload=function(){
-        const twitterButton = document.querySelector('.twitter-share-button');
-        twitterButton.dataset.url = windowUrl;
-      }
+      const twitterButton = document.querySelector('.twitter-share-button');
+      const shareLinkInput = document.querySelector('#share-link');
+      twitterButton.dataset.url = windowUrl;
+      shareLinkInput.value = windowUrl;
   </script>
 
   <script src="../js/styling-helpers.js"></script>

@@ -659,7 +659,7 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
 }
 
 .c-questionnaire{
-  height: 100vw;
+  height: 100vh;
   width: 100%;
 }
 
