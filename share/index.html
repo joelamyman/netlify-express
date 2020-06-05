@@ -93,7 +93,7 @@
               <!-- QUESTION 3 -->
               <div class="c-shopDisplay__productOptions">
                 <div class="c-shopDisplay__productOptions--select u-hidden">
-                  <label class="o-label">Please select a package size:</label>
+                  <label class="o-label o-matchBackgroundAndText">Please select a package size:</label>
                   <select class="c-shopDisplay__productOptions--select-font">
                     <option>Small</option>
                     <option>Medium</option>
@@ -102,7 +102,7 @@
                   </select>
                 </div>
                 <fieldset class="c-shopDisplay__productOptions--listOfCards o-fieldset u-hidden">
-                  <legend class="o-label">Please select a package size:</legend>
+                  <legend class="o-label o-matchBackgroundAndText">Please select a package size:</legend>
                   <div class="c-shopDisplay__productOptions--listOfCards-grid">
                     <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                       <input type="radio" id="productOptions--listOfCards-small" name="productOptions">
@@ -134,28 +134,28 @@
                   </div>
                 </fieldset>
                 <fieldset class="c-shopDisplay__productOptions--radios o-fieldset u-hidden">
-                  <legend class="o-label">Please select a package size:</legend>
+                  <legend class="o-label o-matchBackgroundAndText">Please select a package size:</legend>
                   <div class="c-shopDisplay__productOptions--radios-grid">
                     <div class="">
                       <input type="radio" id="productOptions--radios-small" name="productOptions">
-                      <label for="productOptions--radios-small">Small</label>
+                      <label class="c-productOptRadios" for="productOptions--radios-small">Small</label>
                     </div>
                     <div class="">
                       <input type="radio" id="productOptions--radios-medium" name="productOptions">
-                      <label for="productOptions--radios-medium">Medium</label>
+                      <label class="c-productOptRadios" for="productOptions--radios-medium">Medium</label>
                     </div>
                     <div class="">
                       <input type="radio" id="productOptions--radios-large" name="productOptions">
-                      <label for="productOptions--radios-large">Large</label>
+                      <label class="c-productOptRadios" for="productOptions--radios-large">Large</label>
                     </div>
                     <div class="">
                       <input type="radio" id="productOptions--radios-xlarge" name="productOptions">
-                      <label for="productOptions--radios-xlarge">Extra large</label>
+                      <label class="c-productOptRadios" for="productOptions--radios-xlarge">Extra large</label>
                     </div>
                   </div>
                 </fieldset>
                 <fieldset class="c-shopDisplay__productOptions--rowOfCards o-fieldset u-hidden">
-                  <legend class="o-label">Please select a package size:</legend>
+                  <legend class="o-label o-matchBackgroundAndText">Please select a package size:</legend>
                   <div class="c-shopDisplay__productOptions--rowOfCards-grid">
                     <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                       <input type="radio" id="productOptions--rowOfCards-small" name="productOptions">
@@ -284,7 +284,7 @@
               <!-- QUESTION 3 -->
               <div class="c-shopDisplay__productOptions">
                 <div class="c-shopDisplay__productOptions--select u-hidden">
-                  <label class="o-label">Please select a package size:</label>
+                  <label class="o-label o-matchBackgroundAndText">Please select a package size:</label>
                   <select class="c-shopDisplay__productOptions--select-font">
                     <option>Small</option>
                     <option>Medium</option>
@@ -293,7 +293,7 @@
                   </select>
                 </div>
                 <fieldset class="c-shopDisplay__productOptions--listOfCards o-fieldset u-hidden">
-                  <legend class="o-label">Please select a package size:</legend>
+                  <legend class="o-label o-matchBackgroundAndText">Please select a package size:</legend>
                   <div class="c-shopDisplay__productOptions--listOfCards-grid">
                     <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                       <input type="radio" id="productOptions--listOfCards-small" name="productOptions">
@@ -325,28 +325,28 @@
                   </div>
                 </fieldset>
                 <fieldset class="c-shopDisplay__productOptions--radios o-fieldset u-hidden">
-                  <legend class="o-label">Please select a package size:</legend>
+                  <legend class="o-label o-matchBackgroundAndText">Please select a package size:</legend>
                   <div class="c-shopDisplay__productOptions--radios-grid">
                     <div class="">
                       <input type="radio" id="productOptions--radios-small" name="productOptions">
-                      <label for="productOptions--radios-small">Small</label>
+                      <label class="c-productOptRadios" for="productOptions--radios-small">Small</label>
                     </div>
                     <div class="">
                       <input type="radio" id="productOptions--radios-medium" name="productOptions">
-                      <label for="productOptions--radios-medium">Medium</label>
+                      <label class="c-productOptRadios" for="productOptions--radios-medium">Medium</label>
                     </div>
                     <div class="">
                       <input type="radio" id="productOptions--radios-large" name="productOptions">
-                      <label for="productOptions--radios-large">Large</label>
+                      <label class="c-productOptRadios" for="productOptions--radios-large">Large</label>
                     </div>
                     <div class="">
                       <input type="radio" id="productOptions--radios-xlarge" name="productOptions">
-                      <label for="productOptions--radios-xlarge">Extra large</label>
+                      <label class="c-productOptRadios" for="productOptions--radios-xlarge">Extra large</label>
                     </div>
                   </div>
                 </fieldset>
                 <fieldset class="c-shopDisplay__productOptions--rowOfCards o-fieldset u-hidden">
-                  <legend class="o-label">Please select a package size:</legend>
+                  <legend class="o-label o-matchBackgroundAndText">Please select a package size:</legend>
                   <div class="c-shopDisplay__productOptions--rowOfCards-grid">
                     <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                       <input type="radio" id="productOptions--rowOfCards-small" name="productOptions">
@@ -431,6 +431,7 @@
           updateStyling(receivedData.productOptions[0], 'individualResults');
           updateStyling(receivedData.imagePos[0], 'individualResults');
           updateStyling(receivedData.cleanButtons[0], 'individualResults');
+          updateStyling(receivedData.colourScheme[0], 'individualResults');
         });
 
       fetch(`../.netlify/functions/app/results/popular/`)
@@ -446,7 +447,28 @@
           updateStyling(popularData.productOptions, 'popularResults');
           updateStyling(popularData.imagePos, 'popularResults');
           updateStyling(popularData.buttons, 'popularResults');
+          updateStyling(popularData.colourScheme, 'popularResults');
         });
+      }
+
+      const twitterButton = document.querySelector('.twitter-share-button');
+      const shareLinkInput = document.querySelector('#share-link');
+      twitterButton.dataset.url = windowUrl;
+      shareLinkInput.value = windowUrl;
+
+      function copyUrlToClipboard(){
+        var copyText = document.querySelector("#share-link");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        /* Alert the copied text */
+        
+        document.querySelector('#share-link-copy-button').innerHTML = "Copied text ✅"
       }
   </script>
 

@@ -75,12 +75,14 @@ router.get('/results/popular/', (req, res) => {
       const productOptionsData = dataString.find(x => x._id === '5ebeb4eeeb8fc5d083afa5ce').productOptions;
       const imagePosData = dataString.find(x => x._id === '5ece296b45ce3f056cdab669').imagePos;
       const buttonsData = dataString.find(x => x._id === '5ece2a1845ce3f056cdab66b').buttons;
+      const colourSchemeData = dataString.find(x => x._id === '5eda7b5d5f39ff02b0fdf877').colourScheme;
       res.status(200).jsonp({
         "textSize": mostFrequent(textSizesData),
         "additionalInfo": mostFrequent(additionalInfoData),
         "productOptions": mostFrequent(productOptionsData),
         "imagePos": mostFrequent(imagePosData),
-        "buttons": mostFrequent(buttonsData)
+        "buttons": mostFrequent(buttonsData),
+        "colourScheme": mostFrequent(colourSchemeData)
       })
     })
   })
@@ -642,7 +644,8 @@ router.post('/', [
   check('infoAmount').isLength({ min: 5 }).trim().escape(),
   check('productOptions').isLength({ min: 5 }).trim().escape(),
   check('imagePos').isLength({ min: 5 }).trim().escape(),
-  check('buttons').isLength({ min: 5 }).trim().escape()
+  check('buttons').isLength({ min: 5 }).trim().escape(),
+  check('colourScheme').isLength({ min: 5 }).trim().escape()
 ] , (req, res) =>  {
   MongoClient.connect(uri, { useUnifiedTopology: true })
   .then(client => {
@@ -653,6 +656,7 @@ router.post('/', [
     const cleanProductOptions = req.body.productOptions;
     const cleanImagePos = req.body.imagePos;
     const cleanButtons = req.body.buttons;
+    const clearColourScheme = req.body.colourScheme;
 
     const randomId = randomWords({ exactly: 3, join: '-' });
 
@@ -697,15 +701,32 @@ router.post('/', [
       })
       .catch(error => console.error(error))
 
-    parameter = `imagepos.${req.body.imagepos}`;
+    parameter = `imagePos.${req.body.imagepos}`;
     updateAction = { $inc: { [parameter]: 1 } };
-    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebeb564eb8fc5d083afa5cf")}, updateAction, updateOptions)
+    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ece296b45ce3f056cdab669")}, updateAction, updateOptions)
       .then(result => {
         console.log('Saved new page request. Current count:', result.value.requests);
         client.close();
       })
       .catch(error => console.error(error))
 
+    parameter = `buttons.${req.body.buttons}`;
+    updateAction = { $inc: { [parameter]: 1 } };
+    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ece2a1845ce3f056cdab66b")}, updateAction, updateOptions)
+      .then(result => {
+        console.log('Saved new page request. Current count:', result.value.requests);
+        client.close();
+      })
+      .catch(error => console.error(error))
+
+    parameter = `colourScheme.${req.body.colourScheme}`;
+    updateAction = { $inc: { [parameter]: 1 } };
+    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5eda7b5d5f39ff02b0fdf877")}, updateAction, updateOptions)
+      .then(result => {
+        console.log('Saved new page request. Current count:', result.value.requests);
+        client.close();
+      })
+      .catch(error => console.error(error))
     
   })
   .catch(error => console.error(error))
