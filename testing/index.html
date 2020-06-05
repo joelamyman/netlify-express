@@ -101,7 +101,7 @@
                 <!-- QUESTION 3 -->
                 <div class="c-shopDisplay__productOptions">
                   <div class="c-shopDisplay__productOptions--select u-hidden">
-                    <label class="o-label">Please select a package size:</label>
+                    <label class="o-label o-matchBackgroundAndText">Please select a package size:</label>
                     <select class="c-shopDisplay__productOptions--select-font">
                       <option>Small</option>
                       <option>Medium</option>
@@ -110,7 +110,7 @@
                     </select>
                   </div>
                   <fieldset class="c-shopDisplay__productOptions--listOfCards o-fieldset u-hidden">
-                    <legend class="o-label">Please select a package size:</legend>
+                    <legend class="o-label o-matchBackgroundAndText">Please select a package size:</legend>
                     <div class="c-shopDisplay__productOptions--listOfCards-grid">
                       <div class="form-questionHolder-inputStack form-questionHolder-inputStack--listOfCards">
                         <input type="radio" id="productOptions--listOfCards-small" name="productOptions">
@@ -142,28 +142,28 @@
                     </div>
                   </fieldset>
                   <fieldset class="c-shopDisplay__productOptions--radios o-fieldset u-hidden">
-                    <legend class="o-label">Please select a package size:</legend>
+                    <legend class="o-label o-matchBackgroundAndText">Please select a package size:</legend>
                     <div class="c-shopDisplay__productOptions--radios-grid">
                       <div class="">
                         <input type="radio" id="productOptions--radios-small" name="productOptions">
-                        <label for="productOptions--radios-small">Small</label>
+                        <label class="c-productOptRadios" for="productOptions--radios-small">Small</label>
                       </div>
                       <div class="">
                         <input type="radio" id="productOptions--radios-medium" name="productOptions">
-                        <label for="productOptions--radios-medium">Medium</label>
+                        <label class="c-productOptRadios" for="productOptions--radios-medium">Medium</label>
                       </div>
                       <div class="">
                         <input type="radio" id="productOptions--radios-large" name="productOptions">
-                        <label for="productOptions--radios-large">Large</label>
+                        <label class="c-productOptRadios" for="productOptions--radios-large">Large</label>
                       </div>
                       <div class="">
                         <input type="radio" id="productOptions--radios-xlarge" name="productOptions">
-                        <label for="productOptions--radios-xlarge">Extra large</label>
+                        <label class="c-productOptRadios" for="productOptions--radios-xlarge">Extra large</label>
                       </div>
                     </div>
                   </fieldset>
                   <fieldset class="c-shopDisplay__productOptions--rowOfCards o-fieldset u-hidden">
-                    <legend class="o-label">Please select a package size:</legend>
+                    <legend class="o-label o-matchBackgroundAndText">Please select a package size:</legend>
                     <div class="c-shopDisplay__productOptions--rowOfCards-grid">
                       <div class="form-questionHolder-inputStack form-questionHolder-inputStack--rowOfCards">
                         <input type="radio" id="productOptions--rowOfCards-small" name="productOptions">
@@ -210,6 +210,7 @@
               <button>Buy now!</button>
             </div>
           </div>
+          
         </div>
       </div>
       <a class="h-skipLink" href="#questions">Back to questions</a>
@@ -506,6 +507,64 @@
           <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
           <button type="button" class="o-button o-button--alt js-changeQuestionButton" data-this-question="question-5"
             data-change-question="question-4">Previous
+            question</button>
+          <button type="button" class="o-button js-changeQuestionButton" data-this-question="question-5"
+            data-change-question="question-6">Next
+            question</button>
+        </div>
+      </div>
+
+      <!-- QUESTION 6 - Colour scheme -->
+      <div id="question-6" class="u-hidden o-questionContainer">
+        <fieldset class="form-questionHolder">
+          <legend class="form-fieldsetLegend">Which kind of colour scheme should we use?</legend>
+
+          <div class="form-questionHolder-inputStack">
+            <input type="radio" class="js-answer" id="colourScheme-light" name="colourScheme" value="c-browser--light">
+            <label class="card form-questionHolder-optionHolder" for="colourScheme-light">
+              <span class="form-questionHolder-optionDesc">Light theme</span>
+            </label>
+          </div>
+
+          <div class="form-questionHolder-inputStack">
+            <input type="radio" class="js-answer" id="colourScheme-dark" name="colourScheme"
+              value="c-browser--dark">
+            <label class="card form-questionHolder-optionHolder" for="colourScheme-dark">
+              <span class="form-questionHolder-optionDesc">Dark theme</span>
+            </label>
+          </div>
+
+          <div class="form-questionHolder-inputStack">
+            <input type="radio" class="js-answer" id="colourScheme-highContrast" name="colourScheme"
+              value="c-browser--highContrast">
+            <label class="card form-questionHolder-optionHolder" for="colourScheme-highContrast">
+              <span class="form-questionHolder-optionDesc">High contrast theme</span>
+            </label>
+          </div>
+
+          <div class="form-questionHolder-inputStack">
+            <input type="radio" class="js-answer" id="colourScheme-lowContrast" name="colourScheme"
+              value="c-browser--lowContrast">
+            <label class="card form-questionHolder-optionHolder" for="colourScheme-lowContrast">
+              <span class="form-questionHolder-optionDesc">Low contrast theme</span>
+            </label>
+          </div>
+
+          <div class="form-questionHolder-inputStack">
+            <input type="radio" class="js-random-answer" id="colourScheme-random" name="colourScheme" data-question="question-6" data-random="true" value="">
+            <label class="card form-questionHolder-optionHolder" for="colourScheme-random">
+              <span class="form-questionHolder-optionDesc">I'm not fussed</span>
+            </label>
+          </div>
+
+          <button class="c-clearOptionButton js-clearOption" type="button" data-namegroup="colourScheme">Clear
+            selected option</button>
+
+        </fieldset>
+        <div class="o-buttonsHolder">
+          <a class="h-skipLink" href="#liveSite">Test this in the 'live' website view</a>
+          <button type="button" class="o-button o-button--alt js-changeQuestionButton" data-this-question="question-6"
+            data-change-question="question-5">Previous
             question</button>
           <button class="o-button o-button--purple" type="submit">Submit your answers</button>
         </div>

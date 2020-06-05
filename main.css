@@ -2,6 +2,11 @@
   --main-background: #FFEFD5;
   --label-background: white;
   --selected-color: blue;
+  --game-primary-ui-color: grey;
+  --game-secondary-ui-color: grey;
+  --game-text-color: black;
+  --game-background-color: white;
+  --game-ui-text-color: white;
 }
 
 * {
@@ -246,7 +251,7 @@ fieldset div input:checked+label svg[class*="textsize"] path{
 
 .c-shopNav{
   grid-area: shopnav;
-  background-color: #89699D;
+  background-color: var(--game-primary-ui-color);
 }
 
 .c-shopNav__title{
@@ -286,6 +291,7 @@ fieldset div input:checked+label svg[class*="textsize"] path{
   grid-area: content;
   display: none;
   padding: 1rem;
+  background-color: var(--game-background-color);
 }
 
 .o-circle{
@@ -370,19 +376,23 @@ fieldset div input:checked+label svg[class*="textsize"] path{
 
 .c-shopDisplay__heading{
   font-size: 1.2em;
+  color: var(--game-text-color);
 }
 
 .c-shopDisplay__heading2{
   font-size: 1.1em;
+  color: var(--game-text-color);
 }
 
 .c-shopDisplay__paragraph{
   font-size: 1em;
+  color: var(--game-text-color);
 }
 
 .c-shopDisplay__additionalInfo{
   font-size: 1em;
   display: none;
+  color: var(--game-text-color);
 }
 
 .c-shopDisplay__additionalInfo.c-shopDisplay__additionalInfo--text,
@@ -465,7 +475,7 @@ fieldset div input:checked+label svg[class*="textsize"] path{
 
 .c-shopDisplay__imagePos{
   display: none;
-  background-color: #D0A1ED;
+  background-color: var(--game-secondary-ui-color);
 }
 
 .c-shopDisplay__imagePos.c-shopDisplay__imagePos--right,
@@ -579,14 +589,15 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #D0A1ED;
+  background-color: var(--game-secondary-ui-color);
+  color: var(--game-text-color);
 }
 
 .c-rowOfCards__label{
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #D0A1ED;
+  background-color: var(--game-secondary-ui-color);
 }
 
 .c-rowOfCards__img{
@@ -597,7 +608,7 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
 .o-shopButton{
   padding: 0.75em 1em;
   font-size: 1em;
-  background-color: #89699D;
+  background-color: var(--game-primary-ui-color);
   border: transparent none 0;
   border-radius: 0.5rem;
   color: white;
@@ -663,8 +674,46 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
   width: 100%;
 }
 
+.c-productOptRadios, .o-matchBackgroundAndText{
+  background-color: var(--game-background-color);
+  color: var(--game-text-color);
+}
 
+.c-browser.c-browser--light{
+  --game-primary-ui-color: #89699D;
+  --game-secondary-ui-color: #D0A1ED;
+  --game-text-color: black;
+  --game-background-color: white;
+  --game-ui-text-color: white;
+}
 
+.c-browser.c-browser--dark{
+  --game-primary-ui-color: #89699D;
+  --game-secondary-ui-color: #695179;
+  --game-text-color: white;
+  --game-background-color: #202020;
+  --game-ui-text-color: #202020;
+}
+
+.c-browser.c-browser--highContrast{
+  --game-primary-ui-color: #684F77;
+  --game-secondary-ui-color: #000;
+  --game-text-color: #ffe40a;
+  --game-background-color: #3b2648;
+  --game-ui-text-color: #ffe40a;
+}
+
+.c-browser.c-browser--lowContrast{
+  --game-primary-ui-color: #F7F7F7;
+  --game-secondary-ui-color: #efefef;
+  --game-text-color: #989898;
+  --game-background-color: #fff;
+  --game-ui-text-color: #989898;
+}
+
+.c-shopDisplay__buttons button, .c-shopNav__title, .c-shopNav__menu{
+  color: var(--game-ui-text-color);
+}
 
 
 
