@@ -41,15 +41,7 @@
         console.log(`textSize: ${receivedData.textSize[0]}` );
       });
 
-    fetch(`../.netlify/functions/app/results/popular/`)
-      .then(function(popularResponse) {
-        // The response is a Response instance.
-        // You parse the data into a useable format using `.json()`
-        return popularResponse.json();
-      }).then(function(popularData) {
-        // `data` is the parsed version of the JSON returned from the above endpoint.
-        console.log(popularData);  // { "userId": 1, "id": 1, "title": "...", "body": "..." }
-      });
+
   }
 
 
