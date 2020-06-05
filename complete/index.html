@@ -14,6 +14,7 @@
   <h1>Thank you so much!</h1>
   <label for="share-link">You can share your results by sharing the following link with your friends and family!</p>
   <input id="share-link" type="text" class="c-share__input">
+  <button onclick="copyUrlToClipboard()">Copy URL</button>
   <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="I have just constructed the greatest UI of all time, do not even attempt to challenge me." data-url="" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <div id="test"></div>
   <section class="l-liveView">
@@ -457,6 +458,20 @@
       const shareLinkInput = document.querySelector('#share-link');
       twitterButton.dataset.url = windowUrl;
       shareLinkInput.value = windowUrl;
+
+      function copyUrlToClipboard(){
+        var copyText = document.querySelector("#share-link");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
+      }
   </script>
 
   <script src="../js/styling-helpers.js"></script>
