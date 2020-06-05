@@ -702,7 +702,7 @@ router.post('/', [
       })
       .catch(error => console.error(error))
 
-    parameter = `imagePos.${req.body.imagepos}`;
+    parameter = `imagePos.${req.body.imagePos}`;
     updateAction = { $inc: { [parameter]: 1 } };
     submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ece296b45ce3f056cdab669")}, updateAction, updateOptions)
       .then(result => {
