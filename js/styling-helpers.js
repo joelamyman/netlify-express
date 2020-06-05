@@ -1,13 +1,19 @@
-function updateStyling(targetAnswer) {
-  const elementToUpdate = removeStyling(targetAnswer);
+function updateStyling(targetAnswer, targetBrowser) {
+  const elementToUpdate = removeStyling(targetAnswer, targetBrowser);
   elementToUpdate.classList.add(targetAnswer);
 }
 
-function removeStyling(targetAnswer) {
+function removeStyling(targetAnswer, targetBrowser) {
   const regex = /(([a-z]*[-]{1})\w*)/;
   console.log(`target answer is: ${targetAnswer}`);
   console.log(targetAnswer.match(regex)[0]);
-  const elementToUpdate = document.querySelector(`.${targetAnswer.match(regex)[0]}`);
+  let elementToUpdate = '';
+  if (targetBrowser){
+    elementToUpdate = document.querySelector(`#${targetBrowser} .${targetAnswer.match(regex)[0]}`);
+  } else {
+    elementToUpdate = document.querySelector(`.${targetAnswer.match(regex)[0]}`);
+  }
+  
   console.log(`Element to update is: ${elementToUpdate}`);
   const classListPos1 = elementToUpdate.classList.item(1);
   if (classListPos1 !== null) {
