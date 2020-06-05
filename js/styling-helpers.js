@@ -9,8 +9,6 @@ function removeStyling(targetAnswer, targetBrowser) {
   console.log(targetAnswer.match(regex)[0]);
   let elementToUpdate = '';
   if (targetBrowser){
-    console.log('targetBrowser');
-    console.low(`#${targetBrowser} .${targetAnswer.match(regex)[0]}`);
     elementToUpdate = document.querySelector(`#${targetBrowser} .${targetAnswer.match(regex)[0]}`);
   } else {
     elementToUpdate = document.querySelector(`.${targetAnswer.match(regex)[0]}`);
