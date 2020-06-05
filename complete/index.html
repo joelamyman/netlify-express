@@ -33,6 +33,12 @@
       }).then(function(data) {
         // `data` is the parsed version of the JSON returned from the above endpoint.
         console.log(data.message[0]);  // { "userId": 1, "id": 1, "title": "...", "body": "..." }
+        const receivedData = data.message[0];
+        console.log(`cleanButtons: ${cleanButtons[0]}` );
+        console.log(`imagePos: ${imagePos[0]}` );
+        console.log(`infoAmount: ${infoAmount[0]}` );
+        console.log(`productOptions: ${productOptions[0]}` );
+        console.log(`textSize: ${textSize[0]}` );
       });
   }
 
