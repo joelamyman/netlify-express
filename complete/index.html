@@ -18,7 +18,7 @@
     <a id="liveSite"></a>
     <h1 class="o-bwText h-bold h-maxContent h-text--large">Here's your site so far!</h1>
     <div id="site-in-progress">
-      <div class="c-browser">
+      <div id="individualResults" class="c-browser">
         <div class="c-shopDisplay__browserNav">
           <div class="c-shopDisplay__buttonHolder">
             <span class="o-circle c-shopDisplay__button c-shopDisplay__button--colour-red"></span>
@@ -419,6 +419,11 @@
             console.log(`infoAmount: ${receivedData.infoAmount[0]}` );
             console.log(`productOptions: ${receivedData.productOptions[0]}` );
             console.log(`textSize: ${receivedData.textSize[0]}` );
+            updateStyling(receivedData.textSize[0], 'individualResults');
+            updateStyling(receivedData.infoAmount[0], 'individualResults');
+            updateStyling(receivedData.productOptions[0], 'individualResults');
+            updateStyling(receivedData.imagePos[0], 'individualResults');
+            updateStyling(receivedData.cleanButtons[0], 'individualResults');
           });
 
         fetch(`../.netlify/functions/app/results/popular/`)
