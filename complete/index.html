@@ -429,11 +429,11 @@
           }).then(function(popularData) {
             // `data` is the parsed version of the JSON returned from the above endpoint.
             console.log(popularData);  // { "userId": 1, "id": 1, "title": "...", "body": "..." }
-            updateStyling(popularData.textSize, popularResults);
-            updateStyling(popularData.additionalInfo, popularResults);
-            updateStyling(popularData.productOptions, popularResults);
-            updateStyling(popularData.imagePos, popularResults);
-            updateStyling(popularData.buttons, popularResults);
+            updateStyling(popularData.textSize, 'popularResults');
+            updateStyling(popularData.additionalInfo, 'popularResults');
+            updateStyling(popularData.productOptions, 'popularResults');
+            updateStyling(popularData.imagePos, 'popularResults');
+            updateStyling(popularData.buttons, 'popularResults');
           });
         }
     </script>
