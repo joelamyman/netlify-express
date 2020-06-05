@@ -38,8 +38,6 @@ router.get('/complete/', (req, res) => {
 router.get('/results/share/*', (req, res) => {
   const id = req.query.id.replace(/['"]+/g, '');
 
-  
-
   MongoClient.connect(uri, { useUnifiedTopology: true })
   .then(client => {
     const db = client.db('test-data')
@@ -52,7 +50,31 @@ router.get('/results/share/*', (req, res) => {
       res.status(200).jsonp({ "message": result })
       client.close();
     });
-})
+  })
+});
+router.get('/results/popular/', (req, res) => {
+  MongoClient.connect(uri, { useUnifiedTopology: true })
+  .then(client => {
+    console.log('Connected to Database')
+    console.log('request body is:')
+    const db = client.db('test-data')
+    const submissionsCollection = db.collection('submissions');
+    var query = {
+      "_id" : {"$in":[ObjectId("5ebea76b69c5ed197b666bde"), ObjectId("5ebeb3b9eb8fc5d083afa5cd"), ObjectId("5ebeb4eeeb8fc5d083afa5ce"), ObjectId("5ece296b45ce3f056cdab669"), ObjectId("5ece2a1845ce3f056cdab66b")]}
+    };
+    submissionsCollection.find(query).toArray(function(err, result) {
+      if (err) throw err;
+      console.log(result);
+      client.close();
+      const dataString = JSON.parse(JSON.stringify(result));
+      const textSizesData = dataString.find(x => x._id === '5ebea76b69c5ed197b666bde').textsize;
+      const additionalInfoData = dataString.find(x => x._id === '5ebeb3b9eb8fc5d083afa5cd').infoAmount;
+      const productOptionsData = dataString.find(x => x._id === '5ebeb4eeeb8fc5d083afa5ce').productOptions;
+      const imagePosData = dataString.find(x => x._id === '5ece296b45ce3f056cdab669').imagePos;
+      const buttonsData = dataString.find(x => x._id === '5ece2a1845ce3f056cdab66b').buttons;
+      res.status(200).jsonp({ "message": result })
+    })
+  })
 });
 router.get('/results/show/*', (req, res) => {
   MongoClient.connect(uri, { useUnifiedTopology: true })
