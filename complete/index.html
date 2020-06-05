@@ -205,50 +205,50 @@
         </div>
       </div>
     </section>
+    <script>
+
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      if (urlParams.has('id')){
+        const paramId = urlParams.get('id');
+        console.log(paramId);
+      
+        fetch(`../.netlify/functions/app/results/share/?id="${paramId}"`)
+          .then(function(response) {
+            // The response is a Response instance.
+            // You parse the data into a useable format using `.json()`
+            return response.json();
+          }).then(function(data) {
+            // `data` is the parsed version of the JSON returned from the above endpoint.
+            console.log(data.message[0]);  // { "userId": 1, "id": 1, "title": "...", "body": "..." }
+            const receivedData = data.message[0];
+            console.log(`cleanButtons: ${receivedData.cleanButtons[0]}` );
+            console.log(`imagePos: ${receivedData.imagePos[0]}` );
+            console.log(`infoAmount: ${receivedData.infoAmount[0]}` );
+            console.log(`productOptions: ${receivedData.productOptions[0]}` );
+            console.log(`textSize: ${receivedData.textSize[0]}` );
+          });
+
+        fetch(`../.netlify/functions/app/results/popular/`)
+          .then(function(popularResponse) {
+            // The response is a Response instance.
+            // You parse the data into a useable format using `.json()`
+            return popularResponse.json();
+          }).then(function(popularData) {
+            // `data` is the parsed version of the JSON returned from the above endpoint.
+            console.log(popularData);  // { "userId": 1, "id": 1, "title": "...", "body": "..." }
+            updateStyling(popularData.textSize);
+            updateStyling(popularData.additionalInfo);
+            updateStyling(popularData.productOptions);
+            updateStyling(popularData.imagePos);
+            updateStyling(popularData.buttons);
+          });
+        }
+    </script>
+
+    <script src="../js/styling-helpers.js"></script>
 </body>
 
-<script>
-
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-
-  if (urlParams.has('id')){
-    const paramId = urlParams.get('id');
-    console.log(paramId);
-  
-    fetch(`../.netlify/functions/app/results/share/?id="${paramId}"`)
-      .then(function(response) {
-        // The response is a Response instance.
-        // You parse the data into a useable format using `.json()`
-        return response.json();
-      }).then(function(data) {
-        // `data` is the parsed version of the JSON returned from the above endpoint.
-        console.log(data.message[0]);  // { "userId": 1, "id": 1, "title": "...", "body": "..." }
-        const receivedData = data.message[0];
-        console.log(`cleanButtons: ${receivedData.cleanButtons[0]}` );
-        console.log(`imagePos: ${receivedData.imagePos[0]}` );
-        console.log(`infoAmount: ${receivedData.infoAmount[0]}` );
-        console.log(`productOptions: ${receivedData.productOptions[0]}` );
-        console.log(`textSize: ${receivedData.textSize[0]}` );
-      });
-
-    fetch(`../.netlify/functions/app/results/popular/`)
-      .then(function(popularResponse) {
-        // The response is a Response instance.
-        // You parse the data into a useable format using `.json()`
-        return popularResponse.json();
-      }).then(function(popularData) {
-        // `data` is the parsed version of the JSON returned from the above endpoint.
-        console.log(popularData);  // { "userId": 1, "id": 1, "title": "...", "body": "..." }
-        updateStyling(popularData.textSize);
-        updateStyling(popularData.additionalInfo);
-        updateStyling(popularData.productOptions);
-        updateStyling(popularData.imagePos);
-        updateStyling(popularData.buttons);
-      });
-    }
-</script>
-
-<script src="../js/styling-helpers.js"></script>
 
 </html>
