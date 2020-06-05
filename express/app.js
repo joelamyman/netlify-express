@@ -72,7 +72,13 @@ router.get('/results/popular/', (req, res) => {
       const productOptionsData = dataString.find(x => x._id === '5ebeb4eeeb8fc5d083afa5ce').productOptions;
       const imagePosData = dataString.find(x => x._id === '5ece296b45ce3f056cdab669').imagePos;
       const buttonsData = dataString.find(x => x._id === '5ece2a1845ce3f056cdab66b').buttons;
-      res.status(200).jsonp({ "message": result })
+      res.status(200).jsonp({
+        "textSize": mostFrequent(textSizesData),
+        "additionalInfo": mostFrequent(additionalInfoData),
+        "productOptions": mostFrequent(productOptionsData),
+        "imagePos": mostFrequent(imagePosData),
+        "buttons": mostFrequent(buttonsData)
+      })
     })
   })
 });
@@ -451,7 +457,7 @@ router.get('/results/show/*', (req, res) => {
                           <button class="o-shopButton">Add to basket</button>
                         </div>
                         <!-- QUESTION 2 -->
-                        <div class="c-shopDisplay__additionalInfo ${mostFrequent(additionalInfoData)}">
+                        <div class="c-shopDisplay__additionalInfo ${mostFrequent((additionalInfoData)}">
                           <h2 class="c-shopDisplay__heading2">Additional Information</h2>
                           <p class="c-shopDisplay__additionalInfo--text u-hidden">Lots of important text that you should
                             definitely be
