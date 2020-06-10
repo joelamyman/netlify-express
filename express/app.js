@@ -758,11 +758,11 @@ router.post('/', [
         console.log('Saved new page request. Current count:', result.value.requests);
       })
       .catch(error => console.error(error))
-    
+      
+    client.close();
   })
   .catch(error => console.error(error))
 
-  client.close();
 
 });
 
