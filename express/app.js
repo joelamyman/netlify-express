@@ -75,14 +75,20 @@ router.get('/results/popular/', (req, res) => {
       const productOptionsData = dataString.find(x => x._id === '5ebeb4eeeb8fc5d083afa5ce').productOptions;
       const imagePosData = dataString.find(x => x._id === '5ece296b45ce3f056cdab669').imagePos;
       const buttonsData = dataString.find(x => x._id === '5ece2a1845ce3f056cdab66b').buttons;
-      const colourSchemeData = dataString.find(x => x._id === '5eda7b5d5f39ff02b0fdf877').colourScheme;
+      const colourSchemeData = dataString.find(x => x._id === '5ee0b8619cdebebbfd66d645').colourScheme;
+      const reviewsData = dataString.find(x => x._id === '5ee0b8869cdebebbfd66d646').reviews;
+      const spacingData = dataString.find(x => x._id === '5ee0b8999cdebebbfd66d647').spacing;
+      const additionalFeaturesData = dataString.find(x => x._id === '5ee0b8b69cdebebbfd66d648').additionalFeatures;
       res.status(200).jsonp({
         "textSize": mostFrequent(textSizesData),
         "additionalInfo": mostFrequent(additionalInfoData),
         "productOptions": mostFrequent(productOptionsData),
         "imagePos": mostFrequent(imagePosData),
         "buttons": mostFrequent(buttonsData),
-        "colourScheme": mostFrequent(colourSchemeData)
+        "colourScheme": mostFrequent(colourSchemeData),
+        "reviews": mostFrequent(reviewsData),
+        "spacing": mostFrequent(spacingData),
+        "additionalFeatures": mostFrequent(additionalFeaturesData)
       })
     })
   })
@@ -646,7 +652,10 @@ router.post('/', [
   check('productOptions').isLength({ min: 5 }).trim().escape(),
   check('imagePos').isLength({ min: 5 }).trim().escape(),
   check('buttons').isLength({ min: 5 }).trim().escape(),
-  check('colourScheme').isLength({ min: 5 }).trim().escape()
+  check('colourScheme').isLength({ min: 5 }).trim().escape(),
+  check('reviews').isLength({ min: 5 }).trim().escape(),
+  check('spacing').isLength({ min: 5 }).trim().escape(),
+  check('additionalFeatures').isLength({ min: 5 }).trim().escape()
 ] , (req, res) =>  {
   MongoClient.connect(uri, { useUnifiedTopology: true })
   .then(client => {
@@ -658,13 +667,16 @@ router.post('/', [
     const cleanImagePos = req.body.imagePos;
     const cleanButtons = req.body.buttons;
     const cleanColourScheme = req.body.colourScheme;
+    const cleanReviews = req.body.reviews ;
+    const cleanSpacing = req.body.spacing ;
+    const cleanAdditionalFeatures = req.body.additionalFeatures ;
 
     const randomId = randomWords({ exactly: 3, join: '-' });
 
     const db = client.db('test-data')
     const submissionsCollection = db.collection('submissions');
 
-    submissionsCollection.insertOne( { userID: [randomId], textSize: [cleanTextSize], infoAmount: [cleanInfoAmount], productOptions: [cleanProductOptions], imagePos: [cleanImagePos], cleanButtons: [cleanButtons], colourScheme: [cleanColourScheme] } )
+    submissionsCollection.insertOne( { userID: [randomId], textSize: [cleanTextSize], infoAmount: [cleanInfoAmount], productOptions: [cleanProductOptions], imagePos: [cleanImagePos], cleanButtons: [cleanButtons], colourScheme: [cleanColourScheme], reviews: [cleanReviews], spacing: [cleanSpacing], additionalFeatures: [cleanAdditionalFeatures] } )
       .then(result => {
         res.redirect(`/complete/?id="${randomId}"`)
       })
@@ -722,7 +734,34 @@ router.post('/', [
 
     parameter = `colourScheme.${req.body.colourScheme}`;
     updateAction = { $inc: { [parameter]: 1 } };
-    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5eda7b5d5f39ff02b0fdf877")}, updateAction, updateOptions)
+    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ee0b8619cdebebbfd66d645")}, updateAction, updateOptions)
+      .then(result => {
+        console.log('Saved new page request. Current count:', result.value.requests);
+        client.close();
+      })
+      .catch(error => console.error(error))
+
+    parameter = `reviews.${req.body.reviews}`;
+    updateAction = { $inc: { [parameter]: 1 } };
+    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ee0b8869cdebebbfd66d646")}, updateAction, updateOptions)
+      .then(result => {
+        console.log('Saved new page request. Current count:', result.value.requests);
+        client.close();
+      })
+      .catch(error => console.error(error))
+
+    parameter = `spacing.${req.body.spacing}`;
+    updateAction = { $inc: { [parameter]: 1 } };
+    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ee0b8999cdebebbfd66d647")}, updateAction, updateOptions)
+      .then(result => {
+        console.log('Saved new page request. Current count:', result.value.requests);
+        client.close();
+      })
+      .catch(error => console.error(error))
+
+    parameter = `additionalFeatures.${req.body.additionalFeatures}`;
+    updateAction = { $inc: { [parameter]: 1 } };
+    submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ee0b8b69cdebebbfd66d648")}, updateAction, updateOptions)
       .then(result => {
         console.log('Saved new page request. Current count:', result.value.requests);
         client.close();

@@ -7,6 +7,7 @@
   --game-text-color: black;
   --game-background-color: white;
   --game-ui-text-color: white;
+  --game-spacing: 1em;
 }
 
 * {
@@ -377,6 +378,7 @@ fieldset div input:checked+label svg[class*="textsize"] path{
 .c-shopDisplay__heading{
   font-size: 1.2em;
   color: var(--game-text-color);
+  margin: var(--game-spacing) 0;
 }
 
 .c-shopDisplay__heading2{
@@ -403,7 +405,7 @@ fieldset div input:checked+label svg[class*="textsize"] path{
 .c-shopDisplay__additionalInfo.c-shopDisplay__additionalInfo--mixed  .c-shopDisplay__additionalInfo--mixed,
 .c-shopDisplay__additionalInfo.c-shopDisplay__additionalInfo--details,
 .c-shopDisplay__additionalInfo.c-shopDisplay__additionalInfo--details  .c-shopDisplay__additionalInfo--details{
-  display: block;
+  display: block !important;
 }
 
 .c-shopDisplay__productOptions{
@@ -418,7 +420,7 @@ fieldset div input:checked+label svg[class*="textsize"] path{
 .c-shopDisplay__productOptions.c-shopDisplay__productOptions--radios  .c-shopDisplay__productOptions--radios,
 .c-shopDisplay__productOptions.c-shopDisplay__productOptions--rowOfCards,
 .c-shopDisplay__productOptions.c-shopDisplay__productOptions--rowOfCards  .c-shopDisplay__productOptions--rowOfCards{
-  display: block;
+  display: block !important;
 }
 
 .o-fieldset{
@@ -448,7 +450,7 @@ fieldset div input:checked+label svg[class*="textsize"] path{
 }
 
 .u-hidden{
-  display: none;
+  display: none !important;
 }
 
 .form-questionHolder-inputStack--listOfCards{
@@ -563,9 +565,12 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
 }
 
 .o-questionContainer{
-  margin: auto auto auto 0rem;
   padding: 0 1em;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .o-buttonsHolder{
@@ -714,6 +719,77 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
 .c-shopDisplay__buttons button, .c-shopNav__title, .c-shopNav__menu{
   color: var(--game-ui-text-color);
 }
+
+.c-shopDisplay__reviews{
+  font-size: 1em;
+  display: none;
+  color: var(--game-text-color);
+}
+
+.c-shopDisplay__reviews.c-shopDisplay__reviews--quotes,
+.c-shopDisplay__reviews.c-shopDisplay__reviews--quotes .c-shopDisplay__reviews--quotes,
+.c-shopDisplay__reviews.c-shopDisplay__reviews--section,
+.c-shopDisplay__reviews.c-shopDisplay__reviews--section  .c-shopDisplay__reviews--section,
+.c-shopDisplay__reviews.c-shopDisplay__reviews--indicator,
+.c-shopDisplay__reviews.c-shopDisplay__reviews--indicator  .c-shopDisplay__reviews--indicator,
+.c-shopDisplay__reviews.c-shopDisplay__reviews--none,
+.c-shopDisplay__reviews.c-shopDisplay__reviews--none  .c-shopDisplay__reviews--none{
+  display: block !important;
+}
+
+
+div[data-button="c-shopDisplay__additionalFeatures--viewCounter"], div[data-button="c-shopDisplay__additionalFeatures--numberSold"], details[data-button="c-shopDisplay__additionalFeatures--processInfo"]{
+  display: none;
+}
+
+.c-shopDisplay__additionalFeatures.c-shopDisplay__additionalFeatures--viewCounter div[data-button="c-shopDisplay__additionalFeatures--viewCounter"],
+.c-shopDisplay__additionalFeatures.c-shopDisplay__additionalFeatures--numberSold div[data-button="c-shopDisplay__additionalFeatures--numberSold"],
+.c-shopDisplay__additionalFeatures.c-shopDisplay__additionalFeatures--processInfo details[data-button="c-shopDisplay__additionalFeatures--processInfo"]{
+  display: block !important;
+}
+
+
+.c-shopDisplay__spacing.c-shopDisplay__spacing--small{
+  --game-spacing: 1em;
+}
+
+.c-shopDisplay__spacing.c-shopDisplay__spacing--medium{
+  --game-spacing: 1.2em;
+}
+
+.c-shopDisplay__spacing.c-shopDisplay__spacing--large{
+  --game-spacing: 1.44em;
+}
+
+.c-shopDisplay__spacing.c-shopDisplay__spacing--xlarge{
+  --game-spacing: 1.728em;
+}
+
+.c-shopDisplay__bodyText > *, .c-shopDisplay__paragraph > *, .c-shopDisplay__additionalInfo > *, .c-shopDisplay__additionalFeatures > *, .c-shopDisplay__productOptions * {
+  line-height: var(--game-spacing);
+}
+
+.c-shopDisplay__bodyText > * + *, .c-shopDisplay__paragraph > * + *, .c-shopDisplay__additionalInfo > * + *, .c-shopDisplay__additionalFeatures > * + *, .c-shopDisplay__productOptions > * + *{
+  margin-top: var(--game-spacing);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
