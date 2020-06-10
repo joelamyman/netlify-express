@@ -143,7 +143,7 @@ fieldset label svg{
 }
 
 .mt-0{
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 
 .mb-0{
@@ -322,6 +322,7 @@ fieldset div input:checked+label svg[class*="textsize"] path{
   height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
+  background-color: var(--game-background-color);
 }
 
 .c-shopDisplay__bodyText{
@@ -855,14 +856,51 @@ ul.o-alert{
   margin-left: 0.5rem;
 }
 
+.c-reviewQuotes{
+  display: flex;
+  flex-direction: column;
+  border: 0.2rem solid var(--game-primary-ui-color);
+  padding: 0.25rem 1rem;
+  border-radius: 0.5em;
+}
 
+.c-reviewQuotes + .c-reviewQuotes{
+  margin-top: 1rem;
+}
 
+.c-reviewQuotes__rating{
+  margin: 0;
+  text-align: right;
+  font-style: italic;
+}
 
+.c-reviewQuotes__heading{
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.1em;
+}
 
+.o-reviewIndicator{
+  height: 1em;
+  padding: 0.2em 0 0 0.25em;
+}
 
+.o-warningHolder{
+  background-color: #ee6e6e;
+  color: #5c0000;
+  padding: 0.25em;
+  width: max-content;
+  margin: 0;
+  font-size: 0.8em;
+  height: min-content;
+  line-height: 1.2em;
+}
 
-
-
+[data-button="c-shopDisplay__additionalFeatures--processInfo"]{
+  background-color: #6289e4;
+  color: darkblue;
+  padding: 1rem;
+}
 
 
 
