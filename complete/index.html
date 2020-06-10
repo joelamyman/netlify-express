@@ -23,9 +23,9 @@
 <body>
   <h1 class="o-bwText h-bold h-maxContent">Thanks for finishing your business!</h1>
 
-  <p>Your unique ID is <span class="js-id o-alert"></span>, this can be used if you wish to remove your participation in the future as well as to enter in the Amazon voucher prize draw.</p>
+  <p class="o-bodyText">Your unique ID is <span class="js-id o-alert"></span>, this can be used if you wish to remove your participation in the future as well as to enter in the Amazon voucher prize draw.</p>
 
-  <p>Let's see how your site compares to the most frequently selected options!</p>
+  <p class="o-bodyText">Let's see how your site compares to the most frequently selected options!</p>
   
   
   <div class="l-browserComparison">
@@ -513,9 +513,9 @@
     </section>
   </div>
 
-  <label class="o-bwText h-mt--1" for="share-link">You can share your results by sharing the following link with your friends and family!</label>
+  <p class="o-bwText h-mt--1" id="share-link-label">You can share your results by sharing the following link with your friends and family!</p>
   <div class="c-shareLink">
-    <input id="share-link" type="text" class="c-share__input">
+    <input aria-labelledby="share-link-label" id="share-link" type="text" class="c-share__input">
     <button id="share-link-copy-button" class="o-button" onclick="copyUrlToClipboard()">Copy URL</button>
   </div>
   <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="I have just constructed the greatest UI of all time, do not even attempt to challenge me." data-url="" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -525,6 +525,8 @@
   </div>
 
   <iframe class="c-questionnaire" src="https://docs.google.com/forms/d/e/1FAIpQLSfac-tCSqyE_9nNvrQ6dFTb5IFxD4IK4u7yrGeLd22LHHJBkg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+  <footer>made by <a href="https://twitter.com/JoeLamyman" aria-title"Link to Joe Lamyman's twitter">@JoeLamyman</a> 🧡</footer>
 
   <script>
 
@@ -540,7 +542,7 @@
     if (urlParams.has('id')){
       const paramId = urlParams.get('id');
       console.log(paramId);
-      document.querySelector('.js-id').innerHTML = paramId;
+      document.querySelector('.js-id').innerHTML = paramId.replace(/['"]+/g, '');
     
       fetch(`../.netlify/functions/app/results/share/?id="${paramId}"`)
         .then(function(response) {
