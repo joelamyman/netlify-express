@@ -756,13 +756,12 @@ router.post('/', [
     submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ee0b8b69cdebebbfd66d648")}, updateAction, updateOptions)
       .then(result => {
         console.log('Saved new page request. Current count:', result.value.requests);
+        client.close();
       })
       .catch(error => console.error(error))
-      
-    client.close();
+    
   })
   .catch(error => console.error(error))
-
 
 });
 
