@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Test Page</title>
+  <title>Thanks for finishing your business!</title>
   <meta name="description" content="Warning this is a work in progress">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,18 +17,21 @@
   <meta name="twitter:image:alt" content="An image of toilet paper and the title, Bog roll Business Builder">
 
   <link rel="stylesheet" href="../main.css">
+  <link rel="icon" type="image/png" href="../imgs/favicon.png">
 </head>
 
 <body>
-  <h1>Thanks for finishing your business!</h1>
-  <label for="share-link">You can share your results by sharing the following link with your friends and family!</label>
-  <input id="share-link" type="text" class="c-share__input">
-  <button id="share-link-copy-button" class="o-button" onclick="copyUrlToClipboard()">Copy URL</button>
-  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="I have just constructed the greatest UI of all time, do not even attempt to challenge me." data-url="" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <h1 class="o-bwText h-bold h-maxContent">Thanks for finishing your business!</h1>
+
+  <p>Your unique ID is <span class="js-id o-alert"></span>, this can be used if you wish to remove your participation in the future as well as to enter in the Amazon voucher prize draw.</p>
+
+  <p>Let's see how your site compares to the most frequently selected options!</p>
+  
+  
   <div class="l-browserComparison">
     <section id="individualResults">
       <a id="liveSite"></a>
-      <h1 class="o-bwText h-bold h-maxContent h-text--large">Here's your site so far!</h1>
+      <h2 class="o-alert">Here's the site that you made:</h1>
       <div id="site-in-progress">
         <div class="c-browser">
           <div class="c-shopDisplay__browserNav">
@@ -269,7 +272,7 @@
     </section>
     <section id="popularResults">
       <a id="liveSite"></a>
-      <h1 class="o-bwText h-bold h-maxContent h-text--large">Here's your site so far!</h1>
+      <h2 class="o-alert">Here's the most popular site:</h1>
       <div id="site-in-progress">
         <div class="c-browser">
           <div class="c-shopDisplay__browserNav">
@@ -510,6 +513,17 @@
     </section>
   </div>
 
+  <label class="o-bwText h-mt--1" for="share-link">You can share your results by sharing the following link with your friends and family!</label>
+  <div class="c-shareLink">
+    <input id="share-link" type="text" class="c-share__input">
+    <button id="share-link-copy-button" class="o-button" onclick="copyUrlToClipboard()">Copy URL</button>
+  </div>
+  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="I have just constructed the greatest UI of all time, do not even attempt to challenge me." data-url="" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  <div>
+    <p class="o-bwText">To complete the study, please fill in the form below. Thanks again for taking the time to help with my project, it is much appreciated! 🧡</p>
+  </div>
+
   <iframe class="c-questionnaire" src="https://docs.google.com/forms/d/e/1FAIpQLSfac-tCSqyE_9nNvrQ6dFTb5IFxD4IK4u7yrGeLd22LHHJBkg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
   <script>
@@ -526,6 +540,7 @@
     if (urlParams.has('id')){
       const paramId = urlParams.get('id');
       console.log(paramId);
+      document.querySelector('.js-id').innerHTML = paramId;
     
       fetch(`../.netlify/functions/app/results/share/?id="${paramId}"`)
         .then(function(response) {
