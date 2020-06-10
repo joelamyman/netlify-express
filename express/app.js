@@ -692,7 +692,6 @@ router.post('/', [
     submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebea76b69c5ed197b666bde")}, updateAction, updateOptions)
       .then(result => {
         console.log('Saved new page request. Current count:', result.value.requests);
-        client.close();  
       })
       .catch(error => console.error(error));
 
@@ -701,7 +700,6 @@ router.post('/', [
     submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebeb3b9eb8fc5d083afa5cd")}, updateAction, updateOptions)
       .then(result => {
         console.log('Saved new page request. Current count:', result.value.requests);
-        client.close();  
       })
       .catch(error => console.error(error));
 
@@ -710,7 +708,6 @@ router.post('/', [
     submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ebeb4eeeb8fc5d083afa5ce")}, updateAction, updateOptions) 
       .then(result => {
         console.log('Saved new page request. Current count:', result.value.requests);
-        client.close();
       })
       .catch(error => console.error(error))
 
@@ -719,7 +716,6 @@ router.post('/', [
     submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ece296b45ce3f056cdab669")}, updateAction, updateOptions)
       .then(result => {
         console.log('Saved new page request. Current count:', result.value.requests);
-        client.close();
       })
       .catch(error => console.error(error))
 
@@ -728,7 +724,6 @@ router.post('/', [
     submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ece2a1845ce3f056cdab66b")}, updateAction, updateOptions)
       .then(result => {
         console.log('Saved new page request. Current count:', result.value.requests);
-        client.close();
       })
       .catch(error => console.error(error))
 
@@ -737,7 +732,6 @@ router.post('/', [
     submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ee0b8619cdebebbfd66d645")}, updateAction, updateOptions)
       .then(result => {
         console.log('Saved new page request. Current count:', result.value.requests);
-        client.close();
       })
       .catch(error => console.error(error))
 
@@ -746,7 +740,6 @@ router.post('/', [
     submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ee0b8869cdebebbfd66d646")}, updateAction, updateOptions)
       .then(result => {
         console.log('Saved new page request. Current count:', result.value.requests);
-        client.close();
       })
       .catch(error => console.error(error))
 
@@ -755,7 +748,6 @@ router.post('/', [
     submissionsCollection.findOneAndUpdate({"_id" : ObjectId("5ee0b8999cdebebbfd66d647")}, updateAction, updateOptions)
       .then(result => {
         console.log('Saved new page request. Current count:', result.value.requests);
-        client.close();
       })
       .catch(error => console.error(error))
 
