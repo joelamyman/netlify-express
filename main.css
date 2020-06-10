@@ -1,5 +1,5 @@
 :root {
-  --main-background: #FFEFD5;
+  --main-background: #EBDBFF;
   --label-background: white;
   --selected-color: blue;
   --game-primary-ui-color: grey;
@@ -21,6 +21,11 @@ body {
   background-size: 6rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
   font-size: 1.25rem;
+}
+
+summary:hover{
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .stack > * + *{
@@ -47,6 +52,11 @@ body {
   white-space: normal;
 }
 
+.o-bodyText{
+  max-width: 60ch;
+  line-height: 3rem;
+}
+
 .o-bwText__bodyText{
   line-height: 3rem;
 }
@@ -68,6 +78,8 @@ body {
 }
 
 .o-button{
+  display: block;
+  width: max-content;
   padding: 0.75em 1em;
   font-size: 1.25em;
   background-color: var(--selected-color);
@@ -75,6 +87,7 @@ body {
   border-radius: 0.5rem;
   color: white;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .o-button:hover{
@@ -177,7 +190,7 @@ fieldset label svg{
   border-radius: 0.5rem;
   font-size: 1.25rem;
   font-weight: 700;
-  border: 0.2rem solid #C38728;
+  border: 0.2rem solid #695179;
   cursor: pointer;
 }
 
@@ -215,7 +228,7 @@ fieldset label svg{
 fieldset div input:checked+label {
   background-color: var(--selected-color);
   color: white;
-  border: 0 none;
+  border: 0.2rem solid var(--selected-color);
 }
 
 fieldset div input:checked+label span:after {
@@ -470,9 +483,9 @@ fieldset div input:checked+label svg[class*="textsize"] path{
 
 .c-shopDisplay__productOptions--rowOfCards-grid{
   display: grid;
-  grid-template-rows: repeat(4, 2em);
+  grid-template-rows: repeat(4, max-content);
   grid-template-columns: max-content;
-  grid-gap: 0.5em;
+  grid-gap: calc(var(--game-spacing)/2);
 }
 
 .c-shopDisplay__imagePos{
@@ -603,6 +616,7 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
   flex-direction: row;
   align-items: center;
   background-color: var(--game-secondary-ui-color);
+  color: var(--game-ui-text-color);
 }
 
 .c-rowOfCards__img{
@@ -689,7 +703,7 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
   --game-secondary-ui-color: #D0A1ED;
   --game-text-color: black;
   --game-background-color: white;
-  --game-ui-text-color: white;
+  --game-ui-text-color: black;
 }
 
 .c-browser.c-browser--dark{
@@ -711,9 +725,9 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
 .c-browser.c-browser--lowContrast{
   --game-primary-ui-color: #F7F7F7;
   --game-secondary-ui-color: #efefef;
-  --game-text-color: #989898;
+  --game-text-color: #525252;
   --game-background-color: #fff;
-  --game-ui-text-color: #989898;
+  --game-ui-text-color: #525252;
 }
 
 .c-shopDisplay__buttons button, .c-shopNav__title, .c-shopNav__menu{
@@ -765,17 +779,36 @@ div[data-button="c-shopDisplay__additionalFeatures--viewCounter"], div[data-butt
   --game-spacing: 1.728em;
 }
 
-.c-shopDisplay__bodyText > *, .c-shopDisplay__paragraph > *, .c-shopDisplay__additionalInfo > *, .c-shopDisplay__additionalFeatures > *, .c-shopDisplay__productOptions * {
+.c-shopDisplay__bodyText > *, .c-shopDisplay__paragraph > *, .c-shopDisplay__additionalInfo > *, .c-shopDisplay__additionalFeatures > * {
   line-height: var(--game-spacing);
 }
 
-.c-shopDisplay__bodyText > * + *, .c-shopDisplay__paragraph > * + *, .c-shopDisplay__additionalInfo > * + *, .c-shopDisplay__additionalFeatures > * + *, .c-shopDisplay__productOptions > * + *{
+.c-shopDisplay__bodyText > * + *, .c-shopDisplay__paragraph > * + *, .c-shopDisplay__additionalInfo > * + *, .c-shopDisplay__additionalFeatures > * + *, .c-shopDisplay__productOptions > * + *, .c-shopDisplay__productOptions--rowOfCards > * + *, .c-shopDisplay__productOptions--listOfCards-grid, .c-shopDisplay__productOptions--radios-grid, .c-shopDisplay__productOptions--select-font {
   margin-top: var(--game-spacing);
 }
 
+.c-shopDisplay__productOptions--radios-grid > div + div{
+  margin-top: calc(var(--game-spacing)/2);
+}
 
+.o-alert{
+  background-color: #695179;
+  color: white;
+  padding: 1rem;
+  max-width: 60ch;
+  width: max-content;
+}
 
+ul.o-alert{
+  padding-left: 2rem;
+}
 
+.l-browserComparison{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: auto;
+  grid-gap: 1rem;
+}
 
 
 
