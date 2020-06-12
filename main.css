@@ -948,7 +948,13 @@ ul.o-alert{
   border: 0 none transparent;
 }
 
-.c-consent
+.c-welcome{
+  margin: 5vh 20vw 0 20vw;
+}
+
+.c-welcome__footer{
+  left: -20vw;
+}
 
 
 
@@ -1004,4 +1010,12 @@ ul.o-alert{
     height: auto;
     grid-gap: 1rem;
   }
+
+  .c-welcome{
+    margin: 5vh 2rem 0 2rem;
+  }
+
+  .c-welcome__footer{
+    left: -2rem;
+  }  
 }

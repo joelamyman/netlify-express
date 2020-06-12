@@ -647,7 +647,7 @@ router.get('/results/show/*', (req, res) => {
   })
 });
 router.post('/consent', (req, res) => {
-  res.redirect(`/testing/"`)
+  res.redirect(`/testing/`)
 });
 router.post('/', [
   check('textsize').isLength({ min: 5 }).trim().escape(),
