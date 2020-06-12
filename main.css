@@ -573,7 +573,7 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
 .o-button{
   padding: 0.75rem 1rem;
   border: 0 none transparent;
-  font-size: 1rem;
+  font-size: 1.25rem;
   background-color: var(--selected-color);
   color: white;
   border-radius: 0.5rem;
@@ -902,9 +902,53 @@ ul.o-alert{
   padding: 1rem;
 }
 
+.h-contrastLink{
+  color: #fdfd00;
+}
 
+.h-contrastLink:hover, .h-contrastLink:active, .h-contrastLink:focus{
+  color: #e4e462;
+}
 
+.c-consent{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: #ee6e6e;
+  color: #5c0000;
+  padding: 1rem;
+}
 
+.c-consent__fieldset{
+  border: 0 none transparent;
+  padding: 0;
+}
+
+.c-consent__label{
+  background-color: #ee6e6e;
+  color: #5c0000;
+}
+
+.c-consent__optionHolder{
+  padding: 1rem 0 0 0;
+}
+
+.c-consent__continueButton{
+  margin: 1rem 0 0 0;
+}
+
+.c-consent__checkbox{
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.c-consent__checkbox:checked + .c-consent__label{
+  background-color: #ee6e6e;
+  color: #5c0000;
+  border: 0 none transparent;
+}
+
+.c-consent
 
 
 

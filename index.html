@@ -43,9 +43,9 @@
     <h2 class="o-bwText o-bwText__header">What should I do if I have any concerns?</h2>
     <p class="o-bodyText">If you have any questions please let me or my supervisors know by contacting us as follows:</p>
     <ul class="o-alert">
-      <li>Joe Lamyman (jl2160@york.ac.uk) (student).</li>
-      <li>Dr Anna Bramwell-Dicks (anna.bramwell-dicks@york.ac.uk) (supervisor).</li>
-      <li>Dr Debbie Maxwell (debbie.maxwell@york.ac.uk) (supervisor).</li>
+      <li>Joe Lamyman (<a class="h-contrastLink" href="mailto:jl2160@york.ac.uk">jl2160@york.ac.uk</a>) (student).</li>
+      <li>Dr Anna Bramwell-Dicks (<a class="h-contrastLink" href="mailto:anna.bramwell-dicks@york.ac.uk">anna.bramwell-dicks@york.ac.uk</a>) (supervisor).</li>
+      <li>Dr Debbie Maxwell (<a class="h-contrastLink" href="mailto:debbie.maxwell@york.ac.uk">debbie.maxwell@york.ac.uk</a>) (supervisor).</li>
     </ul>
   </div>
   <div class="stack-small">
@@ -56,10 +56,24 @@
         which provides further information about the project and how we will use and store your data in line with the General Data Protection Regulation (GDPR).
     </p>
   </div>
-  <div class="stack-small">
-    <p class="o-alert">By clicking the continue button, you confirm that you are over the age of 18 and consent to take part in the game.</p>
-    <a href="./testing/index.html" class="o-button">Continue to the game</a>
-  </div>
+
+  <form method="POST" action="/.netlify/functions/app/consent" class="c-consent">
+    <fieldset class="c-consent__fieldset">
+      <legend><strong>To continue to the game, please consent to the following</strong></legend>
+
+      <div class="c-consent__optionHolder">
+        <input class="c-consent__checkbox" type="checkbox" id="consent-aboveAge" name="consent-aboveAge" required>
+        <label class="c-consent__label" for="consent-aboveAge">I am over the age of 18.</label>
+      </div>
+
+      <div class="c-consent__optionHolder">
+        <input class="c-consent__checkbox" type="checkbox" id="consent-informationSheet" name="consent-informationSheet" required>
+        <label class="c-consent__label" for="consent-informationSheet">I have read the information sheet and consent to take part in the study.</label>
+      </div>
+    </fieldset>
+
+    <button class="o-button c-consent__continueButton" type="submit">Continue to game</button>
+  </form>
 
   <footer>made by <a href="https://twitter.com/JoeLamyman" aria-title"Link to Joe Lamyman's twitter">@JoeLamyman</a> 🧡</footer>
 

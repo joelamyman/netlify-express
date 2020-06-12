@@ -646,6 +646,9 @@ router.get('/results/show/*', (req, res) => {
     });
   })
 });
+router.post('/consent', (req, res) => {
+  res.redirect(`/testing/"`)
+});
 router.post('/', [
   check('textsize').isLength({ min: 5 }).trim().escape(),
   check('infoAmount').isLength({ min: 5 }).trim().escape(),
