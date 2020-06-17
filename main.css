@@ -270,6 +270,8 @@ fieldset div input:checked+label svg[class*="textsize"] path{
 
 .l-liveView{
   width: 60vw;
+  min-width: 60vw;
+  max-width: 60vw;
 }
 
 .c-browser{
@@ -956,7 +958,22 @@ ul.o-alert{
   left: -20vw;
 }
 
+.c-footer{
+  display: flex;
+  justify-content: space-between;
+}
 
+.c-footer__linkHolder{
+  display: inline-block;
+}
+
+.c-footer__link + .c-footer__link{
+  margin-left: 1rem;
+}
+
+.c-footer__a:hover{
+  color: #d4d4d4;
+}
 
 @media only screen and (max-width: 70rem) {
   .l-page__grid {
@@ -965,6 +982,8 @@ ul.o-alert{
 
   .l-liveView{
     width: 100%;
+    min-width: 100%;
+    max-width: 100%;
   }
 
   .c-browser{
