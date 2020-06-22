@@ -72,7 +72,7 @@ summary:hover{
 
 .o-bodyText{
   max-width: 60ch;
-  line-height: 3rem;
+  line-height: 2rem;
 }
 
 .o-bwText__bodyText{
@@ -973,6 +973,12 @@ ul.o-alert{
 
 .c-footer__a:hover{
   color: #d4d4d4;
+}
+
+.l-flexEnd{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
 }
 
 @media only screen and (max-width: 70rem) {
