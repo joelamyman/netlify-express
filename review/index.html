@@ -23,7 +23,12 @@
 <body>
   <h1 class="o-bwText h-bold h-maxContent">Almost done...</h1>
 
-  <p class="o-bodyText">Your unique ID is <span class="js-id o-alert"></span>, this can be used if you wish to remove your participation in the future as well as to enter in the Amazon voucher prize draw.</p>
+  <label class="o-bodyText" id="id-value-label">Your unique ID is<label>
+  <div class="c-shareLink">
+   <input aria-labelledby="id-value-label" id="id-value" type="text" class="c-share__input js-id" readonly>
+   <button id="id-value-copy-button" class="o-button" onclick="copyIdToClipboard()">Copy URL</button>
+  </div>
+  <p class="o-bodyText">Make sure to write this down and keep it safe, this can be used if you wish to remove your participation in the future as well as to enter in the Amazon voucher prize draw.</p>
 
   <p class="o-bodyText">You're almost there! Please complete the survey below. Once complete, you'll be able to compare and share your designs!</p>
   
@@ -354,6 +359,22 @@
           updateStyling(receivedData.additionalFeatures[0], 'individualResults');
         });
     }
+
+    function copyIdToClipboard(){
+      var copyText = document.querySelector("#id-value");
+
+      /* Select the text field */
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+      /* Copy the text inside the text field */
+      document.execCommand("copy");
+
+      /* Alert the copied text */
+      
+      document.querySelector('#id-value-copy-button').innerHTML = "Copied text ✅"
+    }
+      
   </script>
 
   <script src="../js/styling-helpers.js"></script>
