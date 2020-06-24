@@ -705,6 +705,8 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
   color: var(--selected-color);
   font-weight: 600;
   border: 0.25rem solid var(--selected-color);
+  width: 100%;
+  max-width: 20rem;
 }
 
 .c-clearOptionButton{
@@ -850,7 +852,7 @@ ul.o-alert{
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
