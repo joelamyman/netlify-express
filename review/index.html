@@ -327,7 +327,7 @@
       const paramId = urlParams.get('id');
       console.log(paramId);
       document.querySelector('.js-id').innerHTML = paramId.replace(/['"]+/g, '');
-      document.querySelector('.js-completeLink').setAttribute('href', `../complete/?="${paramId.replace(/['"]+/g, '')}"`);
+      document.querySelector('.js-completeLink').setAttribute('href', `../complete/id?="${paramId.replace(/['"]+/g, '')}"`);
       fetch(`../.netlify/functions/app/results/share/?id="${paramId}"`)
         .then(function(response) {
           // The response is a Response instance.
