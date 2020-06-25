@@ -26,7 +26,7 @@
   <label class="o-bodyText" id="id-value-label">Your unique ID is<label>
   <div class="c-shareLink">
    <input aria-labelledby="id-value-label" id="id-value" type="text" class="c-share__input js-id" readonly>
-   <button id="id-value-copy-button" class="o-button" onclick="copyIdToClipboard()">Copy URL</button>
+   <button id="id-value-copy-button" class="o-button" onclick="copyIdToClipboard()">Copy ID</button>
   </div>
   <p class="o-bodyText">Make sure to write this down and keep it safe, this can be used if you wish to remove your participation in the future as well as to enter in the Amazon voucher prize draw.</p>
 
@@ -321,7 +321,7 @@
 
     console.log(window.location.href);
     let windowUrl = window.location.href;
-    windowUrl = windowUrl.replace("complete", "share");
+    windowUrl = windowUrl.replace("review", "share");
     console.log(windowUrl);
     history.replaceState(null, null, windowUrl);
 
@@ -331,7 +331,7 @@
     if (urlParams.has('id')){
       const paramId = urlParams.get('id');
       console.log(paramId);
-      document.querySelector('.js-id').innerHTML = paramId.replace(/['"]+/g, '');
+      document.querySelector('.js-id').value = paramId.replace(/['"]+/g, '');
       document.querySelector('.js-completeLink').setAttribute('href', `../complete/?id="${paramId.replace(/['"]+/g, '')}"`);
       fetch(`../.netlify/functions/app/results/share/?id="${paramId}"`)
         .then(function(response) {
@@ -358,6 +358,21 @@
           updateStyling(receivedData.spacing[0], 'individualResults');
           updateStyling(receivedData.additionalFeatures[0], 'individualResults');
         });
+    }
+
+    function copyIdToClipboard(){
+      var copyText = document.querySelector("#id-value");
+
+      /* Select the text field */
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+      /* Copy the text inside the text field */
+      document.execCommand("copy");
+
+      /* Alert the copied text */
+      
+      document.querySelector('#id-value-copy-button').innerHTML = "Copied text ✅"
     }
 
     function copyIdToClipboard(){

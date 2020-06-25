@@ -26,7 +26,7 @@
   <label class="o-bodyText" id="id-value-label">Your unique ID is<label>
   <div class="c-shareLink">
    <input aria-labelledby="id-value-label" id="id-value" type="text" class="c-share__input js-id" readonly>
-   <button id="id-value-copy-button" class="o-button" onclick="copyIdToClipboard()">Copy URL</button>
+   <button id="id-value-copy-button" class="o-button" onclick="copyIdToClipboard()">Copy ID</button>
   </div>
   <p class="o-bodyText">Make sure to write this down and keep it safe, this can be used if you wish to remove your participation in the future.</p>
 
@@ -608,7 +608,7 @@
     if (urlParams.has('id')){
       const paramId = urlParams.get('id');
       console.log(paramId);
-      document.querySelector('.js-id').innerHTML = paramId.replace(/['"]+/g, '');
+      document.querySelector('.js-id').value = paramId.replace(/['"]+/g, '');
       document.querySelector('.twitter-share-button').dataset.url = window.location.href;
       fetch(`../.netlify/functions/app/results/share/?id="${paramId}"`)
         .then(function(response) {
