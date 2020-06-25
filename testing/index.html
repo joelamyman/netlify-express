@@ -845,6 +845,12 @@
 
 
   <script>
+    console.log(window.location.href);
+    let windowUrl = window.location.href;
+    windowUrl = windowUrl.replace("testing/", "");
+    console.log(windowUrl);
+    history.replaceState(null, null, windowUrl);
+
     window.onload = function () {
       const answers = document.querySelectorAll('.js-answer');
 
