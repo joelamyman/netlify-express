@@ -599,9 +599,9 @@
     const userId = localStorage.getItem('id');
 
     console.log(window.location.href);
-    let windowUrl = new URL(window.location.href);
+    let windowUrl = window.location.href;
     windowUrl = windowUrl.replace("complete", "share");
-    windowUrl = new URL(windowUrl.append('id', userId));
+    windowUrl = new URL(windowUrl.append('id', userId)) ;
     console.log(windowUrl);
 
     history.replaceState(null, null, windowUrl);
