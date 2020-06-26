@@ -596,6 +596,8 @@
 
   <script>
 
+    const userId = localStorage.getItem('id');
+
     console.log(window.location.href);
     let windowUrl = window.location.href;
     windowUrl = windowUrl.replace("complete", "share");
@@ -605,12 +607,12 @@
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
-    if (urlParams.has('id')){
+    if ((userId!==undefined)&&(userId!=="")&&(userId!==null)){
       const paramId = urlParams.get('id');
       console.log(paramId);
-      document.querySelector('.js-id').value = paramId.replace(/['"]+/g, '');
-      document.querySelector('.twitter-share-button').dataset.url = window.location.href;
-      fetch(`../.netlify/functions/app/results/share/?id="${paramId}"`)
+      document.querySelector('.js-id').value = userId.replace(/['"]+/g, '');
+      document.querySelector('.twitter-share-button').dataset.url = window.location.href + `?id="${userId}"`;
+      fetch(`../.netlify/functions/app/results/share/?id="${userId}"`)
         .then(function(response) {
           // The response is a Response instance.
           // You parse the data into a useable format using `.json()`
@@ -654,42 +656,42 @@
           updateStyling(popularData.spacing, 'popularResults');
           updateStyling(popularData.additionalFeatures, 'popularResults');
         });
-      }
+    }
 
-      const twitterButton = document.querySelector('.twitter-share-button');
-      const shareLinkInput = document.querySelector('#share-link');
-      twitterButton.dataset.url = windowUrl;
-      shareLinkInput.value = windowUrl;
+    const twitterButton = document.querySelector('.twitter-share-button');
+    const shareLinkInput = document.querySelector('#share-link');
+    twitterButton.dataset.url = windowUrl + `?id="${userId}"`;
+    shareLinkInput.value = windowUrl + `?id="${userId}"`;
 
-      function copyUrlToClipboard(){
-        var copyText = document.querySelector("#share-link");
+    function copyUrlToClipboard(){
+      var copyText = document.querySelector("#share-link");
 
-        /* Select the text field */
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+      /* Select the text field */
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /*For mobile devices*/
 
-        /* Copy the text inside the text field */
-        document.execCommand("copy");
+      /* Copy the text inside the text field */
+      document.execCommand("copy");
 
-        /* Alert the copied text */
-        
-        document.querySelector('#share-link-copy-button').innerHTML = "Copied text ✅"
-      }
+      /* Alert the copied text */
+      
+      document.querySelector('#share-link-copy-button').innerHTML = "Copied text ✅"
+    }
 
-      function copyIdToClipboard(){
-        var copyText = document.querySelector("#id-value");
+    function copyIdToClipboard(){
+      var copyText = document.querySelector("#id-value");
 
-        /* Select the text field */
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+      /* Select the text field */
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /*For mobile devices*/
 
-        /* Copy the text inside the text field */
-        document.execCommand("copy");
+      /* Copy the text inside the text field */
+      document.execCommand("copy");
 
-        /* Alert the copied text */
-        
-        document.querySelector('#id-value-copy-button').innerHTML = "Copied text ✅"
-      }
+      /* Alert the copied text */
+      
+      document.querySelector('#id-value-copy-button').innerHTML = "Copied text ✅"
+    }
       
   </script>
 
