@@ -602,6 +602,9 @@
     let windowUrl = window.location.href;
     windowUrl = windowUrl.replace("complete", "share");
     console.log(windowUrl);
+
+    windowUrl = windowUrl.append('id', userId);
+
     history.replaceState(null, null, windowUrl);
 
     const queryString = window.location.search;
