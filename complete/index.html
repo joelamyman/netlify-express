@@ -602,11 +602,10 @@
     let windowUrl = window.location.href;
     windowUrl = windowUrl.replace("complete", "share");
     windowUrl = new URL(windowUrl);
-    let params = new URLSearchParams(windowUrl.search.slice(1));
-    params.append('id', userId);
-    console.log(windowUrl);
+    windowUrl.searchParams.set( 'id', `"${userId}"` );
+    console.log(windowUrl.href);
 
-    history.replaceState(null, null, windowUrl);
+    history.replaceState(null, null, windowUrl.href);
 
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
