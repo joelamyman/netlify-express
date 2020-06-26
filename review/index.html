@@ -334,7 +334,6 @@
       console.log(paramId);
       const userId = localStorage.setItem('id', paramId.replace(/['"]+/g, ''));
       document.querySelector('.js-id').value = paramId.replace(/['"]+/g, '');
-      document.querySelector('.js-completeLink').setAttribute('href', `../complete/?id="${paramId.replace(/['"]+/g, '')}"`);
       fetch(`../.netlify/functions/app/results/share/?id="${paramId}"`)
         .then(function(response) {
           // The response is a Response instance.
@@ -360,21 +359,6 @@
           updateStyling(receivedData.spacing[0], 'individualResults');
           updateStyling(receivedData.additionalFeatures[0], 'individualResults');
         });
-    }
-
-    function copyIdToClipboard(){
-      var copyText = document.querySelector("#id-value");
-
-      /* Select the text field */
-      copyText.select();
-      copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-
-      /* Copy the text inside the text field */
-      document.execCommand("copy");
-
-      /* Alert the copied text */
-      
-      document.querySelector('#id-value-copy-button').innerHTML = "Copied text ✅"
     }
 
     function copyIdToClipboard(){
