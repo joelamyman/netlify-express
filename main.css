@@ -1038,6 +1038,10 @@ ul.o-alert{
     grid-gap: 1rem;
   }
 
+  .l-questionnaire{
+    grid-template-rows: 35rem auto;
+  }
+
   .c-welcome{
     margin: 5vh 2rem 0 2rem;
   }

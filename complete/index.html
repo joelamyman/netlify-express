@@ -597,22 +597,22 @@
   <script>
 
     const userId = localStorage.getItem('id');
-
-    console.log(window.location.href);
-    let windowUrl = window.location.href;
-    windowUrl = windowUrl.replace("complete", "share");
-    windowUrl = new URL(windowUrl);
-    windowUrl.searchParams.set( 'id', `"${userId}"` );
-    console.log(windowUrl.href);
-
-    history.replaceState(null, null, windowUrl.href);
-
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
+    localStorage.setItem('id', '');
 
     if ((userId!==undefined)&&(userId!=="")&&(userId!==null)){
       const paramId = urlParams.get('id');
       console.log(paramId);
+      console.log(window.location.href);
+      let windowUrl = window.location.href;
+      windowUrl = windowUrl.replace("complete", "share");
+      windowUrl = new URL(windowUrl);
+      windowUrl.searchParams.set( 'id', `"${userId}"` );
+      console.log(windowUrl.href);
+
+      history.replaceState(null, null, windowUrl.href);
+
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
       document.querySelector('.js-id').value = userId.replace(/['"]+/g, '');
       document.querySelector('.twitter-share-button').dataset.url = window.location.href + `?id="${userId}"`;
       fetch(`../.netlify/functions/app/results/share/?id="${userId}"`)
@@ -659,12 +659,15 @@
           updateStyling(popularData.spacing, 'popularResults');
           updateStyling(popularData.additionalFeatures, 'popularResults');
         });
+      const twitterButton = document.querySelector('.twitter-share-button');
+      const shareLinkInput = document.querySelector('#share-link');
+      twitterButton.dataset.url = windowUrl + `?id="${userId}"`;
+      shareLinkInput.value = windowUrl + `?id="${userId}"`;
+    } else {
+      window.alert('No ID');
     }
 
-    const twitterButton = document.querySelector('.twitter-share-button');
-    const shareLinkInput = document.querySelector('#share-link');
-    twitterButton.dataset.url = windowUrl + `?id="${userId}"`;
-    shareLinkInput.value = windowUrl + `?id="${userId}"`;
+    
 
     function copyUrlToClipboard(){
       var copyText = document.querySelector("#share-link");
