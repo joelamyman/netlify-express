@@ -659,8 +659,8 @@
         });
       const twitterButton = document.querySelector('.twitter-share-button');
       const shareLinkInput = document.querySelector('#share-link');
-      twitterButton.dataset.url = windowUrl + `?id="${userId}"`;
-      shareLinkInput.value = windowUrl + `?id="${userId}"`;
+      twitterButton.dataset.url = windowUrl.href;
+      shareLinkInput.value = windowUrl.href;
     } else {
       window.alert('No ID');
     }
