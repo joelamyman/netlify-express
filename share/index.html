@@ -581,12 +581,6 @@
 
   <script>
 
-    console.log(window.location.href);
-    let windowUrl = window.location.href;
-    windowUrl = windowUrl.replace("complete", "share");
-    console.log(windowUrl);
-    history.replaceState(null, null, windowUrl);
-
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
@@ -614,6 +608,10 @@
           updateStyling(receivedData.imagePos[0], 'individualResults');
           updateStyling(receivedData.cleanButtons[0], 'individualResults');
           updateStyling(receivedData.colourScheme[0], 'individualResults');
+          updateStyling(receivedData.colourScheme[0], 'individualResults');
+          updateStyling(receivedData.reviews[0], 'individualResults');
+          updateStyling(receivedData.spacing[0], 'individualResults');
+          updateStyling(receivedData.additionalFeatures[0], 'individualResults');
         });
 
       fetch(`../.netlify/functions/app/results/popular/`)
@@ -630,6 +628,9 @@
           updateStyling(popularData.imagePos, 'popularResults');
           updateStyling(popularData.buttons, 'popularResults');
           updateStyling(popularData.colourScheme, 'popularResults');
+          updateStyling(popularData.reviews, 'popularResults');
+          updateStyling(popularData.spacing, 'popularResults');
+          updateStyling(popularData.additionalFeatures, 'popularResults');
         });
       }
 
