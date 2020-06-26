@@ -600,8 +600,6 @@
     localStorage.setItem('id', '');
 
     if ((userId!==undefined)&&(userId!=="")&&(userId!==null)){
-      const paramId = urlParams.get('id');
-      console.log(paramId);
       console.log(window.location.href);
       let windowUrl = window.location.href;
       windowUrl = windowUrl.replace("complete", "share");
