@@ -359,17 +359,22 @@ fieldset div input:checked+label svg[class*="textsize"] path{
 .c-shopDisplay__browserNav{
   grid-area: browsernav;
   background-color: #0e1319;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .c-shopDisplay__addressBar{
-  display: inline-block;
+  display: block;
   color: white;
   background-color: #3d4954;
   padding: 0.2rem 2rem 0.2rem 2rem;
   border-radius: 1rem;
   font-size: 0.8rem;
-  margin: auto auto auto 10%;
+  margin: auto;
   width: 60%;
+  line-height: 1rem;
 }
 
 .c-shopDisplay__buttonHolder{
@@ -382,7 +387,7 @@ fieldset div input:checked+label svg[class*="textsize"] path{
   width: 1.2rem;
   border-radius: 100%;
   background-color: #3d4954;
-  margin: -1.3rem 0.5rem auto auto;
+  margin: 0 1rem 0 0;
   display: flex;
   position: relative;
   flex-direction: column;
