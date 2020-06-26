@@ -601,7 +601,7 @@
     console.log(window.location.href);
     let windowUrl = new URL(window.location.href);
     windowUrl = windowUrl.replace("complete", "share");
-    windowUrl = windowUrl.append('id', userId);
+    windowUrl = new URL(windowUrl.append('id', userId));
     console.log(windowUrl);
 
     history.replaceState(null, null, windowUrl);
