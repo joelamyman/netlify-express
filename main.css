@@ -155,19 +155,19 @@ fieldset label svg{
   max-width: 15rem;
 }
 
-.textsize-small{
+[class*="textsize-small"]{
   height: 2.5rem;
 }
 
-.textsize-medium{
+[class*="textsize-medium"]{
   height: 3.75rem;
 } 
 
-.textsize-large{
+[class*="textsize-large"]{
   height: 5.625rem;
 }  
 
-.textsize-xlarge{
+[class*="textsize-xlarge"]{
   height: 8.4rem;
 }
 
@@ -236,7 +236,7 @@ fieldset label svg{
   font-weight: 600;
 }
 
-.form-fieldsetLengend-additionalInfo{
+.form-fieldsetLegend-additionalInfo{
   display: block;
   font-size: 1rem;
   font-weight: 400;
@@ -399,22 +399,22 @@ fieldset div input:checked+label svg[class*="textsize"] path{
   height: 0.75rem;
 }
 
-.c-shopDisplay__bodyText--size-small{
+[class*="c-shopDisplay__bodyText--size-small"]{
   font-size: 12px;
   display: block;
 }
 
-.c-shopDisplay__bodyText--size-medium{
+[class*="c-shopDisplay__bodyText--size-medium"]{
   font-size: 16px;
   display: block;
 }
 
-.c-shopDisplay__bodyText--size-large{
+[class*="c-shopDisplay__bodyText--size-large"]{
   font-size: 20px;
   display: block;
 }
 
-.c-shopDisplay__bodyText--size-xlarge{
+[class*="c-shopDisplay__bodyText--size-xlarge"]{
   font-size: 24px;
   display: block;
 }
@@ -441,14 +441,14 @@ fieldset div input:checked+label svg[class*="textsize"] path{
   color: var(--game-text-color);
 }
 
-.c-shopDisplay__additionalInfo.c-shopDisplay__additionalInfo--text,
-.c-shopDisplay__additionalInfo.c-shopDisplay__additionalInfo--text .c-shopDisplay__additionalInfo--text,
-.c-shopDisplay__additionalInfo.c-shopDisplay__additionalInfo--bullets,
-.c-shopDisplay__additionalInfo.c-shopDisplay__additionalInfo--bullets  .c-shopDisplay__additionalInfo--bullets,
-.c-shopDisplay__additionalInfo.c-shopDisplay__additionalInfo--mixed,
-.c-shopDisplay__additionalInfo.c-shopDisplay__additionalInfo--mixed  .c-shopDisplay__additionalInfo--mixed,
-.c-shopDisplay__additionalInfo.c-shopDisplay__additionalInfo--details,
-.c-shopDisplay__additionalInfo.c-shopDisplay__additionalInfo--details  .c-shopDisplay__additionalInfo--details{
+.c-shopDisplay__additionalInfo[class*="c-shopDisplay__additionalInfo--text"],
+.c-shopDisplay__additionalInfo[class*="c-shopDisplay__additionalInfo--text"] > [class*="c-shopDisplay__additionalInfo--text"],
+.c-shopDisplay__additionalInfo[class*="c-shopDisplay__additionalInfo--bullets"],
+.c-shopDisplay__additionalInfo[class*="c-shopDisplay__additionalInfo--bullets"] > [class*="c-shopDisplay__additionalInfo--bullets"],
+.c-shopDisplay__additionalInfo[class*="c-shopDisplay__additionalInfo--mixed"],
+.c-shopDisplay__additionalInfo[class*="c-shopDisplay__additionalInfo--mixed"] > [class*="c-shopDisplay__additionalInfo--mixed"],
+.c-shopDisplay__additionalInfo[class*="c-shopDisplay__additionalInfo--details"],
+.c-shopDisplay__additionalInfo[class*="c-shopDisplay__additionalInfo--details"] > [class*="c-shopDisplay__additionalInfo--details"]{
   display: block !important;
 }
 
@@ -456,14 +456,14 @@ fieldset div input:checked+label svg[class*="textsize"] path{
   display: none;
 }
 
-.c-shopDisplay__productOptions.c-shopDisplay__productOptions--select,
-.c-shopDisplay__productOptions.c-shopDisplay__productOptions--select .c-shopDisplay__productOptions--select,
-.c-shopDisplay__productOptions.c-shopDisplay__productOptions--listOfCards,
-.c-shopDisplay__productOptions.c-shopDisplay__productOptions--listOfCards  .c-shopDisplay__productOptions--listOfCards,
-.c-shopDisplay__productOptions.c-shopDisplay__productOptions--radios,
-.c-shopDisplay__productOptions.c-shopDisplay__productOptions--radios  .c-shopDisplay__productOptions--radios,
-.c-shopDisplay__productOptions.c-shopDisplay__productOptions--rowOfCards,
-.c-shopDisplay__productOptions.c-shopDisplay__productOptions--rowOfCards  .c-shopDisplay__productOptions--rowOfCards{
+.c-shopDisplay__productOptions[class*="c-shopDisplay__productOptions--select"],
+.c-shopDisplay__productOptions[class*="c-shopDisplay__productOptions--select"] > [class*="c-shopDisplay__productOptions--select"],
+.c-shopDisplay__productOptions[class*="c-shopDisplay__productOptions--listOfCards"],
+.c-shopDisplay__productOptions[class*="c-shopDisplay__productOptions--listOfCards"] > [class*="c-shopDisplay__productOptions--listOfCards"],
+.c-shopDisplay__productOptions[class*="c-shopDisplay__productOptions--radios"],
+.c-shopDisplay__productOptions[class*="c-shopDisplay__productOptions--radios"] > [class*="c-shopDisplay__productOptions--radios"],
+.c-shopDisplay__productOptions[class*="c-shopDisplay__productOptions--rowOfCards"],
+.c-shopDisplay__productOptions[class*="c-shopDisplay__productOptions--rowOfCards"] > [class*="c-shopDisplay__productOptions--rowOfCards"]{
   display: block !important;
 }
 
@@ -524,28 +524,28 @@ fieldset div input:checked+label svg[class*="textsize"] path{
   background-color: var(--game-secondary-ui-color);
 }
 
-.c-shopDisplay__imagePos.c-shopDisplay__imagePos--right,
-.c-shopDisplay__imagePos.c-shopDisplay__imagePos--left,
-.c-shopDisplay__imagePos.c-shopDisplay__imagePos--bottom,
-.c-shopDisplay__imagePos.c-shopDisplay__imagePos--top{
+.c-shopDisplay__imagePos[class*="c-shopDisplay__imagePos--right"],
+.c-shopDisplay__imagePos[class*="c-shopDisplay__imagePos--left"],
+.c-shopDisplay__imagePos[class*="c-shopDisplay__imagePos--bottom"],
+.c-shopDisplay__imagePos[class*="c-shopDisplay__imagePos--top"]{
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.c-shopDisplay__imagePos--right{
+[class*="c-shopDisplay__imagePos--right"]{
   grid-area: rightimage;
 }
 
-.c-shopDisplay__imagePos--left{
+[class*="c-shopDisplay__imagePos--left"]{
   grid-area: leftimage;
 }
 
-.c-shopDisplay__imagePos--bottom{
+[class*="c-shopDisplay__imagePos--bottom"]{
   grid-area: bottomimage;
 }
 
-.c-shopDisplay__imagePos--top{
+[class*="c-shopDisplay__imagePos--top"]{
   grid-area: topimage;
 }
 
@@ -558,9 +558,9 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
   display: none;
 }
 
-.c-shopDisplay__buttons.c-shopDisplay__buttons--top div[data-button="c-shopDisplay__buttons--top"],
-.c-shopDisplay__buttons.c-shopDisplay__buttons--middle div[data-button="c-shopDisplay__buttons--middle"],
-.c-shopDisplay__buttons.c-shopDisplay__buttons--bottom div[data-button="c-shopDisplay__buttons--bottom"]{
+.c-shopDisplay__buttons[class*="c-shopDisplay__buttons--top"] div[data-button="c-shopDisplay__buttons--top"],
+.c-shopDisplay__buttons[class*="c-shopDisplay__buttons--middle"] div[data-button="c-shopDisplay__buttons--middle"],
+.c-shopDisplay__buttons[class*="c-shopDisplay__buttons--bottom"] div[data-button="c-shopDisplay__buttons--bottom"]{
   display: block;
 }
 
@@ -739,7 +739,7 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
   color: var(--game-text-color);
 }
 
-.c-browser.c-browser--light{
+.c-browser[class*="c-browser--light"]{
   --game-primary-ui-color: #89699D;
   --game-secondary-ui-color: #D0A1ED;
   --game-text-color: black;
@@ -747,7 +747,7 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
   --game-ui-text-color: black;
 }
 
-.c-browser.c-browser--dark{
+.c-browser[class*="c-browser--dark"]{
   --game-primary-ui-color: #89699D;
   --game-secondary-ui-color: #695179;
   --game-text-color: white;
@@ -755,7 +755,7 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
   --game-ui-text-color: #202020;
 }
 
-.c-browser.c-browser--highContrast{
+.c-browser[class*="c-browser--highContrast"]{
   --game-primary-ui-color: #684F77;
   --game-secondary-ui-color: #000;
   --game-text-color: #ffe40a;
@@ -763,7 +763,7 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
   --game-ui-text-color: #ffe40a;
 }
 
-.c-browser.c-browser--lowContrast{
+.c-browser[class*="c-browser--lowContrast"]{
   --game-primary-ui-color: #F7F7F7;
   --game-secondary-ui-color: #efefef;
   --game-text-color: #525252;
@@ -781,14 +781,14 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
   color: var(--game-text-color);
 }
 
-.c-shopDisplay__reviews.c-shopDisplay__reviews--quotes,
-.c-shopDisplay__reviews.c-shopDisplay__reviews--quotes .c-shopDisplay__reviews--quotes,
-.c-shopDisplay__reviews.c-shopDisplay__reviews--section,
-.c-shopDisplay__reviews.c-shopDisplay__reviews--section  .c-shopDisplay__reviews--section,
-.c-shopDisplay__reviews.c-shopDisplay__reviews--indicator,
-.c-shopDisplay__reviews.c-shopDisplay__reviews--indicator  .c-shopDisplay__reviews--indicator,
-.c-shopDisplay__reviews.c-shopDisplay__reviews--none,
-.c-shopDisplay__reviews.c-shopDisplay__reviews--none  .c-shopDisplay__reviews--none{
+.c-shopDisplay__reviews[class*="c-shopDisplay__reviews--quotes"],
+.c-shopDisplay__reviews[class*="c-shopDisplay__reviews--quotes"] [class*="c-shopDisplay__reviews--quotes"],
+.c-shopDisplay__reviews[class*="c-shopDisplay__reviews--section"],
+.c-shopDisplay__reviews[class*="c-shopDisplay__reviews--section"] [class*="c-shopDisplay__reviews--section"],
+.c-shopDisplay__reviews[class*="c-shopDisplay__reviews--indicator"],
+.c-shopDisplay__reviews[class*="c-shopDisplay__reviews--indicator"] [class*="c-shopDisplay__reviews--indicator"],
+.c-shopDisplay__reviews[class*="c-shopDisplay__reviews--none"],
+.c-shopDisplay__reviews[class*="c-shopDisplay__reviews--none"] [class*="c-shopDisplay__reviews--none"]{
   display: block !important;
 }
 
@@ -797,26 +797,26 @@ div[data-button="c-shopDisplay__additionalFeatures--viewCounter"], div[data-butt
   display: none;
 }
 
-.c-shopDisplay__additionalFeatures.c-shopDisplay__additionalFeatures--viewCounter div[data-button="c-shopDisplay__additionalFeatures--viewCounter"],
-.c-shopDisplay__additionalFeatures.c-shopDisplay__additionalFeatures--numberSold div[data-button="c-shopDisplay__additionalFeatures--numberSold"],
-.c-shopDisplay__additionalFeatures.c-shopDisplay__additionalFeatures--processInfo details[data-button="c-shopDisplay__additionalFeatures--processInfo"]{
+.c-shopDisplay__additionalFeatures[class*="c-shopDisplay__additionalFeatures--viewCounter"] div[data-button="c-shopDisplay__additionalFeatures--viewCounter"],
+.c-shopDisplay__additionalFeatures[class*="c-shopDisplay__additionalFeatures--numberSold"] div[data-button="c-shopDisplay__additionalFeatures--numberSold"],
+.c-shopDisplay__additionalFeatures[class*="c-shopDisplay__additionalFeatures--processInfo"] details[data-button="c-shopDisplay__additionalFeatures--processInfo"]{
   display: block !important;
 }
 
 
-.c-shopDisplay__spacing.c-shopDisplay__spacing--small{
+.c-shopDisplay__spacing[class*="c-shopDisplay__spacing--small"]{
   --game-spacing: 1em;
 }
 
-.c-shopDisplay__spacing.c-shopDisplay__spacing--medium{
+.c-shopDisplay__spacing[class*="c-shopDisplay__spacing--medium"]{
   --game-spacing: 1.2em;
 }
 
-.c-shopDisplay__spacing.c-shopDisplay__spacing--large{
+.c-shopDisplay__spacing[class*="c-shopDisplay__spacing--large"]{
   --game-spacing: 1.44em;
 }
 
-.c-shopDisplay__spacing.c-shopDisplay__spacing--xlarge{
+.c-shopDisplay__spacing[class*="c-shopDisplay__spacing--xlarge"]{
   --game-spacing: 1.728em;
 }
 
