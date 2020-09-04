@@ -14,6 +14,11 @@
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: 0.25rem dashed red;
+  outline-offset: 0.25rem;
+}
+
 body {
   margin: 5vh 1vw 0 1vw;
   background-color: var(--main-background);
@@ -43,6 +48,10 @@ footer a{
 summary:hover{
   text-decoration: underline;
   cursor: pointer;
+}
+
+button:active {
+  outline: 0.25rem solid red;
 }
 
 .stack > * + *{
@@ -248,10 +257,24 @@ fieldset label svg{
   padding: 1rem;
 }
 
+fieldset div input:focus {
+  outline: none;
+}
+
+fieldset div input:focus+label {
+  outline: 0.25rem dashed red;
+  outline-offset: 0.25rem;
+}
+
 fieldset div input:checked+label {
   background-color: var(--selected-color);
   color: white;
   border: 0.2rem solid var(--selected-color);
+}
+
+fieldset div input:focus:checked+label {
+  outline: 0.25rem solid red;
+  outline-offset: 0.25rem;
 }
 
 fieldset div input:checked+label span:after {
@@ -724,9 +747,13 @@ div[data-button="c-shopDisplay__buttons--top"], div[data-button="c-shopDisplay__
   background-color: white;
 }
 
-.c-clearOptionButton:hover {
+.c-clearOptionButton:hover, .c-clearOptionButton:focus {
   background-color: grey;
   cursor: pointer;
+}
+
+.c-clearOptionButton:active {
+  outline: 0.25rem solid red;
 }
 
 .c-questionnaire{
