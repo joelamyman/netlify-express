@@ -1043,6 +1043,10 @@ ul.o-alert{
     height: 30rem;
   }
 
+  #individualResults .c-browser {
+    height: 100% !important;
+  }
+
   .c-shopDisplay__addressBar{
     display: none;
   }
