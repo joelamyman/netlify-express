@@ -873,11 +873,20 @@ ul.o-alert{
 }
 
 .l-browserComparison{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: row;
   height: auto;
-  grid-gap: 1rem;
   margin: 0 0 2rem 0;
+}
+
+@supports (display: grid) {
+  .l-browserComparison{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+    grid-gap: 1rem;
+    margin: 0 0 2rem 0;
+  }
 }
 
 .c-shareLink{
@@ -1064,10 +1073,16 @@ ul.o-alert{
   }
 
   .l-browserComparison{
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 35rem);
-    height: auto;
-    grid-gap: 1rem;
+    flex-direction: column;
+  }
+  
+  @supports (display: grid) {
+    .l-browserComparison{
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 35rem);
+      height: auto;
+      grid-gap: 1rem;
+    }
   }
 
   .l-questionnaire{
