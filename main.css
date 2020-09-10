@@ -1081,6 +1081,7 @@ ul.o-alert{
   }
 
   .l-browserComparison{
+    display: flex;
     flex-direction: column;
   }
   
