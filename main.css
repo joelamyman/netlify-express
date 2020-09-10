@@ -1024,6 +1024,10 @@ ul.o-alert{
   justify-content: end;
 }
 
+#individualResults {
+  height: max-content;
+}
+
 @media only screen and (max-width: 70rem) {
   .l-page__grid {
     flex-direction: column-reverse;
