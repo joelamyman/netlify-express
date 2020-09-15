@@ -30,20 +30,6 @@ router.get('/complete/', (req, res) => {
     });
   })
 });
-router.get('/orange-monkey-llama-32/', (req, res) => {
-  MongoClient.connect(uri, { useUnifiedTopology: true })
-  .then(client => {
-    console.log('Connected to Database');
-    const db = client.db('test-data');
-    const submissionsCollection = db.collection('submissions');
-    submissionsCollection.find().toArray(function(err, result) {
-      if (err) throw err;
-      console.log(result);
-      client.close();
-      res.send(JSON.stringify(result))
-    });
-  })
-});
 router.get('/results/share/*', (req, res) => {
   const id = req.query.id.replace(/['"]+/g, '');
 
